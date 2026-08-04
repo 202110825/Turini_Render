@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: turini-finance
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.13.0
+      - key: PORT
+        value: 10000
