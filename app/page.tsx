@@ -345,8 +345,8 @@ export default function Home() {
     Promise.all([
       fetch("/data/quizData_720_FINAL.json").then((response) => response.json()),
       fetch("/data/diagnostic_quiz.json").then((response) => response.json()),
-      Promise.resolve(localStorage.getItem("turini-progress-v2")),
-      Promise.resolve(localStorage.getItem("turini-portfolio-v2")),
+      Promise.resolve(localStorage.getItem("turini-public-progress-v1")),
+      Promise.resolve(localStorage.getItem("turini-public-portfolio-v1")),
     ])
       .then(([quizItems, diagnosticItems, savedProgress, savedPortfolio]: [QuizQuestion[], DiagnosticQuestionRow[], string | null, string | null]) => {
         setQuestions(quizItems);
@@ -377,11 +377,11 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (!loading) localStorage.setItem("turini-progress-v2", JSON.stringify(progress));
+    if (!loading) localStorage.setItem("turini-public-progress-v1", JSON.stringify(progress));
   }, [progress, loading]);
 
   useEffect(() => {
-    if (!loading) localStorage.setItem("turini-portfolio-v2", JSON.stringify({ allocation, amount, goal, horizon, result: portfolioResult }));
+    if (!loading) localStorage.setItem("turini-public-portfolio-v1", JSON.stringify({ allocation, amount, goal, horizon, result: portfolioResult }));
   }, [allocation, amount, goal, horizon, portfolioResult, loading]);
 
   const completedSet = useMemo(() => new Set(progress.completedIds), [progress.completedIds]);
@@ -563,6 +563,27 @@ export default function Home() {
     return <main className="loading-screen"><Mascot pose="study" size="large" /><h1>투리니가 문제를 준비하고 있어요!</h1><div className="loading-track"><span /></div></main>;
   }
 
+  if (progress.financeLevel === "진단 전" && !session && !result) {
+    return (
+      <main className="onboarding-stage">
+        <section className="onboarding-card">
+          <span className="onboarding-pill">처음 오셨군요!</span>
+          <CharacterArt pose="wave" className="onboarding-mascot" />
+          <p className="eyebrow">WELCOME TO TURINI</p>
+          <h1>나에게 맞는 금융 학습을<br />진단부터 시작해요</h1>
+          <p className="onboarding-copy">금융 수준 18문항과 투자 성향 3문항을 풀면<br />맞춤 학습 경로와 포트폴리오 기준을 알려드려요.</p>
+          <div className="onboarding-info">
+            <span><b>21</b><small>전체 문항</small></span>
+            <span><b>약 5분</b><small>예상 시간</small></span>
+            <span><b>무료</b><small>바로 시작</small></span>
+          </div>
+          <button className="primary-button" onClick={startDiagnosis} disabled={diagnosticQuestions.length !== 21}>진단 테스트 시작하기 <span>→</span></button>
+          <small className="onboarding-note">결과와 학습 기록은 각 사용자의 브라우저에만 저장돼요.</small>
+        </section>
+      </main>
+    );
+  }
+
   if (session) {
     const question = session.questions[session.index];
     const isText = question.type.includes("직접입력");
@@ -656,7 +677,7 @@ export default function Home() {
           {view === "home" && (
             <div className="screen home-screen">
               <section className="welcome-row">
-                <div><p className="eyebrow">좋은 하루예요</p><h1>안녕하세요, 가영님 👋</h1><p>오늘도 투리니와 금융 지식을 키워볼까요?</p></div>
+                <div><p className="eyebrow">좋은 하루예요</p><h1>안녕하세요, 학습자님 👋</h1><p>오늘도 투리니와 금융 지식을 키워볼까요?</p></div>
                 <button className="round-notice" aria-label="알림">♧<span /></button>
               </section>
               <section className="hero-card">
@@ -715,7 +736,7 @@ export default function Home() {
 
           {view === "profile" && (
             <div className="screen profile-screen">
-              <section className="profile-hero"><div className="profile-mascot-frame"><Mascot pose="reading" size="large" /></div><div><p className="eyebrow">MY PROFILE</p><h1>가영</h1><span>@202110825 · 투리니와 학습 중</span></div></section>
+              <section className="profile-hero"><div className="profile-mascot-frame"><Mascot pose="reading" size="large" /></div><div><p className="eyebrow">MY PROFILE</p><h1>투리니 학습자</h1><span>나만의 금융 학습 기록</span></div></section>
               <section className="profile-stats"><article><span>🔥</span><strong>{progress.streak}일</strong><small>연속 학습</small></article><article><span>💎</span><strong>{progress.xp}</strong><small>총 XP</small></article><article><span>🏆</span><strong>Lv. {progress.level}</strong><small>현재 레벨</small></article><article><span>✓</span><strong>{progress.completedIds.length}</strong><small>푼 문제</small></article></section>
               <section className="card-block growth-card"><div className="section-heading"><div><p className="eyebrow">학습 현황</p><h2>나의 성장 기록</h2></div><button onClick={startDiagnosis}>진단 다시 하기</button></div><div className="growth-summary"><article><span>금융 수준</span><strong>{progress.financeLevel}</strong><small>{progress.financeLevel === "진단 전" ? "21문항 진단으로 확인해요" : "진단 결과에 맞춰 학습 중"}</small></article><article><span>투자 성향</span><strong>{progress.tendency}</strong><small>나에게 맞는 자산배분 기준</small></article></div></section>
               <section className="card-block"><p className="eyebrow">획득 배지</p><h2>투리니 배지 컬렉션</h2><div className="badge-grid">{[{icon:"🌱",name:"첫걸음"},{icon:"🔥",name:"연속 학습"},{icon:"💎",name:"XP 수집가"},{icon:"🎯",name:"정답 명중"},{icon:"🛡️",name:"분산 투자"},{icon:"🏆",name:"금융 성장"}].map((badge,index)=><div className={index > Math.floor(progress.completedIds.length / 20) ? "locked" : ""} key={badge.name}><span>{badge.icon}</span><b>{badge.name}</b></div>)}</div></section>
