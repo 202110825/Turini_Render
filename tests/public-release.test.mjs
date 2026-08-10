@@ -4,9 +4,9 @@ import test from "node:test";
 
 const pageSource = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
 
-test("public release uses only a generic learner identity", () => {
-  assert.match(pageSource, /투리니 학습자/);
-  assert.match(pageSource, /학습자님/);
+test("signed-in pages display the active account ID", () => {
+  assert.match(pageSource, /account\.username/);
+  assert.match(pageSource, /안녕하세요, \{account\.username\}님/);
 });
 
 test("new users are routed to diagnosis before the main app", () => {
@@ -15,8 +15,10 @@ test("new users are routed to diagnosis before the main app", () => {
   assert.match(pageSource, /onClick=\{startDiagnosis\}/);
 });
 
-test("public release uses fresh per-browser storage keys", () => {
+test("account state is saved through the server and old browser demo data is discarded", () => {
+  assert.match(pageSource, /fetch\("\/api\/account"/);
+  assert.match(pageSource, /method: "PUT"/);
   assert.match(pageSource, /turini-public-progress-v1/);
   assert.match(pageSource, /turini-public-portfolio-v1/);
-  assert.doesNotMatch(pageSource, /turini-progress-v2|turini-portfolio-v2/);
+  assert.doesNotMatch(pageSource, /localStorage\.setItem/);
 });

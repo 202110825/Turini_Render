@@ -1,9 +1,12 @@
 # Turini Render Edition
 
 Render settings:
-- Build Command: `npm install && npm run build`
+- Build Command: `npm ci && npm run build`
 - Start Command: `npm start`
 - Node: `22.13.0`
 - Root Directory: blank
+- Required environment variable: `DATABASE_URL` (Neon pooled connection string)
 
-This edition removes Cloudflare/Vinext/D1-only files that break a standard Next.js build on Render.
+This edition runs the Next.js UI and account API together on Render. User IDs,
+encrypted 4-digit PINs, diagnosis results, learning progress, and portfolio state
+are stored in PostgreSQL instead of browser storage.

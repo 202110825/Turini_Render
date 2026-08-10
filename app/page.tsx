@@ -117,6 +117,20 @@ type PortfolioResult = {
   coach: string;
 };
 
+type Account = { username: string };
+type AccountPayload = {
+  account: Account;
+  progress?: Partial<Progress>;
+  portfolio?: {
+    allocation?: Allocation;
+    amount?: number;
+    goal?: string;
+    horizon?: string;
+    result?: PortfolioResult | null;
+  };
+};
+type SaveState = "idle" | "saving" | "saved" | "error";
+
 const CATEGORIES = [
   { name: "주식", icon: "↗", color: "green", copy: "기업과 주주의 관계부터 차근차근" },
   { name: "채권", icon: "▥", color: "purple", copy: "금리와 채권 가격의 원리 익히기" },
@@ -149,15 +163,15 @@ const HORIZON_CENTERS: Record<string, number> = { "1년 미만": 20, "1~3년": 4
 const EMPTY_ALLOCATION: Allocation = { domestic: 20, overseas: 15, bond: 30, fund: 15, cash: 10, gold: 10 };
 
 const DEFAULT_PROGRESS: Progress = {
-  xp: 790,
-  streak: 7,
-  level: 9,
+  xp: 0,
+  streak: 0,
+  level: 1,
   completedIds: [],
-  completedLessons: [1, 2, 3, 4, 5, 6, 7, 8],
+  completedLessons: [],
   correct: 0,
   attempts: 0,
   financeLevel: "진단 전",
-  tendency: "중립형",
+  tendency: "진단 전",
   weakTags: [],
   studySessions: 0,
   conceptReviews: {},
@@ -340,49 +354,160 @@ export default function Home() {
   const [portfolioResult, setPortfolioResult] = useState<PortfolioResult | null>(null);
   const [portfolioTab, setPortfolioTab] = useState<"summary" | "rebalance" | "detail" | "coach">("summary");
   const [activeCategoryName, setActiveCategoryName] = useState("");
+  const [account, setAccount] = useState<Account | null>(null);
+  const [accountError, setAccountError] = useState("");
+  const [accountStateReady, setAccountStateReady] = useState(false);
+  const [saveState, setSaveState] = useState<SaveState>("idle");
+  const [resetConfirm, setResetConfirm] = useState(false);
+  const [resetPin, setResetPin] = useState("");
+  const [resetError, setResetError] = useState("");
+  const [resetBusy, setResetBusy] = useState(false);
+
+  const hydrateAccount = (payload: AccountPayload) => {
+    const savedProgress = payload.progress || {};
+    const savedPortfolio = payload.portfolio || {};
+    setAccount(payload.account);
+    setProgress({
+      ...DEFAULT_PROGRESS,
+      ...savedProgress,
+      completedIds: Array.isArray(savedProgress.completedIds) ? savedProgress.completedIds : [],
+      completedLessons: Array.isArray(savedProgress.completedLessons) ? savedProgress.completedLessons : [],
+      weakTags: Array.isArray(savedProgress.weakTags) ? savedProgress.weakTags : [],
+      conceptReviews: savedProgress.conceptReviews || {},
+      pendingRetries: savedProgress.pendingRetries || [],
+    });
+    setAllocation(savedPortfolio.allocation || EMPTY_ALLOCATION);
+    setAmount(typeof savedPortfolio.amount === "number" ? savedPortfolio.amount : 10000000);
+    setGoal(savedPortfolio.goal || "장기 자산 증식");
+    setHorizon(savedPortfolio.horizon || "5년 이상");
+    setPortfolioResult(savedPortfolio.result || null);
+    setAccountStateReady(true);
+    setSaveState("idle");
+  };
+
+  const resetClientState = () => {
+    setProgress({ ...DEFAULT_PROGRESS, completedIds: [], completedLessons: [], weakTags: [], conceptReviews: {}, pendingRetries: [] });
+    setAllocation({ ...EMPTY_ALLOCATION });
+    setAmount(10000000);
+    setGoal("장기 자산 증식");
+    setHorizon("5년 이상");
+    setPortfolioResult(null);
+    setResult(null);
+    setSession(null);
+    setView("home");
+    setAccountStateReady(false);
+    setSaveState("idle");
+  };
 
   useEffect(() => {
-    Promise.all([
-      fetch("/data/quizData_720_FINAL.json").then((response) => response.json()),
-      fetch("/data/diagnostic_quiz.json").then((response) => response.json()),
-      Promise.resolve(localStorage.getItem("turini-public-progress-v1")),
-      Promise.resolve(localStorage.getItem("turini-public-portfolio-v1")),
-    ])
-      .then(([quizItems, diagnosticItems, savedProgress, savedPortfolio]: [QuizQuestion[], DiagnosticQuestionRow[], string | null, string | null]) => {
+    const load = async () => {
+      try {
+        const [quizResponse, diagnosisResponse, accountResponse] = await Promise.all([
+          fetch("/data/quizData_720_FINAL.json"),
+          fetch("/data/diagnostic_quiz.json"),
+          fetch("/api/account", { cache: "no-store" }),
+        ]);
+        const quizItems = await quizResponse.json() as QuizQuestion[];
+        const diagnosticItems = await diagnosisResponse.json() as DiagnosticQuestionRow[];
         setQuestions(quizItems);
         setDiagnosticQuestions(buildDiagnosticQuestions(diagnosticItems, quizItems));
-        if (savedProgress) {
-          const parsed = JSON.parse(savedProgress) as Partial<Progress>;
-          setProgress({
-            ...DEFAULT_PROGRESS,
-            ...parsed,
-            conceptReviews: parsed.conceptReviews || {},
-            pendingRetries: parsed.pendingRetries || [],
-          });
+        localStorage.removeItem("turini-public-progress-v1");
+        localStorage.removeItem("turini-public-portfolio-v1");
+        if (accountResponse.ok) {
+          hydrateAccount(await accountResponse.json() as AccountPayload);
+        } else {
+          setAccount(null);
+          setAccountStateReady(false);
+          if (accountResponse.status !== 401) {
+            const body = await accountResponse.json().catch(() => ({}));
+            setAccountError(body.error || "계정 서버에 연결하지 못했어요.");
+          }
         }
-        if (savedPortfolio) {
-          const parsed = JSON.parse(savedPortfolio);
-          if (parsed.allocation) setAllocation(parsed.allocation);
-          if (parsed.amount) setAmount(parsed.amount);
-          if (parsed.goal) setGoal(parsed.goal);
-          if (parsed.horizon) setHorizon(parsed.horizon);
-          if (parsed.result) setPortfolioResult(parsed.result);
-        }
-      })
-      .catch(() => {
+      } catch {
         setQuestions([]);
         setDiagnosticQuestions([]);
-      })
-      .finally(() => setLoading(false));
+        setAccountError("앱 데이터를 불러오지 못했어요. 잠시 후 다시 시도해 주세요.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    void load();
   }, []);
 
   useEffect(() => {
-    if (!loading) localStorage.setItem("turini-public-progress-v1", JSON.stringify(progress));
-  }, [progress, loading]);
+    if (!account || !accountStateReady || loading) return;
+    const timer = window.setTimeout(async () => {
+      setSaveState("saving");
+      try {
+        const response = await fetch("/api/account", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            progress,
+            portfolio: { allocation, amount, goal, horizon, result: portfolioResult },
+          }),
+        });
+        if (!response.ok) throw new Error("save failed");
+        setSaveState("saved");
+      } catch {
+        setSaveState("error");
+      }
+    }, 400);
+    return () => window.clearTimeout(timer);
+  }, [account, accountStateReady, allocation, amount, goal, horizon, loading, portfolioResult, progress]);
 
-  useEffect(() => {
-    if (!loading) localStorage.setItem("turini-public-portfolio-v1", JSON.stringify({ allocation, amount, goal, horizon, result: portfolioResult }));
-  }, [allocation, amount, goal, horizon, portfolioResult, loading]);
+  const authenticate = async (mode: "login" | "register", username: string, pin: string) => {
+    try {
+      setAccountError("");
+      const response = await fetch(`/api/auth/${mode}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, pin }),
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) return payload.error || "계정 정보를 확인해 주세요.";
+      hydrateAccount(payload as AccountPayload);
+      setView("home");
+      return null;
+    } catch {
+      return "서버에 연결하지 못했어요. 잠시 후 다시 시도해 주세요.";
+    }
+  };
+
+  const logout = async () => {
+    await fetch("/api/auth/logout", { method: "POST" }).catch(() => null);
+    setAccount(null);
+    resetClientState();
+  };
+
+  const deleteAccount = async () => {
+    if (!/^\d{4}$/.test(resetPin)) {
+      setResetError("숫자 비밀번호 4자리를 입력해 주세요.");
+      return;
+    }
+    setResetBusy(true);
+    setResetError("");
+    try {
+      const response = await fetch("/api/account", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pin: resetPin }),
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        setResetError(payload.error || "계정을 초기화하지 못했어요.");
+        return;
+      }
+      setAccount(null);
+      resetClientState();
+      setResetPin("");
+      setResetConfirm(false);
+    } catch {
+      setResetError("서버에 연결하지 못했어요. 잠시 후 다시 시도해 주세요.");
+    } finally {
+      setResetBusy(false);
+    }
+  };
 
   const completedSet = useMemo(() => new Set(progress.completedIds), [progress.completedIds]);
   const categoryCounts = useMemo(() => {
@@ -532,7 +657,6 @@ export default function Home() {
   const applyPreset = (type: "안정형" | "중립형" | "공격형") => {
     const target = targetFor(type);
     setAllocation(target);
-    setProgress((current) => ({ ...current, tendency: type }));
     setPortfolioResult(null);
   };
 
@@ -563,6 +687,10 @@ export default function Home() {
     return <main className="loading-screen"><Mascot pose="study" size="large" /><h1>투리니가 문제를 준비하고 있어요!</h1><div className="loading-track"><span /></div></main>;
   }
 
+  if (!account) {
+    return <AuthScreen onAuthenticate={authenticate} serverError={accountError} />;
+  }
+
   if (progress.financeLevel === "진단 전" && !session && !result) {
     return (
       <main className="onboarding-stage">
@@ -578,7 +706,7 @@ export default function Home() {
             <span><b>무료</b><small>바로 시작</small></span>
           </div>
           <button className="primary-button" onClick={startDiagnosis} disabled={diagnosticQuestions.length !== 21}>진단 테스트 시작하기 <span>→</span></button>
-          <small className="onboarding-note">결과와 학습 기록은 각 사용자의 브라우저에만 저장돼요.</small>
+          <small className="onboarding-note">진단은 처음 한 번만 진행하며 결과와 학습 기록은 계정에 안전하게 저장돼요.</small>
         </section>
       </main>
     );
@@ -677,7 +805,7 @@ export default function Home() {
           {view === "home" && (
             <div className="screen home-screen">
               <section className="welcome-row">
-                <div><p className="eyebrow">좋은 하루예요</p><h1>안녕하세요, 학습자님 👋</h1><p>오늘도 투리니와 금융 지식을 키워볼까요?</p></div>
+                <div><p className="eyebrow">좋은 하루예요</p><h1>안녕하세요, {account.username}님 👋</h1><p>오늘도 투리니와 금융 지식을 키워볼까요?</p></div>
                 <button className="round-notice" aria-label="알림">♧<span /></button>
               </section>
               <section className="hero-card">
@@ -686,9 +814,9 @@ export default function Home() {
               </section>
               <section className="summary-grid">
                 <article className="level-card"><div className="section-title"><div><span>나의 금융 레벨</span><h2>{progress.financeLevel === "진단 전" ? `Lv. ${progress.level}` : progress.financeLevel}</h2></div><div className="level-ring">{progress.level}</div></div><div className="progress-track"><span style={{ width: `${Math.min(100, (progress.xp % 1000) / 10)}%` }} /></div><small>{progress.xp} / {Math.ceil((progress.xp + 1) / 1000) * 1000} XP</small></article>
-                <article className="tendency-card"><span>투자 성향</span><h2>{progress.tendency}</h2><p>{progress.tendency === "안정형" ? "원금 보전을 중요하게 생각해요." : progress.tendency === "공격형" ? "성장을 위해 변동성을 감수해요." : "안정성과 수익의 균형을 추구해요."}</p><button onClick={startDiagnosis}>{progress.financeLevel === "진단 전" ? "21문항 진단 시작" : "다시 진단하기"} →</button></article>
+                <article className="tendency-card"><span>투자 성향</span><h2>{progress.tendency}</h2><p>{progress.tendency === "안정형" ? "원금 보전을 중요하게 생각해요." : progress.tendency === "공격형" ? "성장을 위해 변동성을 감수해요." : "안정성과 수익의 균형을 추구해요."}</p><small className="diagnosis-complete">✓ 최초 진단 완료</small></article>
               </section>
-              <section className="mission-card"><div><span className="mission-icon">🎁</span><div><p className="eyebrow">이번 주 학습 미션</p><h3>퀴즈 5회 완료하기</h3></div></div><strong>3 / 5</strong><div className="progress-track"><span style={{ width: "60%" }} /></div></section>
+              <section className="mission-card"><div><span className="mission-icon">🎁</span><div><p className="eyebrow">이번 주 학습 미션</p><h3>퀴즈 5회 완료하기</h3></div></div><strong>{Math.min(5, progress.studySessions)} / 5</strong><div className="progress-track"><span style={{ width: `${Math.min(100, progress.studySessions * 20)}%` }} /></div></section>
               <section className="content-section"><div className="section-heading"><div><p className="eyebrow">빠른 학습</p><h2>어떤 주제부터 시작할까요?</h2></div><button onClick={() => navigate("category")}>전체 보기 →</button></div><div className="quick-categories">{CATEGORIES.slice(0, 3).map((category) => <button key={category.name} className={`quick-card ${category.color}`} onClick={() => startCategory(category.name)}><span>{category.icon}</span><div><strong>{category.name}</strong><small>{category.copy}</small></div><b>→</b></button>)}</div></section>
             </div>
           )}
@@ -736,9 +864,14 @@ export default function Home() {
 
           {view === "profile" && (
             <div className="screen profile-screen">
-              <section className="profile-hero"><div className="profile-mascot-frame"><Mascot pose="reading" size="large" /></div><div><p className="eyebrow">MY PROFILE</p><h1>투리니 학습자</h1><span>나만의 금융 학습 기록</span></div></section>
+              <section className="profile-hero"><div className="profile-mascot-frame"><Mascot pose="reading" size="large" /></div><div><p className="eyebrow">MY PROFILE</p><h1>{account.username}</h1><span>나만의 금융 학습 기록</span></div></section>
+              <section className="card-block account-card">
+                <div><p className="eyebrow">ACCOUNT</p><h2>{account.username}</h2><small className={`save-state ${saveState}`}>{saveState === "saving" ? "기록 저장 중…" : saveState === "error" ? "저장 실패 · 인터넷 연결을 확인해 주세요" : "학습 기록이 계정에 저장돼요"}</small></div>
+                <div className="account-actions"><button onClick={logout}>로그아웃</button><button className="danger-link" onClick={() => { setResetConfirm(true); setResetError(""); }}>계정 초기화</button></div>
+                {resetConfirm ? <div className="reset-panel"><h3>아이디와 모든 기록을 삭제할까요?</h3><p>삭제하면 진단 결과, 학습 기록, 포트폴리오가 모두 사라지고 되돌릴 수 없어요.</p><label>비밀번호 4자리<input type="password" inputMode="numeric" maxLength={4} value={resetPin} onChange={(event) => setResetPin(event.target.value.replace(/\D/g, "").slice(0, 4))} autoComplete="current-password" /></label>{resetError ? <p className="form-error">{resetError}</p> : null}<div><button onClick={() => { setResetConfirm(false); setResetPin(""); setResetError(""); }}>취소</button><button className="danger-button" onClick={deleteAccount} disabled={resetBusy}>{resetBusy ? "삭제 중…" : "아이디와 기록 모두 삭제"}</button></div></div> : null}
+              </section>
               <section className="profile-stats"><article><span>🔥</span><strong>{progress.streak}일</strong><small>연속 학습</small></article><article><span>💎</span><strong>{progress.xp}</strong><small>총 XP</small></article><article><span>🏆</span><strong>Lv. {progress.level}</strong><small>현재 레벨</small></article><article><span>✓</span><strong>{progress.completedIds.length}</strong><small>푼 문제</small></article></section>
-              <section className="card-block growth-card"><div className="section-heading"><div><p className="eyebrow">학습 현황</p><h2>나의 성장 기록</h2></div><button onClick={startDiagnosis}>진단 다시 하기</button></div><div className="growth-summary"><article><span>금융 수준</span><strong>{progress.financeLevel}</strong><small>{progress.financeLevel === "진단 전" ? "21문항 진단으로 확인해요" : "진단 결과에 맞춰 학습 중"}</small></article><article><span>투자 성향</span><strong>{progress.tendency}</strong><small>나에게 맞는 자산배분 기준</small></article></div></section>
+              <section className="card-block growth-card"><div className="section-heading"><div><p className="eyebrow">학습 현황</p><h2>나의 성장 기록</h2></div><span className="diagnosis-complete">✓ 최초 진단 완료</span></div><div className="growth-summary"><article><span>금융 수준</span><strong>{progress.financeLevel}</strong><small>진단 결과에 맞춰 학습 중</small></article><article><span>투자 성향</span><strong>{progress.tendency}</strong><small>나에게 맞는 자산배분 기준</small></article></div></section>
               <section className="card-block"><p className="eyebrow">획득 배지</p><h2>투리니 배지 컬렉션</h2><div className="badge-grid">{[{icon:"🌱",name:"첫걸음"},{icon:"🔥",name:"연속 학습"},{icon:"💎",name:"XP 수집가"},{icon:"🎯",name:"정답 명중"},{icon:"🛡️",name:"분산 투자"},{icon:"🏆",name:"금융 성장"}].map((badge,index)=><div className={index > Math.floor(progress.completedIds.length / 20) ? "locked" : ""} key={badge.name}><span>{badge.icon}</span><b>{badge.name}</b></div>)}</div></section>
             </div>
           )}
@@ -746,6 +879,91 @@ export default function Home() {
 
         <nav className="mobile-nav">{(["home", "learn", "category", "portfolio", "profile"] as View[]).map((item) => <NavButton key={item} item={item} active={view === item} onClick={() => navigate(item)} />)}</nav>
       </div>
+    </main>
+  );
+}
+
+function AuthScreen({
+  onAuthenticate,
+  serverError,
+}: {
+  onAuthenticate: (mode: "login" | "register", username: string, pin: string) => Promise<string | null>;
+  serverError: string;
+}) {
+  const [mode, setMode] = useState<"login" | "register">("login");
+  const [username, setUsername] = useState("");
+  const [pin, setPin] = useState("");
+  const [error, setError] = useState("");
+  const [checking, setChecking] = useState(false);
+  const [availability, setAvailability] = useState<"idle" | "available" | "taken">("idle");
+  const [submitting, setSubmitting] = useState(false);
+
+  const changeMode = (next: "login" | "register") => {
+    setMode(next);
+    setError("");
+    setAvailability("idle");
+    setPin("");
+  };
+
+  const checkUsername = async () => {
+    if (!username.trim()) {
+      setError("아이디를 입력해 주세요.");
+      return;
+    }
+    setChecking(true);
+    setError("");
+    setAvailability("idle");
+    try {
+      const response = await fetch(`/api/auth/check?username=${encodeURIComponent(username.trim())}`);
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        setError(payload.error || "중복 확인을 하지 못했어요.");
+      } else {
+        setAvailability(payload.available ? "available" : "taken");
+      }
+    } catch {
+      setError("서버에 연결하지 못했어요.");
+    } finally {
+      setChecking(false);
+    }
+  };
+
+  const submit = async (event: FormEvent) => {
+    event.preventDefault();
+    setSubmitting(true);
+    setError("");
+    const nextError = await onAuthenticate(mode, username, pin);
+    if (nextError) {
+      setError(nextError);
+      if (mode === "register" && nextError.includes("이미 사용")) setAvailability("taken");
+    }
+    setSubmitting(false);
+  };
+
+  return (
+    <main className="auth-stage">
+      <section className="auth-card">
+        <div className="auth-brand"><CharacterArt pose="wave" /><div><p className="eyebrow">WELCOME TO TURINI</p><h1>나만의 금융 학습을<br />이어서 시작해요</h1><p>아이디별로 진단 결과와 학습 기록을 안전하게 보관해요.</p></div></div>
+        <div className="auth-tabs" role="tablist" aria-label="계정 방식">
+          <button role="tab" aria-selected={mode === "login"} className={mode === "login" ? "active" : ""} onClick={() => changeMode("login")}>로그인</button>
+          <button role="tab" aria-selected={mode === "register"} className={mode === "register" ? "active" : ""} onClick={() => changeMode("register")}>새 아이디 만들기</button>
+        </div>
+        <form className="auth-form" onSubmit={submit}>
+          <div className="auth-intro"><h2>{mode === "login" ? "다시 만나서 반가워요!" : "처음 사용할 아이디를 만들어요"}</h2><p>{mode === "login" ? "기존 아이디와 비밀번호를 입력하면 저장된 기록을 불러와요." : "중복되지 않은 아이디와 숫자 비밀번호 4자리를 정해 주세요."}</p></div>
+          <label>
+            아이디
+            <div className="username-row"><input value={username} onChange={(event) => { setUsername(event.target.value); setAvailability("idle"); }} minLength={3} maxLength={20} autoComplete="username" placeholder="한글·영문·숫자 3~20자" />{mode === "register" ? <button type="button" onClick={checkUsername} disabled={checking}>{checking ? "확인 중" : "중복 확인"}</button> : null}</div>
+          </label>
+          {mode === "register" && availability !== "idle" ? <p className={`availability ${availability}`}>{availability === "available" ? "✓ 사용할 수 있는 아이디예요." : "이미 사용 중인 아이디예요. 다른 아이디를 입력해 주세요."}</p> : null}
+          <label>
+            비밀번호 4자리
+            <input type="password" inputMode="numeric" pattern="[0-9]{4}" maxLength={4} value={pin} onChange={(event) => setPin(event.target.value.replace(/\D/g, "").slice(0, 4))} autoComplete={mode === "login" ? "current-password" : "new-password"} placeholder="숫자 4자리" />
+          </label>
+          {serverError || error ? <p className="form-error">{error || serverError}</p> : null}
+          <button className="primary-button auth-submit" disabled={submitting || username.trim().length < 3 || pin.length !== 4}>{submitting ? "확인 중…" : mode === "login" ? "로그인하기" : "아이디 만들고 시작하기"}<span>→</span></button>
+          <small className="auth-note">비밀번호 원문은 저장하지 않아요. 4자리를 잊으면 기록을 복구할 수 없으니 기억해 주세요.</small>
+        </form>
+      </section>
     </main>
   );
 }

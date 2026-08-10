@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Turini | 기린과 함께하는 금융 학습",
+  title: "Turini 계정 로그인",
   description: "공식 자료로 검증한 720문항과 포트폴리오 코칭을 제공하는 귀여운 금융 학습 앱",
   other: {
     "codex-preview": "development",
