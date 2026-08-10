@@ -11,7 +11,14 @@ import {
 } from "./quiz-scheduler";
 import { isAnswerCorrect } from "./answer-utils";
 import { financeLevelForRawScore } from "./diagnosis-utils";
-import { categoryLevelForSolved } from "./category-progress";
+import {
+  categoryLessonPool,
+  categoryLevelForSolved,
+  completedCategoryLessonsForSolved,
+  MAX_CATEGORY_LEVEL,
+  QUESTIONS_PER_CATEGORY,
+  QUESTIONS_PER_CATEGORY_LEVEL,
+} from "./category-progress";
 
 type View = "home" | "learn" | "category" | "portfolio" | "profile";
 type Difficulty = "초급" | "중급" | "고급";
@@ -518,10 +525,11 @@ export default function Home() {
     });
     return map;
   }, [questions, completedSet]);
-  const currentLesson = Math.min(30, Math.max(1, progress.completedLessons.length + 1));
-  const defaultCategory = CATEGORIES[(currentLesson - 1) % CATEGORIES.length];
+  const defaultCategory = CATEGORIES[0];
   const activeCategory = CATEGORIES.find((category) => category.name === activeCategoryName) || defaultCategory;
-  const activeCategoryLevel = categoryLevelForSolved(categoryCounts[activeCategory.name] || 0);
+  const activeCategorySolved = categoryCounts[activeCategory.name] || 0;
+  const activeCategoryLevel = categoryLevelForSolved(activeCategorySolved);
+  const activeCategoryCompletedLessons = completedCategoryLessonsForSolved(activeCategorySolved);
 
   const openSession = (mode: QuizMode, title: string, pool: QuizQuestion[], count = 10, lesson?: number) => {
     if (!pool.length) return;
@@ -560,11 +568,10 @@ export default function Home() {
     openSession("category", `${category} · ${difficulty || "전체"}`, pool, 10);
   };
 
-  const startLesson = (lesson: number) => {
-    const category = CATEGORIES[(lesson - 1) % CATEGORIES.length].name;
+  const startLesson = (category: string, lesson: number) => {
     setActiveCategoryName(category);
-    const difficulty: Difficulty = lesson <= 10 ? "초급" : lesson <= 20 ? "중급" : "고급";
-    openSession("lesson", `레벨 ${lesson} · ${category}`, questions.filter((question) => question.category === category && question.difficulty === difficulty), 10, lesson);
+    const lessonPool = categoryLessonPool(questions, category, lesson);
+    openSession("lesson", `${category} 레벨 ${lesson}`, lessonPool, QUESTIONS_PER_CATEGORY_LEVEL, lesson);
   };
 
   const startDiagnosis = () => {
@@ -826,13 +833,12 @@ export default function Home() {
           {view === "learn" && (
             <div className="screen learn-screen">
               <PageTitle eyebrow="LEARNING PATH" title="금융 지식, 한 단계씩" copy="각 레벨은 10문항이에요. 초급부터 고급까지 차근차근 올라가요." />
-              <section className="learning-banner"><div><span>전체 레벨</span><h2>Lv. {progress.level}</h2><div className="progress-track"><span style={{ width: `${Math.min(100, progress.level / 30 * 100)}%` }} /></div><small>{progress.completedLessons.length} / 30 레슨 완료</small></div><CharacterArt pose="reading" /></section>
-              <div className="learning-path">{Array.from({ length: 30 }, (_, index) => index + 1).map((level, index) => {
-                const completed = progress.completedLessons.includes(level);
-                const current = level === Math.min(30, Math.max(1, progress.completedLessons.length + 1));
-                const locked = level > progress.completedLessons.length + 1;
-                const category = CATEGORIES[(level - 1) % CATEGORIES.length];
-                return <div className={`path-row ${index % 2 ? "right" : "left"}`} key={level}><button className={`path-node ${completed ? "completed" : ""} ${current ? "current" : ""} ${locked ? "locked" : ""}`} onClick={() => !locked && startLesson(level)} disabled={locked}><span>{completed ? "✓" : locked ? "🔒" : level}</span></button>{current ? <div className="current-lesson"><b>{category.name}</b><small>현재 레벨 · 10문항</small><button onClick={() => startLesson(level)}>시작</button></div> : null}</div>;
+              <section className="learning-banner"><div><span>{activeCategory.name} 레벨</span><h2>Lv. {activeCategoryLevel}</h2><div className="progress-track"><span style={{ width: `${Math.min(100, activeCategorySolved / QUESTIONS_PER_CATEGORY * 100)}%` }} /></div><small>{activeCategoryCompletedLessons} / {MAX_CATEGORY_LEVEL} 레슨 완료</small></div><CharacterArt pose="reading" /></section>
+              <div className="learning-path">{Array.from({ length: MAX_CATEGORY_LEVEL }, (_, index) => index + 1).map((level, index) => {
+                const completed = level <= activeCategoryCompletedLessons;
+                const current = activeCategoryCompletedLessons < MAX_CATEGORY_LEVEL && level === activeCategoryCompletedLessons + 1;
+                const locked = level > activeCategoryCompletedLessons + 1;
+                return <div className={`path-row ${index % 2 ? "right" : "left"}`} key={level}><button className={`path-node ${completed ? "completed" : ""} ${current ? "current" : ""} ${locked ? "locked" : ""}`} onClick={() => !locked && startLesson(activeCategory.name, level)} disabled={locked}><span>{completed ? "✓" : locked ? "🔒" : level}</span></button>{current ? <div className="current-lesson"><b>{activeCategory.name}</b><small>현재 레벨 · 10문항</small><button onClick={() => startLesson(activeCategory.name, level)}>시작</button></div> : null}</div>;
               })}</div>
             </div>
           )}
