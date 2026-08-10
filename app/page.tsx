@@ -11,6 +11,7 @@ import {
 } from "./quiz-scheduler";
 import { isAnswerCorrect } from "./answer-utils";
 import { financeLevelForRawScore } from "./diagnosis-utils";
+import { categoryLevelForSolved } from "./category-progress";
 
 type View = "home" | "learn" | "category" | "portfolio" | "profile";
 type Difficulty = "초급" | "중급" | "고급";
@@ -520,6 +521,7 @@ export default function Home() {
   const currentLesson = Math.min(30, Math.max(1, progress.completedLessons.length + 1));
   const defaultCategory = CATEGORIES[(currentLesson - 1) % CATEGORIES.length];
   const activeCategory = CATEGORIES.find((category) => category.name === activeCategoryName) || defaultCategory;
+  const activeCategoryLevel = categoryLevelForSolved(categoryCounts[activeCategory.name] || 0);
 
   const openSession = (mode: QuizMode, title: string, pool: QuizQuestion[], count = 10, lesson?: number) => {
     if (!pool.length) return;
@@ -800,7 +802,7 @@ export default function Home() {
     <main className="app-bg">
       <div className="app-shell">
         <section className="app-main">
-          <header className="top-status"><button className="learning-context" onClick={() => navigate("learn")} aria-label={`현재 학습 ${activeCategory.name}, 레벨 ${progress.level}`}><span className="top-category-icon" style={{ background: CATEGORY_COLORS[activeCategory.color] }}>{activeCategory.icon}</span><span className="top-learning-copy"><small>{activeCategory.name}</small><b>Lv. {progress.level}</b></span></button><div><span>🔥 <b>{progress.streak}</b></span><span>💎 <b>{progress.xp}</b></span><span>♥ <b>5</b></span></div></header>
+          <header className="top-status"><button className="learning-context" onClick={() => navigate("category")} aria-label={`현재 학습 ${activeCategory.name}, 레벨 ${activeCategoryLevel}`}><span className="top-category-icon" style={{ background: CATEGORY_COLORS[activeCategory.color] }}>{activeCategory.icon}</span><span className="top-learning-copy"><small>{activeCategory.name}</small><b>Lv. {activeCategoryLevel}</b></span></button><div><span>🔥 <b>{progress.streak}</b></span><span>💎 <b>{progress.xp}</b></span><span>♥ <b>5</b></span></div></header>
 
           {view === "home" && (
             <div className="screen home-screen">
@@ -840,7 +842,8 @@ export default function Home() {
               <PageTitle eyebrow="TOPIC PRACTICE" title="카테고리 골라 배우기" copy="검증한 금융 문제를 난이도별로 골라서 학습해요." />
               <div className="category-list">{CATEGORIES.map((category) => {
                 const solved = categoryCounts[category.name] || 0;
-                return <article className={`category-card ${category.color}`} key={category.name}><button className="category-main" onClick={() => startCategory(category.name)}><span className="category-icon">{category.icon}</span><div><h2>{category.name}</h2><p>{category.copy}</p><div className="progress-track"><span style={{ width: `${solved / 120 * 100}%` }} /></div><small>{solved} / 120문항 완료</small></div><b>›</b></button><div className="difficulty-row">{(["초급", "중급", "고급"] as Difficulty[]).map((difficulty) => <button key={difficulty} onClick={() => startCategory(category.name, difficulty)}>{difficulty}</button>)}</div></article>;
+                const categoryLevel = categoryLevelForSolved(solved);
+                return <article className={`category-card ${category.color}`} key={category.name}><button className="category-main" onClick={() => startCategory(category.name)}><span className="category-icon">{category.icon}</span><div><div className="category-title-row"><h2>{category.name}</h2><span>Lv. {categoryLevel}</span></div><p>{category.copy}</p><div className="progress-track"><span style={{ width: `${solved / 120 * 100}%` }} /></div><small>{solved} / 120문항 완료</small></div><b>›</b></button><div className="difficulty-row">{(["초급", "중급", "고급"] as Difficulty[]).map((difficulty) => <button key={difficulty} onClick={() => startCategory(category.name, difficulty)}>{difficulty}</button>)}</div></article>;
               })}</div>
             </div>
           )}

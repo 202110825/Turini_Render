@@ -157,6 +157,8 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .category-main { width: 100%; display: grid; grid-template-columns: 54px 1fr auto; gap: 16px; align-items: center; padding: 19px; border: 0; background: transparent; text-align: left; cursor: pointer; }
 .category-icon { width: 54px; height: 54px; border-radius: 15px; display: grid; place-items: center; color: #fff; font-size: 27px; }
 .category-main h2 { margin: 0; font-size: 17px; } .category-main p { margin: 4px 0 10px; color: var(--muted); font-size: 10px; }
+.category-title-row { display:flex; align-items:center; gap:7px; }
+.category-title-row > span { padding:3px 7px; border-radius:99px; background:#eef7ea; color:var(--green-dark); font-size:9px; font-weight:950; }
 .category-main small { display: block; margin-top: 5px; color: var(--muted); font-size: 9px; }
 .category-main > b { font-size: 28px; color: #9ca9a2; }
 .difficulty-row { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--line); }
@@ -237,7 +239,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .quiz-mascot { margin-top:auto; min-height:125px; padding-top:15px; display:flex; align-items:end; }.speech { position:relative; align-self:center; max-width:230px; padding:10px 13px; border:1px solid #dfe7e1; border-radius:13px; background:#fff; font-size:10px; font-weight:800; }.speech::before { content:""; position:absolute; left:-6px; top:45%; width:10px; height:10px; background:white; border-left:1px solid #dfe7e1; border-bottom:1px solid #dfe7e1; transform:rotate(45deg); }
 .quiz-mascot.waiting { min-height: 138px; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 6px; align-items: end; overflow: visible; }
 .quiz-mascot.waiting .character-art { width: 150px; height: 128px; }
-.quiz-mascot.waiting .speech { align-self: center; margin-bottom: 8px; }
+.quiz-mascot.waiting .speech { width:max-content; max-width:100%; justify-self:start; align-self:center; margin-bottom:8px; white-space:nowrap; }
 .quiz-mascot .mascot-medium, .portfolio-intro .mascot-medium, .result-hero .mascot-medium, .ai-coach-panel .mascot-medium { height:118px; }
 .quiz-mascot.answered .mascot-correct { background-position: -48px -365px; }
 .quiz-mascot.answered .mascot-wrong { background-position: -222px -365px; }
