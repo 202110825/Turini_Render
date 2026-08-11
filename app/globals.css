@@ -539,6 +539,11 @@ body {
 .ai-coach-panel { border: 1px solid #deedda; border-radius: 20px; }
 .ai-coach-panel p:not(.eyebrow) { font-size: 11px; }
 .ai-coach-panel .primary-button { font-size: 11px; }
+.ai-feedback-section { margin: 12px 0; }
+.ai-feedback-section b { color: #31931c; font-size: 11px; }
+.ai-feedback-section ul { margin: 6px 0 0; padding-left: 18px; }
+.ai-feedback-section li { margin: 4px 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
+.ai-concepts { padding: 9px 11px; border-radius: 10px; background: #fff; font-weight: 800; }
 
 .profile-hero { border-bottom: 2px solid #f3d8d4; background: linear-gradient(145deg, #ffe3e6, #fff2d8); }
 .profile-hero span { font-size: 12px; }

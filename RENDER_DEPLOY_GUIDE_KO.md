@@ -22,8 +22,10 @@ npm run dev
 1. 이 폴더의 기존 파일을 GitHub 저장소에 덮어씁니다.
 2. Render의 기존 Turini Web Service에서 **Environment**를 엽니다.
 3. 환경변수 `DATABASE_URL`을 추가하고 Neon에서 복사한 연결 주소를 값으로 붙여 넣습니다.
-4. **Save, rebuild, and deploy**를 누릅니다.
-5. 배포가 끝나면 기존 `onrender.com` 주소에서 새 로그인 화면을 사용할 수 있습니다.
+4. 환경변수 `OPENAI_API_KEY`를 추가하고 OpenAI에서 발급받은 실제 API 키를 붙여 넣습니다.
+5. 환경변수 `OPENAI_MODEL`을 추가하고 `gpt-4.1-mini-2025-04-14`를 입력합니다.
+6. **Save, rebuild, and deploy**를 누릅니다.
+7. 배포가 끝나면 기존 `onrender.com` 주소에서 새 로그인 화면과 GPT 코칭을 사용할 수 있습니다.
 
 수동 Web Service 방식이라면 다음 값을 사용합니다.
 
@@ -32,10 +34,13 @@ npm run dev
 - Start Command: `npm start`
 - Environment Variable: `NODE_VERSION=22.13.0`
 - Environment Variable: `DATABASE_URL=Neon에서 복사한 연결 주소`
+- Environment Variable: `OPENAI_API_KEY=OpenAI에서 발급받은 실제 키`
+- Environment Variable: `OPENAI_MODEL=gpt-4.1-mini-2025-04-14`
 
 ## 주의
 
 - `.env` 파일과 실제 API 키는 GitHub에 올리지 마세요.
 - `DATABASE_URL`도 GitHub 파일에 직접 적지 말고 Render의 Environment에만 저장하세요.
+- `OPENAI_API_KEY`도 GitHub 파일에 직접 적지 말고 Render의 Environment에만 저장하세요.
 - 무료 Render 서비스는 일정 시간 미사용 시 잠들 수 있어 첫 접속이 느릴 수 있습니다.
 - Render의 무료 PostgreSQL은 30일 뒤 만료되므로 이 앱은 무료 Neon PostgreSQL 사용을 기준으로 만들었습니다.
