@@ -42,7 +42,7 @@
 | 현금성자산 | 5 | 현금, 예금, CMA·MMF 등 |
 | 금 | 40 | 실물 금, 금 통장, 일반 금 가격 추종 상품 |
 
-ETF·펀드는 상품의 이름이 아니라 기초자산에 따라 분류합니다. 채권 ETF·채권형 펀드는 `채권`, 주식형 ETF·펀드는 `주식형 ETF·펀드`에 입력하고, 혼합형 펀드는 공시된 주식·채권 비중에 따라 나누어 입력합니다. 각 입력 항목의 `ⓘ` 버튼에서 포함 범위, 제외 상품과 대표 가중치를 확인할 수 있습니다.
+ETF·펀드는 상품의 이름이 아니라 기초자산에 따라 분류합니다. 채권 ETF·채권형 펀드는 `채권`, 주식형 ETF·펀드는 `주식형 ETF·펀드`에 입력하고, 혼합형 펀드는 공시된 주식·채권 비중에 따라 나누어 입력합니다. 각 입력 항목의 `ⓘ` 버튼에서는 포함 범위와 제외 상품을 확인할 수 있습니다. 내부 위험가중치는 사용자 화면에 표시하지 않고 규칙 문서와 코드에서만 관리합니다.
 
 주식형 ETF·펀드 55는 국내 대표 주식형 ETF가 6단계 위험등급 중 2등급(높은 위험)으로 공시되는 점을 기존 5~65 상대위험 척도로 환산한 대표값입니다. 분산투자로 개별기업 위험은 낮아지지만 주식시장 전체의 가격변동 위험은 유지되므로 개별주식과의 차이를 과도하게 벌리지 않았습니다. 참고 기준은 [금융투자협회 표준투자권유준칙](https://law.kofia.or.kr/service/law/lawFullScreenContent.do?historySeq=1193&seq=149), [미래에셋증권 금융투자상품 위험도 분류표](https://securities.miraeasset.com/hku/hku4028/p01.do), [KODEX 200 공식 상품자료](https://m.samsungfund.com/sheet/20250402/2ETF01_20250331.pdf), [Vanguard 주식형 펀드 설명](https://investor.vanguard.com/investor-resources-education/understanding-investment-types/what-are-equity-stock-funds)입니다.
 

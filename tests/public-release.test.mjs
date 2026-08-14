@@ -36,6 +36,7 @@ test("GPT portfolio coaching is called through a server-only API route", () => {
 
 test("portfolio screen exposes the revised asset classification help", () => {
   assert.match(pageSource, /asset-info-button/);
-  assert.match(pageSource, /asset-classification-note/);
+  assert.doesNotMatch(pageSource, /asset-classification-note/);
   assert.match(pageSource, /portfolioRuleVersion: PORTFOLIO_RULE_VERSION/);
+  assert.doesNotMatch(pageSource, /분석 가중치/);
 });

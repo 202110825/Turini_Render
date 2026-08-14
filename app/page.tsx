@@ -916,9 +916,8 @@ export default function Home() {
                         <input aria-label={`${asset.label} 비중 슬라이더`} type="range" min="0" max="100" value={allocation[asset.key]} onChange={(event) => { setAllocation({ ...allocation, [asset.key]: Number(event.target.value) }); setPortfolioResult(null); }} style={{ "--range-color": asset.color } as CSSProperties} />
                         <span className="percent-input"><input aria-label={`${asset.label} 비중`} type="number" min="0" max="100" value={allocation[asset.key]} onChange={(event) => { setAllocation({ ...allocation, [asset.key]: clamp(Number(event.target.value)) }); setPortfolioResult(null); }} />%</span>
                       </div>
-                      {activeAssetHelp === asset.key && <div className="asset-help" id={`asset-help-${asset.key}`} role="note"><span>분석 가중치 {asset.risk}</span><p>{asset.help}</p>{asset.key === "equityFund" && <small>혼합형 펀드는 공시된 주식·채권 비중에 따라 두 자산군으로 나누어 입력해 주세요.</small>}</div>}
+                      {activeAssetHelp === asset.key && <div className="asset-help" id={`asset-help-${asset.key}`} role="note"><p>{asset.help}</p>{asset.key === "equityFund" && <small>혼합형 펀드는 공시된 주식·채권 비중에 따라 두 자산군으로 나누어 입력해 주세요.</small>}</div>}
                     </div>)}
-                    <p className="asset-classification-note"><b>입력 기준</b> ETF·펀드는 상품 이름이 아니라 기초자산으로 구분해요. 주식형은 이 항목에, 채권형은 ‘채권’에 입력해 주세요.</p>
                   </div>
                 </div>
               </section>

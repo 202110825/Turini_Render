@@ -203,11 +203,8 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .percent-input { display: flex; align-items: center; border: 1px solid #dfe7e1; border-radius: 8px; padding-right: 6px; color: var(--muted); font-size: 10px; }
 .percent-input input { width: 36px; height: 29px; border: 0; background: transparent; text-align: right; font-weight: 800; outline: 0; }
 .asset-help { margin: 7px 0 2px 39px; padding: 10px 12px; border: 1px solid #dcebd6; border-radius: 12px; background: #f6fbf3; color: #4f6255; animation: asset-help-in .16s ease-out; }
-.asset-help > span { display: inline-flex; padding: 3px 7px; border-radius: 99px; background: #e3f3dc; color: #36733e; font-size: 9px; font-weight: 900; }
-.asset-help p, .asset-help small { display: block; margin: 6px 0 0; font-size: 10px; line-height: 1.55; }
-.asset-help small { color: #6b766f; }
-.asset-classification-note { margin: 2px 0 0; padding: 10px 12px; border-radius: 12px; background: #fff8dc; color: #6e6440; font-size: 10px; line-height: 1.55; }
-.asset-classification-note b { margin-right: 5px; color: #6a5a18; }
+.asset-help p, .asset-help small { display: block; margin: 0; font-size: 10px; line-height: 1.55; }
+.asset-help small { margin-top: 6px; color: #6b766f; }
 @keyframes asset-help-in { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: translateY(0); } }
 .portfolio-options > div { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 10px; }
 .portfolio-options label { color: var(--muted); font-size: 10px; font-weight: 800; }
