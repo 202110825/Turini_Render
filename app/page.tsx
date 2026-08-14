@@ -19,6 +19,19 @@ import {
   QUESTIONS_PER_CATEGORY,
   QUESTIONS_PER_CATEGORY_LEVEL,
 } from "./category-progress";
+import {
+  ASSETS,
+  EMPTY_ALLOCATION,
+  PORTFOLIO_RULE_VERSION,
+  RISK_CENTERS,
+  normalizeAllocation,
+  portfolioTypeFor,
+  riskScoreFor,
+  targetFor,
+  type Allocation,
+  type AssetKey,
+  type PortfolioType,
+} from "./portfolio-rules";
 
 type View = "home" | "learn" | "category" | "portfolio" | "profile";
 type Difficulty = "초급" | "중급" | "고급";
@@ -98,9 +111,6 @@ type QuizSession = {
   lesson?: number;
 };
 
-type AssetKey = "domestic" | "overseas" | "bond" | "fund" | "cash" | "gold";
-type Allocation = Record<AssetKey, number>;
-type PortfolioType = "안정형" | "중립형" | "공격형";
 type ScoreLabel = "Excellent" | "Good" | "Fair" | "Poor";
 type MatchLevel = "우수" | "보통" | "불일치";
 type TraitLevel = "낮음" | "보통" | "높음";
@@ -138,11 +148,12 @@ type AccountPayload = {
   account: Account;
   progress?: Partial<Progress>;
   portfolio?: {
-    allocation?: Allocation;
+    allocation?: unknown;
     amount?: number;
     goal?: string;
     horizon?: string;
     result?: PortfolioResult | null;
+    ruleVersion?: string;
   };
 };
 type SaveState = "idle" | "saving" | "saved" | "error";
@@ -165,18 +176,7 @@ const CATEGORY_COLORS: Record<(typeof CATEGORIES)[number]["color"], string> = {
   blue: "#2f8fe5",
 };
 
-const ASSETS: { key: AssetKey; label: string; short: string; color: string; icon: string; risk: number }[] = [
-  { key: "domestic", label: "국내주식", short: "국내", color: "#58cc02", icon: "KR", risk: 60 },
-  { key: "overseas", label: "해외주식", short: "해외", color: "#1cb0f6", icon: "GL", risk: 65 },
-  { key: "bond", label: "채권", short: "채권", color: "#9069e7", icon: "B", risk: 25 },
-  { key: "fund", label: "ETF/펀드", short: "ETF", color: "#ff9600", icon: "F", risk: 45 },
-  { key: "cash", label: "현금성자산", short: "현금", color: "#2bb6a8", icon: "₩", risk: 5 },
-  { key: "gold", label: "금", short: "금", color: "#ffc800", icon: "Au", risk: 40 },
-];
-
-const RISK_CENTERS: Record<PortfolioType, number> = { 안정형: 30.2, 중립형: 40, 공격형: 51.8 };
 const HORIZON_CENTERS: Record<string, number> = { "1년 미만": 20, "1~3년": 40, "3~5년": 55, "5년 이상": 70 };
-const EMPTY_ALLOCATION: Allocation = { domestic: 20, overseas: 15, bond: 30, fund: 15, cash: 10, gold: 10 };
 
 const DEFAULT_PROGRESS: Progress = {
   xp: 0,
@@ -261,13 +261,6 @@ function sumAllocation(value: Allocation) {
   return Object.values(value).reduce((sum, item) => sum + Number(item || 0), 0);
 }
 
-function targetFor(tendency: Progress["tendency"]): Allocation {
-  const profile = tendency === "진단 전" ? "중립형" : tendency;
-  if (profile === "안정형") return { domestic: 5, overseas: 10, bond: 55, fund: 5, cash: 15, gold: 10 };
-  if (profile === "공격형") return { domestic: 20, overseas: 40, bond: 10, fund: 20, cash: 5, gold: 5 };
-  return { domestic: 10, overseas: 20, bond: 30, fund: 20, cash: 10, gold: 10 };
-}
-
 function trait(value: number, low: number, high: number): TraitLevel {
   return value < low ? "낮음" : value <= high ? "보통" : "높음";
 }
@@ -287,15 +280,15 @@ function analyzeAllocation(current: Allocation, target: Allocation, tendency: Pr
   const diversification = clamp(Math.round(((1 - hhi) / (1 - 1 / ASSETS.length)) * 100));
   const maxWeight = Math.max(...Object.values(current));
   const concentrationPenalty = Math.max(0, Math.round((maxWeight - 50) * 10) / 10);
-  const riskScore = Math.round(ASSETS.reduce((sum, asset) => sum + current[asset.key] * asset.risk, 0) / 10) / 10;
+  const riskScore = riskScoreFor(current);
   const gap = Math.round(Math.abs(riskScore - RISK_CENTERS[profile]) * 10) / 10;
   const fit = Math.round(clamp(100 - gap * 4) * 10) / 10;
   const horizonFit = Math.round(clamp(100 - Math.abs(riskScore - HORIZON_CENTERS[horizon]) * 1.5) * 10) / 10;
   const score = Math.round(clamp(0.45 * fit + 0.25 * diversification + 0.15 * horizonFit - concentrationPenalty));
   const scoreLabel: ScoreLabel = score >= 85 ? "Excellent" : score >= 70 ? "Good" : score >= 50 ? "Fair" : "Poor";
-  const portfolioType: PortfolioType = riskScore <= 35.1 ? "안정형" : riskScore <= 45.9 ? "중립형" : "공격형";
+  const portfolioType = portfolioTypeFor(riskScore);
   const profileMatch: PortfolioResult["profileMatch"] = { level: gap <= 5 ? "우수" : gap <= 12 ? "보통" : "불일치", gap };
-  const growth = current.domestic + current.overseas + current.fund;
+  const growth = current.domestic + current.overseas + current.equityFund;
   const defense = current.bond + current.cash;
   const heldClasses = ASSETS.filter((asset) => current[asset.key] > 0).length;
   const characteristics: PortfolioResult["characteristics"] = {
@@ -372,6 +365,7 @@ export default function Home() {
   const [aiFeedbackLoading, setAiFeedbackLoading] = useState(false);
   const [aiFeedbackError, setAiFeedbackError] = useState("");
   const [portfolioTab, setPortfolioTab] = useState<"summary" | "rebalance" | "detail" | "coach">("summary");
+  const [activeAssetHelp, setActiveAssetHelp] = useState<AssetKey | null>(null);
   const [activeCategoryName, setActiveCategoryName] = useState("");
   const [account, setAccount] = useState<Account | null>(null);
   const [accountError, setAccountError] = useState("");
@@ -395,11 +389,11 @@ export default function Home() {
       conceptReviews: savedProgress.conceptReviews || {},
       pendingRetries: savedProgress.pendingRetries || [],
     });
-    setAllocation(savedPortfolio.allocation || EMPTY_ALLOCATION);
+    setAllocation(normalizeAllocation(savedPortfolio.allocation));
     setAmount(typeof savedPortfolio.amount === "number" ? savedPortfolio.amount : 10000000);
     setGoal(savedPortfolio.goal || "장기 자산 증식");
     setHorizon(savedPortfolio.horizon || "5년 이상");
-    setPortfolioResult(savedPortfolio.result || null);
+    setPortfolioResult(savedPortfolio.ruleVersion === PORTFOLIO_RULE_VERSION ? savedPortfolio.result || null : null);
     setAiFeedback(null);
     setAiFeedbackError("");
     setAccountStateReady(true);
@@ -467,7 +461,7 @@ export default function Home() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             progress,
-            portfolio: { allocation, amount, goal, horizon, result: portfolioResult },
+            portfolio: { allocation, amount, goal, horizon, result: portfolioResult, ruleVersion: PORTFOLIO_RULE_VERSION },
           }),
         });
         if (!response.ok) throw new Error("save failed");
@@ -697,6 +691,8 @@ export default function Home() {
           computed: analysis,
           context: {
             allocation,
+            assetLabels: Object.fromEntries(ASSETS.map((asset) => [asset.key, asset.label])),
+            portfolioRuleVersion: PORTFOLIO_RULE_VERSION,
             tendency: progress.tendency === "진단 전" ? "중립형" : progress.tendency,
             horizon,
             goal,
@@ -912,7 +908,18 @@ export default function Home() {
                 <div className="preset-row"><span>성향 프리셋</span>{(["안정형", "중립형", "공격형"] as const).map((type) => <button key={type} className={progress.tendency === type ? "active" : ""} onClick={() => applyPreset(type)}>{type}</button>)}</div>
                 <div className="allocation-layout">
                   <div className="donut-wrap"><div className="allocation-donut" style={chartStyle}><span><b>{sumAllocation(allocation)}</b><small>%</small></span></div><p>현재 자산 구성</p></div>
-                  <div className="asset-inputs">{ASSETS.map((asset) => <label className="asset-row" key={asset.key}><span className="asset-dot" style={{ background: asset.color }}>{asset.icon}</span><strong>{asset.label}</strong><input type="range" min="0" max="100" value={allocation[asset.key]} onChange={(event) => { setAllocation({ ...allocation, [asset.key]: Number(event.target.value) }); setPortfolioResult(null); }} style={{ "--range-color": asset.color } as CSSProperties} /><span className="percent-input"><input aria-label={`${asset.label} 비중`} type="number" min="0" max="100" value={allocation[asset.key]} onChange={(event) => { setAllocation({ ...allocation, [asset.key]: clamp(Number(event.target.value)) }); setPortfolioResult(null); }} />%</span></label>)}</div>
+                  <div className="asset-inputs">
+                    {ASSETS.map((asset) => <div className="asset-item" key={asset.key}>
+                      <div className="asset-row">
+                        <span className="asset-dot" style={{ background: asset.color }}>{asset.icon}</span>
+                        <span className="asset-name"><strong>{asset.label}</strong><button type="button" className="asset-info-button" aria-label={`${asset.label} 입력 기준 보기`} aria-expanded={activeAssetHelp === asset.key} aria-controls={`asset-help-${asset.key}`} onClick={() => setActiveAssetHelp(activeAssetHelp === asset.key ? null : asset.key)}>ⓘ</button></span>
+                        <input aria-label={`${asset.label} 비중 슬라이더`} type="range" min="0" max="100" value={allocation[asset.key]} onChange={(event) => { setAllocation({ ...allocation, [asset.key]: Number(event.target.value) }); setPortfolioResult(null); }} style={{ "--range-color": asset.color } as CSSProperties} />
+                        <span className="percent-input"><input aria-label={`${asset.label} 비중`} type="number" min="0" max="100" value={allocation[asset.key]} onChange={(event) => { setAllocation({ ...allocation, [asset.key]: clamp(Number(event.target.value)) }); setPortfolioResult(null); }} />%</span>
+                      </div>
+                      {activeAssetHelp === asset.key && <div className="asset-help" id={`asset-help-${asset.key}`} role="note"><span>분석 가중치 {asset.risk}</span><p>{asset.help}</p>{asset.key === "equityFund" && <small>혼합형 펀드는 공시된 주식·채권 비중에 따라 두 자산군으로 나누어 입력해 주세요.</small>}</div>}
+                    </div>)}
+                    <p className="asset-classification-note"><b>입력 기준</b> ETF·펀드는 상품 이름이 아니라 기초자산으로 구분해요. 주식형은 이 항목에, 채권형은 ‘채권’에 입력해 주세요.</p>
+                  </div>
                 </div>
               </section>
               <section className="portfolio-options card-block"><div><label>투자 목표<select value={goal} onChange={(event) => setGoal(event.target.value)}><option>장기 자산 증식</option><option>주택·목돈 마련</option><option>은퇴 준비</option><option>단기 여유자금 운용</option></select></label><label>투자 기간<select value={horizon} onChange={(event) => { setHorizon(event.target.value); setPortfolioResult(null); }}><option>1년 미만</option><option>1~3년</option><option>3~5년</option><option>5년 이상</option></select></label><label>총 투자금액<div className="money-input"><input type="number" min="0" step="100000" value={amount} onChange={(event) => setAmount(Number(event.target.value))} /><span>원</span></div></label></div><button className="primary-button" disabled={sumAllocation(allocation) !== 100} onClick={runPortfolioAnalysis}>{sumAllocation(allocation) === 100 ? "포트폴리오 분석하기" : `합계를 100%로 맞춰주세요 (${sumAllocation(allocation)}%)`}</button></section>

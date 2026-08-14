@@ -33,3 +33,9 @@ test("GPT portfolio coaching is called through a server-only API route", () => {
   assert.doesNotMatch(pageSource, /sk-[A-Za-z0-9_-]{20,}/);
   assert.match(envExampleSource, /OPENAI_API_KEY=your_api_key_here/);
 });
+
+test("portfolio screen exposes the revised asset classification help", () => {
+  assert.match(pageSource, /asset-info-button/);
+  assert.match(pageSource, /asset-classification-note/);
+  assert.match(pageSource, /portfolioRuleVersion: PORTFOLIO_RULE_VERSION/);
+});

@@ -61,6 +61,7 @@ export async function POST(request: Request) {
         instructions: [
           "당신은 Turini 금융 학습 앱의 포트폴리오 설명 코치입니다.",
           "computed와 context에 명시된 규칙 계산 결과만 쉽고 친절한 한국어로 설명하세요.",
+          "context.assetLabels를 사용해 자산명을 표시하세요. equityFund는 주식형 ETF·펀드이며, 채권 ETF·채권형 펀드는 bond에 포함된 것으로 해석하세요.",
           "입력에 없는 숫자, 자산, 종목, 상품, 회사, 티커, 수익률을 만들지 마세요.",
           "computed.signals 밖의 새로운 주의사항을 만들지 말고, rebalancingActions의 확대·축소 방향을 바꾸지 마세요.",
           "특정 종목·상품 추천, 직접적인 매수·매도 지시, 미래 수익률 예측, 원금·수익 보장을 하지 마세요.",

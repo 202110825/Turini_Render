@@ -190,13 +190,25 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .allocation-donut span b { font-size: 26px; } .allocation-donut span small { font-size: 10px; }
 .allocation-donut.small { width: 90px; height: 90px; margin: 0; } .allocation-donut.small::after { width: 56px; height: 56px; } .allocation-donut.small span { font-size: 10px; }
 .asset-inputs { display: grid; gap: 9px; }
+.asset-item { min-width: 0; }
 .asset-row { display: grid; grid-template-columns: 31px 78px 1fr 56px; gap: 8px; align-items: center; }
 .asset-dot { width: 29px; height: 29px; display: grid; place-items: center; border-radius: 9px; color: white; font-size: 9px; font-weight: 900; }
-.asset-row > strong { font-size: 11px; }
+.asset-name { min-width: 0; display: flex; align-items: center; gap: 3px; }
+.asset-name strong { font-size: 11px; line-height: 1.25; overflow-wrap: anywhere; }
+.asset-info-button { width: 23px; height: 23px; flex: 0 0 23px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: #eef7ea; color: #477951; font-size: 13px; font-weight: 900; cursor: pointer; }
+.asset-info-button:hover, .asset-info-button[aria-expanded="true"] { background: #dcf1d1; color: #287a31; }
+.asset-info-button:focus-visible { outline: 3px solid rgba(88,204,2,.28); outline-offset: 2px; }
 .asset-row > input[type="range"] { width: 100%; height: 5px; appearance: none; background: #e6ece8; border-radius: 9px; }
 .asset-row > input[type="range"]::-webkit-slider-thumb { appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--range-color); border: 3px solid white; box-shadow: 0 0 0 1px #cdd8d1; cursor: pointer; }
 .percent-input { display: flex; align-items: center; border: 1px solid #dfe7e1; border-radius: 8px; padding-right: 6px; color: var(--muted); font-size: 10px; }
 .percent-input input { width: 36px; height: 29px; border: 0; background: transparent; text-align: right; font-weight: 800; outline: 0; }
+.asset-help { margin: 7px 0 2px 39px; padding: 10px 12px; border: 1px solid #dcebd6; border-radius: 12px; background: #f6fbf3; color: #4f6255; animation: asset-help-in .16s ease-out; }
+.asset-help > span { display: inline-flex; padding: 3px 7px; border-radius: 99px; background: #e3f3dc; color: #36733e; font-size: 9px; font-weight: 900; }
+.asset-help p, .asset-help small { display: block; margin: 6px 0 0; font-size: 10px; line-height: 1.55; }
+.asset-help small { color: #6b766f; }
+.asset-classification-note { margin: 2px 0 0; padding: 10px 12px; border-radius: 12px; background: #fff8dc; color: #6e6440; font-size: 10px; line-height: 1.55; }
+.asset-classification-note b { margin-right: 5px; color: #6a5a18; }
+@keyframes asset-help-in { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: translateY(0); } }
 .portfolio-options > div { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 10px; }
 .portfolio-options label { color: var(--muted); font-size: 10px; font-weight: 800; }
 .portfolio-options select, .money-input { width: 100%; height: 42px; margin-top: 6px; border: 1px solid #dce5df; border-radius: 11px; background: #fbfdfb; padding: 0 10px; color: var(--ink); font-size: 11px; font-weight: 700; }
@@ -272,7 +284,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 }
 
 @media (max-width: 560px) {
-  .welcome-row h1 { font-size:22px; }.hero-card { grid-template-columns:1fr 115px; min-height:230px; padding:24px 19px; }.hero-copy h2 { font-size:24px; }.hero-copy p { font-size:11px; }.hero-mascot { margin-right:-35px; }.summary-grid { grid-template-columns:1fr; }.quick-categories { grid-template-columns:1fr; }.quick-card { min-height:94px; grid-template-columns:45px 1fr; gap:12px; align-content:center; }.page-title h1 { font-size:25px; }.learning-banner { padding:19px; }.learning-banner .mascot { margin-right:-25px; }.path-row.left { transform:translateX(-30px); }.path-row.right { transform:translateX(30px); }.current-lesson { width:135px; left:calc(50% + 50px); }.path-row.right .current-lesson { right:calc(50% + 50px); }.current-lesson small { display:none; }.category-main { grid-template-columns:48px 1fr auto; gap:12px; padding:15px; }.category-icon { width:48px; height:48px; }.portfolio-intro { padding:19px; }.portfolio-intro .mascot { margin-right:-22px; }.preset-row { flex-wrap:wrap; }.preset-row > span { width:100%; flex-basis:100%; }.allocation-layout { grid-template-columns:1fr; }.asset-row { grid-template-columns:31px 70px 1fr 52px; }.portfolio-options > div { grid-template-columns:1fr 1fr; }.portfolio-options label:last-child { grid-column:1/-1; }.score-cards, .analysis-columns { grid-template-columns:1fr 1fr; }.portfolio-tabs button { font-size:9px; }.ai-coach-panel { grid-template-columns:100px 1fr; }.profile-stats { grid-template-columns:1fr 1fr; }.badge-grid { grid-template-columns:repeat(3,1fr); }.quiz-stage, .result-stage { padding:0; }.quiz-phone { min-height:100vh; border:0; border-radius:0; padding:19px 18px; }.quiz-question { font-size:20px; }.answer-choice { min-height:52px; }.quiz-mascot { min-height:105px; }.result-card-page { min-height:100vh; border:0; border-radius:0; display:flex; flex-direction:column; justify-content:center; }.profile-hero { padding:24px 20px; }.rebalance-table > div { grid-template-columns:1.25fr .5fr .5fr 1.15fr; padding:9px 7px; }
+  .welcome-row h1 { font-size:22px; }.hero-card { grid-template-columns:1fr 115px; min-height:230px; padding:24px 19px; }.hero-copy h2 { font-size:24px; }.hero-copy p { font-size:11px; }.hero-mascot { margin-right:-35px; }.summary-grid { grid-template-columns:1fr; }.quick-categories { grid-template-columns:1fr; }.quick-card { min-height:94px; grid-template-columns:45px 1fr; gap:12px; align-content:center; }.page-title h1 { font-size:25px; }.learning-banner { padding:19px; }.learning-banner .mascot { margin-right:-25px; }.path-row.left { transform:translateX(-30px); }.path-row.right { transform:translateX(30px); }.current-lesson { width:135px; left:calc(50% + 50px); }.path-row.right .current-lesson { right:calc(50% + 50px); }.current-lesson small { display:none; }.category-main { grid-template-columns:48px 1fr auto; gap:12px; padding:15px; }.category-icon { width:48px; height:48px; }.portfolio-intro { padding:19px; }.portfolio-intro .mascot { margin-right:-22px; }.preset-row { flex-wrap:wrap; }.preset-row > span { width:100%; flex-basis:100%; }.allocation-layout { grid-template-columns:1fr; }.asset-row { grid-template-columns:31px 108px 1fr 52px; }.portfolio-options > div { grid-template-columns:1fr 1fr; }.portfolio-options label:last-child { grid-column:1/-1; }.score-cards, .analysis-columns { grid-template-columns:1fr 1fr; }.portfolio-tabs button { font-size:9px; }.ai-coach-panel { grid-template-columns:100px 1fr; }.profile-stats { grid-template-columns:1fr 1fr; }.badge-grid { grid-template-columns:repeat(3,1fr); }.quiz-stage, .result-stage { padding:0; }.quiz-phone { min-height:100vh; border:0; border-radius:0; padding:19px 18px; }.quiz-question { font-size:20px; }.answer-choice { min-height:52px; }.quiz-mascot { min-height:105px; }.result-card-page { min-height:100vh; border:0; border-radius:0; display:flex; flex-direction:column; justify-content:center; }.profile-hero { padding:24px 20px; }.rebalance-table > div { grid-template-columns:1.25fr .5fr .5fr 1.15fr; padding:9px 7px; }
 }
 
 /* Phone-first shell: the service always behaves like a mobile app, even on a wide monitor. */
@@ -313,7 +325,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .portfolio-intro .mascot { margin-right: 0; }
 .preset-row { flex-wrap: wrap; }
 .preset-row > span { width: 100%; flex-basis: 100%; }
-.asset-row { grid-template-columns: 31px 70px 1fr 52px; }
+.asset-row { grid-template-columns: 31px 108px 1fr 52px; }
 .portfolio-options > div { grid-template-columns: 1fr 1fr; }
 .portfolio-options label:last-child { grid-column: 1 / -1; }
 .score-cards, .analysis-columns { grid-template-columns: 1fr 1fr; }
@@ -348,7 +360,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
   .profile-hero { grid-template-columns: 108px 1fr; }
   .profile-mascot-frame { width: 104px; }
   .growth-summary { grid-template-columns: 1fr; }
-  .asset-row { grid-template-columns: 29px 62px 1fr 49px; gap: 5px; }
+  .asset-row { grid-template-columns: 29px 94px 1fr 49px; gap: 5px; }
 }
 
 /* Unified friendly mobile visual system */
@@ -508,7 +520,7 @@ body {
 .donut-wrap p { font-size: 11px; }
 .asset-inputs { gap: 12px; }
 .asset-dot { width: 32px; height: 32px; border-radius: 11px; font-size: 10px; }
-.asset-row > strong { font-size: 12px; }
+.asset-name strong { font-size: 12px; }
 .percent-input { min-height: 33px; border-radius: 10px; font-size: 11px; }
 .portfolio-options label { font-size: 11px; }
 .portfolio-options select, .money-input { height: 46px; border-radius: 13px; font-size: 12px; }
