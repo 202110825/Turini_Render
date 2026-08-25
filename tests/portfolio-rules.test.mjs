@@ -28,7 +28,7 @@ test("portfolio uses six documented asset classes with help text", () => {
 test("equity funds and bond funds use their underlying asset risk", () => {
   const equityFund = ASSETS.find((asset) => asset.key === "equityFund");
   const bond = ASSETS.find((asset) => asset.key === "bond");
-  assert.equal(equityFund?.risk, 55);
+  assert.equal(equityFund?.risk, 50);
   assert.equal(bond?.risk, 25);
   assert.match(equityFund?.help || "", /레버리지·인버스 상품은 제외/);
   assert.match(bond?.help || "", /채권 ETF·채권형 펀드/);
@@ -44,16 +44,16 @@ test("each target allocation sums to 100 and reproduces its risk center", () => 
 });
 
 test("portfolio type boundaries match the new target midpoints", () => {
-  assert.deepEqual(PORTFOLIO_TYPE_BANDS, { stableMax: 36.4, neutralMax: 47.9 });
-  assert.equal(portfolioTypeFor(36.4), "안정형");
-  assert.equal(portfolioTypeFor(36.5), "중립형");
-  assert.equal(portfolioTypeFor(47.9), "중립형");
-  assert.equal(portfolioTypeFor(48), "공격형");
+  assert.deepEqual(PORTFOLIO_TYPE_BANDS, { stableMax: 35.8, neutralMax: 46.9 });
+  assert.equal(portfolioTypeFor(35.8), "안정형");
+  assert.equal(portfolioTypeFor(35.9), "중립형");
+  assert.equal(portfolioTypeFor(46.9), "중립형");
+  assert.equal(portfolioTypeFor(47), "공격형");
 });
 
 test("legacy fund allocation migrates without losing the saved percentage", () => {
   const migrated = normalizeAllocation({ domestic: 10, overseas: 20, bond: 30, fund: 20, cash: 10, gold: 10 });
   assert.equal(migrated.equityFund, 20);
   assert.equal(Object.values(migrated).reduce((sum, value) => sum + value, 0), 100);
-  assert.equal(PORTFOLIO_RULE_VERSION, "2.0.0-equity-fund-55");
+  assert.equal(PORTFOLIO_RULE_VERSION, "2.1.0-equity-fund-50");
 });

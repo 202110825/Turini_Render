@@ -38,15 +38,15 @@
 | 국내주식 | 60 | 국내 거래소의 개별기업 주식 |
 | 해외주식 | 65 | 해외 거래소의 개별기업 주식 |
 | 채권 | 25 | 직접채권, 일반 채권 ETF, 채권형 펀드 |
-| 주식형 ETF·펀드 | 55 | 일반 주식형 ETF·펀드, 레버리지·인버스 제외 |
+| 주식형 ETF·펀드 | 50 | 일반 주식형 ETF·펀드, 레버리지·인버스 제외 |
 | 현금성자산 | 5 | 현금, 예금, CMA·MMF 등 |
 | 금 | 40 | 실물 금, 금 통장, 일반 금 가격 추종 상품 |
 
 ETF·펀드는 상품의 이름이 아니라 기초자산에 따라 분류합니다. 채권 ETF·채권형 펀드는 `채권`, 주식형 ETF·펀드는 `주식형 ETF·펀드`에 입력하고, 혼합형 펀드는 공시된 주식·채권 비중에 따라 나누어 입력합니다. 각 입력 항목의 `ⓘ` 버튼에서는 포함 범위와 제외 상품을 확인할 수 있습니다. 내부 위험가중치는 사용자 화면에 표시하지 않고 규칙 문서와 코드에서만 관리합니다.
 
-주식형 ETF·펀드 55는 국내 대표 주식형 ETF가 6단계 위험등급 중 2등급(높은 위험)으로 공시되는 점을 기존 5~65 상대위험 척도로 환산한 대표값입니다. 분산투자로 개별기업 위험은 낮아지지만 주식시장 전체의 가격변동 위험은 유지되므로 개별주식과의 차이를 과도하게 벌리지 않았습니다. 참고 기준은 [금융투자협회 표준투자권유준칙](https://law.kofia.or.kr/service/law/lawFullScreenContent.do?historySeq=1193&seq=149), [미래에셋증권 금융투자상품 위험도 분류표](https://securities.miraeasset.com/hku/hku4028/p01.do), [KODEX 200 공식 상품자료](https://m.samsungfund.com/sheet/20250402/2ETF01_20250331.pdf), [Vanguard 주식형 펀드 설명](https://investor.vanguard.com/investor-resources-education/understanding-investment-types/what-are-equity-stock-funds)입니다.
+주식형 ETF·펀드 50은 주식시장 전체의 가격변동 위험을 반영하되, 여러 종목에 분산투자하여 개별기업 위험을 줄일 수 있는 점을 반영한 내부 분석가중치입니다. 따라서 채권 25와 금 40보다 높고 국내·해외 개별주식 60·65보다 낮게 설정했습니다. 이 값은 금융기관의 공식 공통점수가 아니라 서비스의 5~65 상대위험 척도에서 사용하는 내부 기준입니다. 참고 기준은 [금융투자협회 표준투자권유준칙](https://law.kofia.or.kr/service/law/lawFullScreenContent.do?historySeq=1193&seq=149), [미래에셋증권 금융투자상품 위험도 분류표](https://securities.miraeasset.com/hku/hku4028/p01.do), [KODEX 200 공식 상품자료](https://m.samsungfund.com/sheet/20250402/2ETF01_20250331.pdf), [Vanguard 주식형 펀드 설명](https://investor.vanguard.com/investor-resources-education/understanding-investment-types/what-are-equity-stock-funds)입니다.
 
-규칙 버전은 `2.0.0-equity-fund-55`입니다. 이전 버전에서 저장한 `fund` 비중은 `equityFund`로 자동 이전하지만, 예전 가중치로 계산된 분석 결과는 다시 사용하지 않고 사용자가 새 규칙으로 재분석하도록 처리합니다.
+규칙 버전은 `2.1.0-equity-fund-50`입니다. 이전 버전에서 저장한 `fund` 비중은 `equityFund`로 자동 이전하지만, 예전 가중치로 계산된 분석 결과는 다시 사용하지 않고 사용자가 새 규칙으로 재분석하도록 처리합니다.
 
 ## 실행 방법
 

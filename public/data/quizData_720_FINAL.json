@@ -9899,37 +9899,37 @@
     "variant_group": "FND_B_003",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "금융위 어린이 금융왕 (Q7)",
-    "source_url": "https://www.fsc.go.kr/kids/kd040200",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "금융위 어린이 금융왕 (Q7)",
-        "source_url": "https://www.fsc.go.kr/kids/kd040200"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "ORIGINAL_SOURCE",
-    "source_checked_at": null,
-    "verification_note": "기존 출처 기반 문항",
-    "key_concept": "자산운용회사 정의",
-    "weakness_tag": "펀드 운용 주체",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "ETF·펀드의 상품 구조와 편입자산",
+    "weakness_tag": "상품 형태와 편입자산 구분",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "자산운용회사의 역할 이해",
-    "explanation": "자산운용회사는 여러 투자자에게 모은 자금을 펀드의 투자목적과 운용전략에 따라 주식·채권 등에 투자하고 관리하는 금융회사입니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "ETF·펀드라는 상품 형태와 실제 편입자산을 구분하고 위험 판단에 필요한 정보를 이해",
+    "explanation": "ETF와 펀드는 여러 투자자의 자금을 모아 운용하는 집합투자상품입니다. ETF는 거래소에서 장중 매매된다는 거래 방식의 특징이 있지만, 실제 위험과 수익의 성격은 주식·채권·단기금융상품 등 무엇을 편입하는지와 어떤 전략을 사용하는지에 따라 달라집니다. 따라서 ETF 또는 펀드라는 명칭만으로 위험을 판단하면 안 됩니다.",
     "type": "4지선다",
-    "question": "다음 중 펀드(집합투자기구)의 운용을 전문으로 수행하는 금융회사는?",
+    "question": "ETF나 펀드의 위험과 수익 특성을 판단할 때 가장 먼저 함께 확인해야 할 정보는?",
     "choices": [
-      "은행",
-      "보험회사",
-      "자산운용회사",
-      "카드회사"
+      "최근 단기 수익률만",
+      "실제 편입자산과 투자전략",
+      "운용사 브랜드만",
+      "현재 시장가격의 높고 낮음만"
     ],
-    "answer": "자산운용회사",
+    "answer": "실제 편입자산과 투자전략",
     "answer_mode": "choice"
   },
   {
@@ -9939,35 +9939,35 @@
     "variant_group": "FND_B_003",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "금융위 어린이 금융왕 (Q7)",
-    "source_url": "https://www.fsc.go.kr/kids/kd040200",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "금융위 어린이 금융왕 (Q7)",
-        "source_url": "https://www.fsc.go.kr/kids/kd040200"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "ORIGINAL_SOURCE",
-    "source_checked_at": null,
-    "verification_note": "기존 출처 기반 문항",
-    "key_concept": "자산운용회사 정의",
-    "weakness_tag": "펀드 운용 주체",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "ETF·펀드의 상품 구조와 편입자산",
+    "weakness_tag": "상품 형태와 편입자산 구분",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "자산운용회사의 역할 이해",
-    "explanation": "자산운용회사는 여러 투자자에게 모은 자금을 펀드의 투자목적과 운용전략에 따라 주식·채권 등에 투자하고 관리하는 금융회사입니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "ETF·펀드라는 상품 형태와 실제 편입자산을 구분하고 위험 판단에 필요한 정보를 이해",
+    "explanation": "ETF와 펀드는 여러 투자자의 자금을 모아 운용하는 집합투자상품입니다. ETF는 거래소에서 장중 매매된다는 거래 방식의 특징이 있지만, 실제 위험과 수익의 성격은 주식·채권·단기금융상품 등 무엇을 편입하는지와 어떤 전략을 사용하는지에 따라 달라집니다. 따라서 ETF 또는 펀드라는 명칭만으로 위험을 판단하면 안 됩니다.",
     "type": "OX",
-    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n자산운용회사는 투자자에게 모은 자금으로 펀드 자산을 전문적으로 운용한다.",
+    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\nETF라는 명칭이 같다면 실제 편입자산이 달라도 위험과 수익의 성격은 모두 같다.",
     "choices": [
       "O",
       "X"
     ],
-    "answer": "O",
+    "answer": "X",
     "answer_mode": "choice"
   },
   {
@@ -9977,37 +9977,37 @@
     "variant_group": "FND_B_003",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "금융위 어린이 금융왕 (Q7)",
-    "source_url": "https://www.fsc.go.kr/kids/kd040200",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "금융위 어린이 금융왕 (Q7)",
-        "source_url": "https://www.fsc.go.kr/kids/kd040200"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "ORIGINAL_SOURCE",
-    "source_checked_at": null,
-    "verification_note": "기존 출처 기반 문항",
-    "key_concept": "자산운용회사 정의",
-    "weakness_tag": "펀드 운용 주체",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "ETF·펀드의 상품 구조와 편입자산",
+    "weakness_tag": "상품 형태와 편입자산 구분",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "자산운용회사의 역할 이해",
-    "explanation": "자산운용회사는 여러 투자자에게 모은 자금을 펀드의 투자목적과 운용전략에 따라 주식·채권 등에 투자하고 관리하는 금융회사입니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "ETF·펀드라는 상품 형태와 실제 편입자산을 구분하고 위험 판단에 필요한 정보를 이해",
+    "explanation": "ETF와 펀드는 여러 투자자의 자금을 모아 운용하는 집합투자상품입니다. ETF는 거래소에서 장중 매매된다는 거래 방식의 특징이 있지만, 실제 위험과 수익의 성격은 주식·채권·단기금융상품 등 무엇을 편입하는지와 어떤 전략을 사용하는지에 따라 달라집니다. 따라서 ETF 또는 펀드라는 명칭만으로 위험을 판단하면 안 됩니다.",
     "type": "빈칸선택",
-    "question": "다음 질문의 빈칸에 들어갈 알맞은 답을 고르세요.\n다음 중 펀드(집합투자기구)의 운용을 전문으로 수행하는 금융회사는?\n선택: _____",
+    "question": "다음 문장의 빈칸에 들어갈 알맞은 답을 고르세요.\nETF의 구체적인 위험 특성을 파악하려면 상품명뿐 아니라 실제 _____과 투자전략을 확인해야 한다.",
     "choices": [
-      "은행",
-      "보험회사",
-      "자산운용회사",
-      "카드회사"
+      "편입자산",
+      "최근 거래량",
+      "판매 순위",
+      "현재 시장가격"
     ],
-    "answer": "자산운용회사",
+    "answer": "편입자산",
     "answer_mode": "choice"
   },
   {
@@ -10017,40 +10017,40 @@
     "variant_group": "FND_B_003",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "금융위 어린이 금융왕 (Q7)",
-    "source_url": "https://www.fsc.go.kr/kids/kd040200",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "금융위 어린이 금융왕 (Q7)",
-        "source_url": "https://www.fsc.go.kr/kids/kd040200"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "ORIGINAL_SOURCE",
-    "source_checked_at": null,
-    "verification_note": "기존 출처 기반 문항",
-    "key_concept": "자산운용회사 정의",
-    "weakness_tag": "펀드 운용 주체",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "ETF·펀드의 상품 구조와 편입자산",
+    "weakness_tag": "상품 형태와 편입자산 구분",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "자산운용회사의 역할 이해",
-    "explanation": "자산운용회사는 여러 투자자에게 모은 자금을 펀드의 투자목적과 운용전략에 따라 주식·채권 등에 투자하고 관리하는 금융회사입니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "ETF·펀드라는 상품 형태와 실제 편입자산을 구분하고 위험 판단에 필요한 정보를 이해",
+    "explanation": "ETF와 펀드는 여러 투자자의 자금을 모아 운용하는 집합투자상품입니다. ETF는 거래소에서 장중 매매된다는 거래 방식의 특징이 있지만, 실제 위험과 수익의 성격은 주식·채권·단기금융상품 등 무엇을 편입하는지와 어떤 전략을 사용하는지에 따라 달라집니다. 따라서 ETF 또는 펀드라는 명칭만으로 위험을 판단하면 안 됩니다.",
     "type": "빈칸직접입력",
-    "question": "투자자에게 모은 자금을 주식·채권 등에 전문적으로 운용하는 회사를 무엇이라고 하나요?",
+    "question": "펀드가 실제로 보유하거나 투자하는 주식·채권 등의 자산을 통틀어 무엇이라고 하나요?",
     "choices": [],
-    "answer": "자산운용회사",
+    "answer": "편입자산",
     "acceptable_answers": [
-      "자산운용회사",
-      "자산운용사",
-      "운용사"
+      "편입자산",
+      "보유자산",
+      "포트폴리오 자산"
     ],
     "answer_mode": "text",
     "grading_rule": "NFKC_TRIM_CASE_PUNCTUATION_NORMALIZED_ALIAS_MATCH",
-    "input_hint": "핵심 단어 또는 수치를 입력하세요."
+    "input_hint": "핵심 단어를 입력하세요."
   },
   {
     "id": "FND_B_004_MCQ",
@@ -10539,37 +10539,41 @@
     "variant_group": "FND_B_007",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "Investor.gov Mutual Funds and ETFs (Q4)",
-    "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "Investor.gov Mutual Funds and ETFs (Q4)",
-        "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "ORIGINAL_SOURCE",
-    "source_checked_at": null,
-    "verification_note": "기존 출처 기반 문항",
-    "key_concept": "펀드의 장점 vs 보증 없음",
-    "weakness_tag": "펀드 보호 범위",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "주된 투자대상에 따른 ETF·펀드 구분",
+    "weakness_tag": "기초자산별 ETF·펀드 유형",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "펀드의 장점과 보증 한계를 구분",
-    "explanation": "펀드는 전문운용과 분산투자, 비교적 적은 금액으로 여러 자산에 투자할 수 있다는 장점이 있지만 정부나 운용사가 원금과 수익률을 보장하지 않습니다. 비용과 환매조건도 상품마다 다릅니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "주된 투자대상을 보고 주식형·채권형·단기금융형·혼합형과 금 가격 노출 상품을 구분",
+    "explanation": "ETF·펀드는 주된 투자대상과 운용구조에 따라 주식형, 채권형, 단기금융형, 혼합형 등으로 구분할 수 있습니다. 금에 투자하는 상품도 금 현물, 금 선물, 금광기업 주식처럼 구조가 다를 수 있습니다. 분류 명칭과 법적 구조는 상품마다 다를 수 있으므로 투자설명서에서 실제 편입자산과 운용전략을 확인해야 합니다.",
     "type": "4지선다",
-    "question": "개인이 펀드에 투자하는 이유로 적절하지 않은 것은?",
+    "question": "ETF·펀드의 주된 투자대상과 유형을 연결한 것으로 가장 적절한 것은?",
     "choices": [
-      "전문 운용역이 종목을 분석해 운용해 주기 때문에",
-      "여러 회사·산업에 분산투자할 수 있기 때문에",
-      "정부가 원금과 수익률을 완전 보증하기 때문에",
-      "소액으로도 분산투자가 가능하기 때문에"
+      "기업 주식 → 주식형",
+      "국채·회사채 → 주식형",
+      "금 가격 추종 → 채권형",
+      "주식과 채권 혼합 → 단일 주식형"
     ],
-    "answer": "정부가 원금과 수익률을 완전 보증하기 때문에",
+    "answer": "기업 주식 → 주식형",
     "answer_mode": "choice"
   },
   {
@@ -10579,35 +10583,39 @@
     "variant_group": "FND_B_007",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "Investor.gov Mutual Funds and ETFs (Q4)",
-    "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "Investor.gov Mutual Funds and ETFs (Q4)",
-        "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "ORIGINAL_SOURCE",
-    "source_checked_at": null,
-    "verification_note": "기존 출처 기반 문항",
-    "key_concept": "펀드의 장점 vs 보증 없음",
-    "weakness_tag": "펀드 보호 범위",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "주된 투자대상에 따른 ETF·펀드 구분",
+    "weakness_tag": "기초자산별 ETF·펀드 유형",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "펀드의 장점과 보증 한계를 구분",
-    "explanation": "펀드는 전문운용과 분산투자, 비교적 적은 금액으로 여러 자산에 투자할 수 있다는 장점이 있지만 정부나 운용사가 원금과 수익률을 보장하지 않습니다. 비용과 환매조건도 상품마다 다릅니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "주된 투자대상을 보고 주식형·채권형·단기금융형·혼합형과 금 가격 노출 상품을 구분",
+    "explanation": "ETF·펀드는 주된 투자대상과 운용구조에 따라 주식형, 채권형, 단기금융형, 혼합형 등으로 구분할 수 있습니다. 금에 투자하는 상품도 금 현물, 금 선물, 금광기업 주식처럼 구조가 다를 수 있습니다. 분류 명칭과 법적 구조는 상품마다 다를 수 있으므로 투자설명서에서 실제 편입자산과 운용전략을 확인해야 합니다.",
     "type": "OX",
-    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n개인이 펀드에 투자하면 정부가 원금과 수익률을 완전히 보증한다.",
+    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n주식형과 채권형 ETF·펀드는 주로 어떤 자산에 투자하는지를 기준으로 구분한다.",
     "choices": [
       "O",
       "X"
     ],
-    "answer": "X",
+    "answer": "O",
     "answer_mode": "choice"
   },
   {
@@ -10617,37 +10625,41 @@
     "variant_group": "FND_B_007",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "Investor.gov Mutual Funds and ETFs (Q4)",
-    "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "Investor.gov Mutual Funds and ETFs (Q4)",
-        "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "ORIGINAL_SOURCE",
-    "source_checked_at": null,
-    "verification_note": "기존 출처 기반 문항",
-    "key_concept": "펀드의 장점 vs 보증 없음",
-    "weakness_tag": "펀드 보호 범위",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "주된 투자대상에 따른 ETF·펀드 구분",
+    "weakness_tag": "기초자산별 ETF·펀드 유형",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "펀드의 장점과 보증 한계를 구분",
-    "explanation": "펀드는 전문운용과 분산투자, 비교적 적은 금액으로 여러 자산에 투자할 수 있다는 장점이 있지만 정부나 운용사가 원금과 수익률을 보장하지 않습니다. 비용과 환매조건도 상품마다 다릅니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "주된 투자대상을 보고 주식형·채권형·단기금융형·혼합형과 금 가격 노출 상품을 구분",
+    "explanation": "ETF·펀드는 주된 투자대상과 운용구조에 따라 주식형, 채권형, 단기금융형, 혼합형 등으로 구분할 수 있습니다. 금에 투자하는 상품도 금 현물, 금 선물, 금광기업 주식처럼 구조가 다를 수 있습니다. 분류 명칭과 법적 구조는 상품마다 다를 수 있으므로 투자설명서에서 실제 편입자산과 운용전략을 확인해야 합니다.",
     "type": "빈칸선택",
-    "question": "다음 질문의 빈칸에 들어갈 알맞은 답을 고르세요.\n개인이 펀드에 투자하는 이유로 적절하지 않은 것은?\n선택: _____",
+    "question": "다음 문장의 빈칸에 들어갈 알맞은 답을 고르세요.\n국채와 회사채에 주로 투자하는 펀드는 일반적으로 _____ 펀드로 분류한다.",
     "choices": [
-      "전문 운용역이 종목을 분석해 운용해 주기 때문에",
-      "여러 회사·산업에 분산투자할 수 있기 때문에",
-      "정부가 원금과 수익률을 완전 보증하기 때문에",
-      "소액으로도 분산투자가 가능하기 때문에"
+      "주식형",
+      "채권형",
+      "부동산형",
+      "주식혼합형"
     ],
-    "answer": "정부가 원금과 수익률을 완전 보증하기 때문에",
+    "answer": "채권형",
     "answer_mode": "choice"
   },
   {
@@ -10657,39 +10669,44 @@
     "variant_group": "FND_B_007",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "Investor.gov Mutual Funds and ETFs (Q4)",
-    "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "Investor.gov Mutual Funds and ETFs (Q4)",
-        "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "ORIGINAL_SOURCE",
-    "source_checked_at": null,
-    "verification_note": "기존 출처 기반 문항",
-    "key_concept": "펀드의 장점 vs 보증 없음",
-    "weakness_tag": "펀드 보호 범위",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "주된 투자대상에 따른 ETF·펀드 구분",
+    "weakness_tag": "기초자산별 ETF·펀드 유형",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "펀드의 장점과 보증 한계를 구분",
-    "explanation": "펀드는 전문운용과 분산투자, 비교적 적은 금액으로 여러 자산에 투자할 수 있다는 장점이 있지만 정부나 운용사가 원금과 수익률을 보장하지 않습니다. 비용과 환매조건도 상품마다 다릅니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "주된 투자대상을 보고 주식형·채권형·단기금융형·혼합형과 금 가격 노출 상품을 구분",
+    "explanation": "ETF·펀드는 주된 투자대상과 운용구조에 따라 주식형, 채권형, 단기금융형, 혼합형 등으로 구분할 수 있습니다. 금에 투자하는 상품도 금 현물, 금 선물, 금광기업 주식처럼 구조가 다를 수 있습니다. 분류 명칭과 법적 구조는 상품마다 다를 수 있으므로 투자설명서에서 실제 편입자산과 운용전략을 확인해야 합니다.",
     "type": "빈칸직접입력",
-    "question": "소액으로도 여러 자산에 분산하고 전문가에게 운용을 맡길 수 있는 간접투자상품은 무엇인가요?",
+    "question": "기업의 주식에 주로 투자하는 ETF나 펀드의 유형을 입력하세요.",
     "choices": [],
-    "answer": "펀드",
+    "answer": "주식형",
     "acceptable_answers": [
-      "펀드",
-      "fund"
+      "주식형",
+      "주식형 ETF",
+      "주식형 펀드"
     ],
     "answer_mode": "text",
     "grading_rule": "NFKC_TRIM_CASE_PUNCTUATION_NORMALIZED_ALIAS_MATCH",
-    "input_hint": "핵심 단어 또는 수치를 입력하세요."
+    "input_hint": "핵심 단어를 입력하세요."
   },
   {
     "id": "FND_B_008_MCQ",
@@ -10698,37 +10715,45 @@
     "variant_group": "FND_B_008",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "예금보험공사 - 예금자보호제도 FAQ",
-    "source_url": "https://www.kdic.or.kr/sp/dpstrprot/ProtSystFaq/selectScrn.do",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "예금보험공사 - 예금자보호제도 FAQ",
-        "source_url": "https://www.kdic.or.kr/sp/dpstrprot/ProtSystFaq/selectScrn.do"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Asset Allocation and Diversification",
+        "source_url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - How to Read a Mutual Fund Prospectus: Concentration Risk",
+        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/how-read-2"
       }
     ],
     "source_type": "LLM_GENERATED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "LLM 생성 문항의 핵심 개념·정답·해설을 표시된 공식기관 또는 공신력 있는 원자료와 대조함",
-    "key_concept": "펀드는 예금자보호 X",
-    "weakness_tag": "투자상품의 법적 보호",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "주식형 ETF·펀드의 세부 범위",
+    "weakness_tag": "주식형 ETF·펀드 범위",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "예금과 펀드의 보호 범위 차이 이해",
-    "explanation": "2025년 9월 1일부터 예금보호한도는 보호대상 금융회사별 1인당 원금과 이자를 합해 1억원입니다. 예·적금 등 원금 지급이 보장되는 보호상품은 대상이지만, 운용실적에 따라 지급액이 달라지는 주식형 펀드 등 금융투자상품은 보호 대상이 아닙니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "국내·해외·시장대표·섹터·테마·액티브라는 명칭과 주식형 여부의 관계 이해",
+    "explanation": "주식형 ETF·펀드는 기업 주식에 주로 투자하는 상품입니다. 국내 또는 해외 주식에 투자할 수 있고, 시장 전체를 넓게 담거나 특정 산업·주제에 집중할 수도 있으며, 지수추종형 또는 액티브형으로 운용할 수도 있습니다. 따라서 해외형·섹터형·테마형·액티브형이라는 명칭은 주식형과 동시에 적용될 수 있습니다.",
     "type": "4지선다",
-    "question": "다음 중 한국의 예금자보호제도에 따른 보호 대상이 아닌 것은? (2026년 8월 기준, 보호대상 금융회사별 1인당 원금과 이자 합계 1억원 한도)",
+    "question": "다음 중 편입자산이 주식 중심이라면 모두 주식형 ETF·펀드에 포함될 수 있는 조합은?",
     "choices": [
-      "보호대상 은행의 보통예금",
-      "보호대상 저축은행의 정기예금",
-      "DC·IRP 적립금 중 보호대상 예금으로 운용되는 금액",
-      "주식형 펀드"
+      "국내 시장대표형·해외 시장대표형·주식 섹터형·주식 테마형",
+      "국채형·회사채형·단기채형·MMF",
+      "금 현물형·금 선물형·원유 선물형·농산물형",
+      "예금·적금·CMA·보통예금"
     ],
-    "answer": "주식형 펀드",
+    "answer": "국내 시장대표형·해외 시장대표형·주식 섹터형·주식 테마형",
     "answer_mode": "choice"
   },
   {
@@ -10738,35 +10763,43 @@
     "variant_group": "FND_B_008",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "예금보험공사 - 예금자보호제도 FAQ",
-    "source_url": "https://www.kdic.or.kr/sp/dpstrprot/ProtSystFaq/selectScrn.do",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "예금보험공사 - 예금자보호제도 FAQ",
-        "source_url": "https://www.kdic.or.kr/sp/dpstrprot/ProtSystFaq/selectScrn.do"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Asset Allocation and Diversification",
+        "source_url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - How to Read a Mutual Fund Prospectus: Concentration Risk",
+        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/how-read-2"
       }
     ],
     "source_type": "LLM_GENERATED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "LLM 생성 문항의 핵심 개념·정답·해설을 표시된 공식기관 또는 공신력 있는 원자료와 대조함",
-    "key_concept": "펀드는 예금자보호 X",
-    "weakness_tag": "투자상품의 법적 보호",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "주식형 ETF·펀드의 세부 범위",
+    "weakness_tag": "주식형 ETF·펀드 범위",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "예금과 펀드의 보호 범위 차이 이해",
-    "explanation": "2025년 9월 1일부터 예금보호한도는 보호대상 금융회사별 1인당 원금과 이자를 합해 1억원입니다. 예·적금 등 원금 지급이 보장되는 보호상품은 대상이지만, 운용실적에 따라 지급액이 달라지는 주식형 펀드 등 금융투자상품은 보호 대상이 아닙니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "국내·해외·시장대표·섹터·테마·액티브라는 명칭과 주식형 여부의 관계 이해",
+    "explanation": "주식형 ETF·펀드는 기업 주식에 주로 투자하는 상품입니다. 국내 또는 해외 주식에 투자할 수 있고, 시장 전체를 넓게 담거나 특정 산업·주제에 집중할 수도 있으며, 지수추종형 또는 액티브형으로 운용할 수도 있습니다. 따라서 해외형·섹터형·테마형·액티브형이라는 명칭은 주식형과 동시에 적용될 수 있습니다.",
     "type": "OX",
-    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n주식형 펀드는 예금자보호제도에 따라 원금과 이자가 1억원까지 보호된다.",
+    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n특정 산업이나 테마의 기업 주식에 주로 투자하는 ETF도 주식형 ETF에 해당할 수 있다.",
     "choices": [
       "O",
       "X"
     ],
-    "answer": "X",
+    "answer": "O",
     "answer_mode": "choice"
   },
   {
@@ -10776,37 +10809,45 @@
     "variant_group": "FND_B_008",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "예금보험공사 - 예금자보호제도 FAQ",
-    "source_url": "https://www.kdic.or.kr/sp/dpstrprot/ProtSystFaq/selectScrn.do",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "예금보험공사 - 예금자보호제도 FAQ",
-        "source_url": "https://www.kdic.or.kr/sp/dpstrprot/ProtSystFaq/selectScrn.do"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Asset Allocation and Diversification",
+        "source_url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - How to Read a Mutual Fund Prospectus: Concentration Risk",
+        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/how-read-2"
       }
     ],
     "source_type": "LLM_GENERATED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "LLM 생성 문항의 핵심 개념·정답·해설을 표시된 공식기관 또는 공신력 있는 원자료와 대조함",
-    "key_concept": "펀드는 예금자보호 X",
-    "weakness_tag": "투자상품의 법적 보호",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "주식형 ETF·펀드의 세부 범위",
+    "weakness_tag": "주식형 ETF·펀드 범위",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "예금과 펀드의 보호 범위 차이 이해",
-    "explanation": "2025년 9월 1일부터 예금보호한도는 보호대상 금융회사별 1인당 원금과 이자를 합해 1억원입니다. 예·적금 등 원금 지급이 보장되는 보호상품은 대상이지만, 운용실적에 따라 지급액이 달라지는 주식형 펀드 등 금융투자상품은 보호 대상이 아닙니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "국내·해외·시장대표·섹터·테마·액티브라는 명칭과 주식형 여부의 관계 이해",
+    "explanation": "주식형 ETF·펀드는 기업 주식에 주로 투자하는 상품입니다. 국내 또는 해외 주식에 투자할 수 있고, 시장 전체를 넓게 담거나 특정 산업·주제에 집중할 수도 있으며, 지수추종형 또는 액티브형으로 운용할 수도 있습니다. 따라서 해외형·섹터형·테마형·액티브형이라는 명칭은 주식형과 동시에 적용될 수 있습니다.",
     "type": "빈칸선택",
-    "question": "다음 질문의 빈칸에 들어갈 알맞은 답을 고르세요.\n다음 중 한국의 예금자보호제도에 따른 보호 대상이 아닌 것은? (2026년 8월 기준, 보호대상 금융회사별 1인당 원금과 이자 합계 1억원 한도)\n선택: _____",
+    "question": "다음 문장의 빈칸에 들어갈 알맞은 답을 고르세요.\n해외 반도체 기업의 주식에 주로 투자하는 ETF는 투자지역으로는 해외형, 투자대상으로는 _____에 해당할 수 있다.",
     "choices": [
-      "보호대상 은행의 보통예금",
-      "보호대상 저축은행의 정기예금",
-      "DC·IRP 적립금 중 보호대상 예금으로 운용되는 금액",
-      "주식형 펀드"
+      "주식형",
+      "채권형",
+      "단기금융형",
+      "예금형"
     ],
-    "answer": "주식형 펀드",
+    "answer": "주식형",
     "answer_mode": "choice"
   },
   {
@@ -10816,40 +10857,49 @@
     "variant_group": "FND_B_008",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "예금보험공사 - 예금자보호제도 FAQ",
-    "source_url": "https://www.kdic.or.kr/sp/dpstrprot/ProtSystFaq/selectScrn.do",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "예금보험공사 - 예금자보호제도 FAQ",
-        "source_url": "https://www.kdic.or.kr/sp/dpstrprot/ProtSystFaq/selectScrn.do"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Asset Allocation and Diversification",
+        "source_url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - How to Read a Mutual Fund Prospectus: Concentration Risk",
+        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/how-read-2"
       }
     ],
     "source_type": "LLM_GENERATED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "LLM 생성 문항의 핵심 개념·정답·해설을 표시된 공식기관 또는 공신력 있는 원자료와 대조함",
-    "key_concept": "펀드는 예금자보호 X",
-    "weakness_tag": "투자상품의 법적 보호",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "주식형 ETF·펀드의 세부 범위",
+    "weakness_tag": "주식형 ETF·펀드 범위",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "예금과 펀드의 보호 범위 차이 이해",
-    "explanation": "2025년 9월 1일부터 예금보호한도는 보호대상 금융회사별 1인당 원금과 이자를 합해 1억원입니다. 예·적금 등 원금 지급이 보장되는 보호상품은 대상이지만, 운용실적에 따라 지급액이 달라지는 주식형 펀드 등 금융투자상품은 보호 대상이 아닙니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "국내·해외·시장대표·섹터·테마·액티브라는 명칭과 주식형 여부의 관계 이해",
+    "explanation": "주식형 ETF·펀드는 기업 주식에 주로 투자하는 상품입니다. 국내 또는 해외 주식에 투자할 수 있고, 시장 전체를 넓게 담거나 특정 산업·주제에 집중할 수도 있으며, 지수추종형 또는 액티브형으로 운용할 수도 있습니다. 따라서 해외형·섹터형·테마형·액티브형이라는 명칭은 주식형과 동시에 적용될 수 있습니다.",
     "type": "빈칸직접입력",
-    "question": "예금자보호 대상이 아닌 대표적인 실적배당 금융상품 하나를 입력하세요.",
+    "question": "특정 산업의 기업 주식에 집중적으로 투자하는 ETF 유형을 무엇이라고 하나요?",
     "choices": [],
-    "answer": "주식형 펀드",
+    "answer": "섹터형 ETF",
     "acceptable_answers": [
-      "주식형 펀드",
-      "펀드",
-      "ETF"
+      "섹터형 ETF",
+      "섹터 ETF",
+      "산업별 ETF",
+      "업종 ETF"
     ],
     "answer_mode": "text",
     "grading_rule": "NFKC_TRIM_CASE_PUNCTUATION_NORMALIZED_ALIAS_MATCH",
-    "input_hint": "핵심 단어 또는 수치를 입력하세요."
+    "input_hint": "핵심 단어를 입력하세요."
   },
   {
     "id": "FND_B_009_MCQ",
@@ -11018,37 +11068,41 @@
     "variant_group": "FND_B_010",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-    "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Money Market Funds",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-5",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-        "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Money Market Funds",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-5"
+      },
+      {
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
       }
     ],
     "source_type": "LLM_GENERATED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "LLM 생성 문항의 핵심 개념·정답·해설을 표시된 공식기관 또는 공신력 있는 원자료와 대조함",
-    "key_concept": "한국 ETF 시장",
-    "weakness_tag": "한국 ETF 운용사 브랜드",
-    "parent_tag": "ETF의 개념",
-    "diagnostic_item": "F2",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "MMF의 투자대상과 위험",
+    "weakness_tag": "펀드 종류",
+    "parent_tag": "펀드의 개념",
+    "diagnostic_item": "F1",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "ETF의 개념",
-    "learning_goal": "국내 주요 ETF 브랜드를 식별",
-    "explanation": "국내 상장 ETF의 기초지수, 순자산가치, 괴리율, 보수, 위험 등은 한국거래소 정보와 운용사의 상품설명서·투자설명서에서 확인해야 합니다. 브랜드명이나 과거 수익률만으로 상품의 적합성이나 원금보장 여부를 판단하면 안 됩니다.",
+    "remediation_tag": "펀드의 개념",
+    "learning_goal": "MMF가 단기금융상품에 투자하는 펀드이며 예금과 동일하지 않음을 이해",
+    "explanation": "MMF(Money Market Fund)는 현금, 현금성자산, 유동성이 높은 단기 채무증권 등에 투자하는 펀드입니다. 다른 펀드보다 위험이 상대적으로 낮은 편이고 단기금리에 연동된 수익을 추구하지만, 은행 예금과 동일한 상품이 아니며 투자손실 가능성이 완전히 사라지는 것은 아닙니다.",
     "type": "4지선다",
-    "question": "한국에 상장된 ETF의 기본정보를 확인하는 방법으로 가장 적절한 것은?",
+    "question": "MMF(Money Market Fund)에 대한 설명으로 가장 적절한 것은?",
     "choices": [
-      "한국거래소 정보와 상품설명서·투자설명서를 확인한다",
-      "상품 이름만 보고 원금보장 여부를 판단한다",
-      "SNS 추천 글만 확인한다",
-      "과거 수익률이 높으면 다른 정보는 확인하지 않는다"
+      "유동성이 높은 단기 채무증권과 현금성자산 등에 투자하는 펀드",
+      "개별 기업 주식 한 종목에만 투자하는 펀드",
+      "금 실물만 보관하는 예금상품",
+      "원금과 수익률이 법적으로 보장되는 정기예금"
     ],
-    "answer": "한국거래소 정보와 상품설명서·투자설명서를 확인한다",
+    "answer": "유동성이 높은 단기 채무증권과 현금성자산 등에 투자하는 펀드",
     "answer_mode": "choice"
   },
   {
@@ -11058,30 +11112,34 @@
     "variant_group": "FND_B_010",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-    "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Money Market Funds",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-5",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-        "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Money Market Funds",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-5"
+      },
+      {
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
       }
     ],
     "source_type": "LLM_GENERATED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "LLM 생성 문항의 핵심 개념·정답·해설을 표시된 공식기관 또는 공신력 있는 원자료와 대조함",
-    "key_concept": "한국 ETF 시장",
-    "weakness_tag": "한국 ETF 운용사 브랜드",
-    "parent_tag": "ETF의 개념",
-    "diagnostic_item": "F2",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "MMF의 투자대상과 위험",
+    "weakness_tag": "펀드 종류",
+    "parent_tag": "펀드의 개념",
+    "diagnostic_item": "F1",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "ETF의 개념",
-    "learning_goal": "국내 주요 ETF 브랜드를 식별",
-    "explanation": "국내 상장 ETF의 기초지수, 순자산가치, 괴리율, 보수, 위험 등은 한국거래소 정보와 운용사의 상품설명서·투자설명서에서 확인해야 합니다. 브랜드명이나 과거 수익률만으로 상품의 적합성이나 원금보장 여부를 판단하면 안 됩니다.",
+    "remediation_tag": "펀드의 개념",
+    "learning_goal": "MMF가 단기금융상품에 투자하는 펀드이며 예금과 동일하지 않음을 이해",
+    "explanation": "MMF(Money Market Fund)는 현금, 현금성자산, 유동성이 높은 단기 채무증권 등에 투자하는 펀드입니다. 다른 펀드보다 위험이 상대적으로 낮은 편이고 단기금리에 연동된 수익을 추구하지만, 은행 예금과 동일한 상품이 아니며 투자손실 가능성이 완전히 사라지는 것은 아닙니다.",
     "type": "OX",
-    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n국내 상장 ETF는 SNS 추천 글만 확인하면 상품의 위험과 비용을 충분히 판단할 수 있다.",
+    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\nMMF는 은행의 정기예금과 동일하여 투자원금과 수익률이 법적으로 보장된다.",
     "choices": [
       "O",
       "X"
@@ -11096,37 +11154,41 @@
     "variant_group": "FND_B_010",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-    "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Money Market Funds",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-5",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-        "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Money Market Funds",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-5"
+      },
+      {
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
       }
     ],
     "source_type": "LLM_GENERATED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "LLM 생성 문항의 핵심 개념·정답·해설을 표시된 공식기관 또는 공신력 있는 원자료와 대조함",
-    "key_concept": "한국 ETF 시장",
-    "weakness_tag": "한국 ETF 운용사 브랜드",
-    "parent_tag": "ETF의 개념",
-    "diagnostic_item": "F2",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "MMF의 투자대상과 위험",
+    "weakness_tag": "펀드 종류",
+    "parent_tag": "펀드의 개념",
+    "diagnostic_item": "F1",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "ETF의 개념",
-    "learning_goal": "국내 주요 ETF 브랜드를 식별",
-    "explanation": "국내 상장 ETF의 기초지수, 순자산가치, 괴리율, 보수, 위험 등은 한국거래소 정보와 운용사의 상품설명서·투자설명서에서 확인해야 합니다. 브랜드명이나 과거 수익률만으로 상품의 적합성이나 원금보장 여부를 판단하면 안 됩니다.",
+    "remediation_tag": "펀드의 개념",
+    "learning_goal": "MMF가 단기금융상품에 투자하는 펀드이며 예금과 동일하지 않음을 이해",
+    "explanation": "MMF(Money Market Fund)는 현금, 현금성자산, 유동성이 높은 단기 채무증권 등에 투자하는 펀드입니다. 다른 펀드보다 위험이 상대적으로 낮은 편이고 단기금리에 연동된 수익을 추구하지만, 은행 예금과 동일한 상품이 아니며 투자손실 가능성이 완전히 사라지는 것은 아닙니다.",
     "type": "빈칸선택",
-    "question": "다음 질문의 빈칸에 들어갈 알맞은 답을 고르세요.\n한국에 상장된 ETF의 기본정보를 확인하는 방법으로 가장 적절한 것은?\n선택: _____",
+    "question": "다음 문장의 빈칸에 들어갈 알맞은 답을 고르세요.\n현금성자산과 만기가 짧은 채무증권 등에 주로 투자하는 펀드는 _____이다.",
     "choices": [
-      "한국거래소 정보와 상품설명서·투자설명서를 확인한다",
-      "상품 이름만 보고 원금보장 여부를 판단한다",
-      "SNS 추천 글만 확인한다",
-      "과거 수익률이 높으면 다른 정보는 확인하지 않는다"
+      "MMF",
+      "주식형 펀드",
+      "금 펀드",
+      "부동산 펀드"
     ],
-    "answer": "한국거래소 정보와 상품설명서·투자설명서를 확인한다",
+    "answer": "MMF",
     "answer_mode": "choice"
   },
   {
@@ -11136,39 +11198,45 @@
     "variant_group": "FND_B_010",
     "category": "펀드/ETF",
     "difficulty": "초급",
-    "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-    "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Money Market Funds",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-5",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-        "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Money Market Funds",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-5"
+      },
+      {
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
       }
     ],
     "source_type": "LLM_GENERATED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "LLM 생성 문항의 핵심 개념·정답·해설을 표시된 공식기관 또는 공신력 있는 원자료와 대조함",
-    "key_concept": "한국 ETF 시장",
-    "weakness_tag": "한국 ETF 운용사 브랜드",
-    "parent_tag": "ETF의 개념",
-    "diagnostic_item": "F2",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "MMF의 투자대상과 위험",
+    "weakness_tag": "펀드 종류",
+    "parent_tag": "펀드의 개념",
+    "diagnostic_item": "F1",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "ETF의 개념",
-    "learning_goal": "국내 주요 ETF 브랜드를 식별",
-    "explanation": "국내 상장 ETF의 기초지수, 순자산가치, 괴리율, 보수, 위험 등은 한국거래소 정보와 운용사의 상품설명서·투자설명서에서 확인해야 합니다. 브랜드명이나 과거 수익률만으로 상품의 적합성이나 원금보장 여부를 판단하면 안 됩니다.",
+    "remediation_tag": "펀드의 개념",
+    "learning_goal": "MMF가 단기금융상품에 투자하는 펀드이며 예금과 동일하지 않음을 이해",
+    "explanation": "MMF(Money Market Fund)는 현금, 현금성자산, 유동성이 높은 단기 채무증권 등에 투자하는 펀드입니다. 다른 펀드보다 위험이 상대적으로 낮은 편이고 단기금리에 연동된 수익을 추구하지만, 은행 예금과 동일한 상품이 아니며 투자손실 가능성이 완전히 사라지는 것은 아닙니다.",
     "type": "빈칸직접입력",
-    "question": "국내 상장 ETF의 기초지수·순자산가치·괴리율 등을 확인할 수 있는 거래소는 어디인가요?",
+    "question": "단기금융상품에 주로 투자하는 머니마켓펀드의 영문 약자를 입력하세요.",
     "choices": [],
-    "answer": "한국거래소",
+    "answer": "MMF",
     "acceptable_answers": [
-      "한국거래소",
-      "KRX"
+      "MMF",
+      "mmf",
+      "머니마켓펀드",
+      "머니 마켓 펀드"
     ],
     "answer_mode": "text",
     "grading_rule": "NFKC_TRIM_CASE_PUNCTUATION_NORMALIZED_ALIAS_MATCH",
-    "input_hint": "핵심 단어 또는 수치를 입력하세요."
+    "input_hint": "핵심 단어를 입력하세요."
   },
   {
     "id": "FND_I_001_MCQ",
@@ -11817,37 +11885,41 @@
     "variant_group": "FND_I_005",
     "category": "펀드/ETF",
     "difficulty": "중급",
-    "source_name": "한국거래소(KRX) - ETF 투자 안내",
-    "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) - ETF 투자 안내",
-        "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "SOURCE_REVALIDATED",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "기존의 비정상·구형 출처 주소를 현재 열리는 공식 또는 공신력 있는 자료로 교체하고 핵심 개념을 재검토함",
-    "key_concept": "국내 주식형 ETF 세제",
-    "weakness_tag": "ETF 비용·세금",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "ETF·펀드의 다차원 분류",
+    "weakness_tag": "ETF·펀드 분류 기준",
     "parent_tag": "ETF의 개념",
     "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "ETF의 개념",
-    "learning_goal": "국내 ETF의 세제 혜택 이해",
-    "explanation": "국내 주식형 ETF는 매도 시 일반적으로 증권거래세가 부과되지 않지만, 증권사 위탁수수료와 펀드 보수 등이 발생할 수 있고 분배금에는 세금이 부과될 수 있습니다. 세금은 ETF 유형과 계좌에 따라 달라질 수 있습니다.",
+    "learning_goal": "투자대상·지역·범위·운용방식·수익구조가 서로 다른 분류 기준임을 이해",
+    "explanation": "ETF·펀드는 한 가지 기준으로만 분류되지 않습니다. 투자대상은 주식형·채권형 등, 투자지역은 국내형·해외형 등, 투자범위는 시장대표형·섹터형·테마형 등, 운용방식은 패시브형·액티브형 등, 수익구조는 일반형·레버리지형·인버스형 등으로 설명할 수 있습니다. 한 상품에 여러 명칭이 동시에 적용될 수 있습니다.",
     "type": "4지선다",
-    "question": "국내 주식형 ETF의 세금·비용에 대한 설명으로 옳지 않은 것은?",
+    "question": "해외 반도체 주가지수를 그대로 추종하는 ETF를 여러 기준으로 분류한 것으로 가장 적절한 것은?",
     "choices": [
-      "매도 시 일반적으로 증권거래세가 부과되지 않는다",
-      "매매 시 증권사 위탁수수료가 발생할 수 있다",
-      "분배금에는 배당소득세가 부과될 수 있다",
-      "어떤 계좌에서 거래해도 모든 세금과 비용이 항상 0원이다"
+      "주식형·해외형·섹터형·패시브형",
+      "채권형·국내형·시장대표형·액티브형",
+      "금 가격 추종형·해외형·테마형·인버스형",
+      "단기금융형·국내형·섹터형·레버리지형"
     ],
-    "answer": "어떤 계좌에서 거래해도 모든 세금과 비용이 항상 0원이다",
+    "answer": "주식형·해외형·섹터형·패시브형",
     "answer_mode": "choice"
   },
   {
@@ -11857,30 +11929,34 @@
     "variant_group": "FND_I_005",
     "category": "펀드/ETF",
     "difficulty": "중급",
-    "source_name": "한국거래소(KRX) - ETF 투자 안내",
-    "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) - ETF 투자 안내",
-        "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "SOURCE_REVALIDATED",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "기존의 비정상·구형 출처 주소를 현재 열리는 공식 또는 공신력 있는 자료로 교체하고 핵심 개념을 재검토함",
-    "key_concept": "국내 주식형 ETF 세제",
-    "weakness_tag": "ETF 비용·세금",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "ETF·펀드의 다차원 분류",
+    "weakness_tag": "ETF·펀드 분류 기준",
     "parent_tag": "ETF의 개념",
     "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "ETF의 개념",
-    "learning_goal": "국내 ETF의 세제 혜택 이해",
-    "explanation": "국내 주식형 ETF는 매도 시 일반적으로 증권거래세가 부과되지 않지만, 증권사 위탁수수료와 펀드 보수 등이 발생할 수 있고 분배금에는 세금이 부과될 수 있습니다. 세금은 ETF 유형과 계좌에 따라 달라질 수 있습니다.",
+    "learning_goal": "투자대상·지역·범위·운용방식·수익구조가 서로 다른 분류 기준임을 이해",
+    "explanation": "ETF·펀드는 한 가지 기준으로만 분류되지 않습니다. 투자대상은 주식형·채권형 등, 투자지역은 국내형·해외형 등, 투자범위는 시장대표형·섹터형·테마형 등, 운용방식은 패시브형·액티브형 등, 수익구조는 일반형·레버리지형·인버스형 등으로 설명할 수 있습니다. 한 상품에 여러 명칭이 동시에 적용될 수 있습니다.",
     "type": "OX",
-    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n국내 주식형 ETF는 어떤 계좌에서 거래해도 모든 세금과 비용이 항상 0원이다.",
+    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n해외형 ETF는 동시에 주식형이거나 액티브형일 수 없다.",
     "choices": [
       "O",
       "X"
@@ -11895,37 +11971,41 @@
     "variant_group": "FND_I_005",
     "category": "펀드/ETF",
     "difficulty": "중급",
-    "source_name": "한국거래소(KRX) - ETF 투자 안내",
-    "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) - ETF 투자 안내",
-        "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "SOURCE_REVALIDATED",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "기존의 비정상·구형 출처 주소를 현재 열리는 공식 또는 공신력 있는 자료로 교체하고 핵심 개념을 재검토함",
-    "key_concept": "국내 주식형 ETF 세제",
-    "weakness_tag": "ETF 비용·세금",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "ETF·펀드의 다차원 분류",
+    "weakness_tag": "ETF·펀드 분류 기준",
     "parent_tag": "ETF의 개념",
     "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "ETF의 개념",
-    "learning_goal": "국내 ETF의 세제 혜택 이해",
-    "explanation": "국내 주식형 ETF는 매도 시 일반적으로 증권거래세가 부과되지 않지만, 증권사 위탁수수료와 펀드 보수 등이 발생할 수 있고 분배금에는 세금이 부과될 수 있습니다. 세금은 ETF 유형과 계좌에 따라 달라질 수 있습니다.",
+    "learning_goal": "투자대상·지역·범위·운용방식·수익구조가 서로 다른 분류 기준임을 이해",
+    "explanation": "ETF·펀드는 한 가지 기준으로만 분류되지 않습니다. 투자대상은 주식형·채권형 등, 투자지역은 국내형·해외형 등, 투자범위는 시장대표형·섹터형·테마형 등, 운용방식은 패시브형·액티브형 등, 수익구조는 일반형·레버리지형·인버스형 등으로 설명할 수 있습니다. 한 상품에 여러 명칭이 동시에 적용될 수 있습니다.",
     "type": "빈칸선택",
-    "question": "다음 질문의 빈칸에 들어갈 알맞은 답을 고르세요.\n국내 주식형 ETF의 세금·비용에 대한 설명으로 옳지 않은 것은?\n선택: _____",
+    "question": "다음 중 패시브형과 액티브형을 구분하는 기준은 무엇인가요?",
     "choices": [
-      "매도 시 일반적으로 증권거래세가 부과되지 않는다",
-      "매매 시 증권사 위탁수수료가 발생할 수 있다",
-      "분배금에는 배당소득세가 부과될 수 있다",
-      "어떤 계좌에서 거래해도 모든 세금과 비용이 항상 0원이다"
+      "운용방식",
+      "투자지역",
+      "거래통화",
+      "상장 연도"
     ],
-    "answer": "어떤 계좌에서 거래해도 모든 세금과 비용이 항상 0원이다",
+    "answer": "운용방식",
     "answer_mode": "choice"
   },
   {
@@ -11935,39 +12015,45 @@
     "variant_group": "FND_I_005",
     "category": "펀드/ETF",
     "difficulty": "중급",
-    "source_name": "한국거래소(KRX) - ETF 투자 안내",
-    "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) - ETF 투자 안내",
-        "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "SOURCE_REVALIDATED",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "기존의 비정상·구형 출처 주소를 현재 열리는 공식 또는 공신력 있는 자료로 교체하고 핵심 개념을 재검토함",
-    "key_concept": "국내 주식형 ETF 세제",
-    "weakness_tag": "ETF 비용·세금",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "ETF·펀드의 다차원 분류",
+    "weakness_tag": "ETF·펀드 분류 기준",
     "parent_tag": "ETF의 개념",
     "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "ETF의 개념",
-    "learning_goal": "국내 ETF의 세제 혜택 이해",
-    "explanation": "국내 주식형 ETF는 매도 시 일반적으로 증권거래세가 부과되지 않지만, 증권사 위탁수수료와 펀드 보수 등이 발생할 수 있고 분배금에는 세금이 부과될 수 있습니다. 세금은 ETF 유형과 계좌에 따라 달라질 수 있습니다.",
+    "learning_goal": "투자대상·지역·범위·운용방식·수익구조가 서로 다른 분류 기준임을 이해",
+    "explanation": "ETF·펀드는 한 가지 기준으로만 분류되지 않습니다. 투자대상은 주식형·채권형 등, 투자지역은 국내형·해외형 등, 투자범위는 시장대표형·섹터형·테마형 등, 운용방식은 패시브형·액티브형 등, 수익구조는 일반형·레버리지형·인버스형 등으로 설명할 수 있습니다. 한 상품에 여러 명칭이 동시에 적용될 수 있습니다.",
     "type": "빈칸직접입력",
-    "question": "국내 주식형 ETF를 매도할 때 일반적으로 부과되지 않는 세금은 무엇인가요?",
+    "question": "ETF·펀드를 패시브형과 액티브형으로 나눌 때 사용하는 분류 기준을 입력하세요.",
     "choices": [],
-    "answer": "증권거래세",
+    "answer": "운용방식",
     "acceptable_answers": [
-      "증권거래세",
-      "거래세"
+      "운용방식",
+      "운용 방식",
+      "운용전략",
+      "운용 전략"
     ],
     "answer_mode": "text",
     "grading_rule": "NFKC_TRIM_CASE_PUNCTUATION_NORMALIZED_ALIAS_MATCH",
-    "input_hint": "핵심 단어 또는 수치를 입력하세요."
+    "input_hint": "핵심 단어를 입력하세요."
   },
   {
     "id": "FND_I_006_MCQ",
@@ -12135,37 +12221,45 @@
     "variant_group": "FND_I_007",
     "category": "펀드/ETF",
     "difficulty": "중급",
-    "source_name": "한국거래소(KRX) - ETF 투자 안내",
-    "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) - ETF 투자 안내",
-        "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - How to Read a Mutual Fund Prospectus: Concentration Risk",
+        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/how-read-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Asset Allocation and Diversification",
+        "source_url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation"
       }
     ],
     "source_type": "LLM_GENERATED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "LLM 생성 문항의 핵심 개념·정답·해설을 표시된 공식기관 또는 공신력 있는 원자료와 대조함",
-    "key_concept": "해외주식형 ETF 세제",
-    "weakness_tag": "ETF 세제 차이",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "시장대표형·섹터형·테마형의 분산 차이",
+    "weakness_tag": "섹터·테마 집중위험",
     "parent_tag": "ETF의 개념",
     "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "ETF의 개념",
-    "learning_goal": "국내/해외 ETF 세제 차이 이해",
-    "explanation": "일반계좌의 국내 상장 해외주식형 ETF는 실제 매매차익과 매수·매도 사이 과표기준가격 상승분 중 작은 금액을 배당소득으로 보아 일반적으로 15.4%를 원천징수합니다. 계좌 종류와 납세자 상황, 세법 개정에 따라 달라질 수 있으므로 거래 시점의 안내를 확인해야 합니다.",
+    "learning_goal": "시장대표형과 섹터·테마형의 투자범위 및 집중위험 차이 이해",
+    "explanation": "시장대표형 주식 ETF는 여러 산업의 종목을 넓게 담는 경우가 많습니다. 섹터형은 특정 산업에, 테마형은 특정 주제와 관련된 기업에 집중합니다. 섹터·테마형도 여러 종목을 보유할 수 있지만 투자범위가 좁아 특정 산업이나 주제의 악재에 더 크게 영향을 받을 수 있습니다.",
     "type": "4지선다",
-    "question": "일반계좌에서 국내 상장 해외주식형 ETF를 매도해 이익이 발생한 경우의 과세 설명으로 옳은 것은? (2026년 8월 기준)",
+    "question": "일반적인 시장대표형 ETF와 비교한 섹터형·테마형 ETF의 특징으로 가장 적절한 것은?",
     "choices": [
-      "실제 매매차익과 과표기준가격 상승분 중 작은 금액에 일반적으로 15.4%가 원천징수된다",
-      "모든 매매차익이 조건 없이 비과세된다",
-      "예금자보호료만 납부한다",
-      "수익과 관계없이 매수금액 전체에 세금이 붙는다"
+      "특정 산업이나 주제에 집중되어 관련 위험의 영향을 더 크게 받을 수 있다",
+      "여러 종목을 담기만 하면 집중위험은 완전히 사라진다",
+      "시장대표형보다 가격 변동이 항상 작다",
+      "국내형·해외형 여부만으로 섹터형과 테마형이 구분된다"
     ],
-    "answer": "실제 매매차익과 과표기준가격 상승분 중 작은 금액에 일반적으로 15.4%가 원천징수된다",
+    "answer": "특정 산업이나 주제에 집중되어 관련 위험의 영향을 더 크게 받을 수 있다",
     "answer_mode": "choice"
   },
   {
@@ -12175,30 +12269,38 @@
     "variant_group": "FND_I_007",
     "category": "펀드/ETF",
     "difficulty": "중급",
-    "source_name": "한국거래소(KRX) - ETF 투자 안내",
-    "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) - ETF 투자 안내",
-        "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - How to Read a Mutual Fund Prospectus: Concentration Risk",
+        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/how-read-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Asset Allocation and Diversification",
+        "source_url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation"
       }
     ],
     "source_type": "LLM_GENERATED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "LLM 생성 문항의 핵심 개념·정답·해설을 표시된 공식기관 또는 공신력 있는 원자료와 대조함",
-    "key_concept": "해외주식형 ETF 세제",
-    "weakness_tag": "ETF 세제 차이",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "시장대표형·섹터형·테마형의 분산 차이",
+    "weakness_tag": "섹터·테마 집중위험",
     "parent_tag": "ETF의 개념",
     "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "ETF의 개념",
-    "learning_goal": "국내/해외 ETF 세제 차이 이해",
-    "explanation": "일반계좌의 국내 상장 해외주식형 ETF는 실제 매매차익과 매수·매도 사이 과표기준가격 상승분 중 작은 금액을 배당소득으로 보아 일반적으로 15.4%를 원천징수합니다. 계좌 종류와 납세자 상황, 세법 개정에 따라 달라질 수 있으므로 거래 시점의 안내를 확인해야 합니다.",
+    "learning_goal": "시장대표형과 섹터·테마형의 투자범위 및 집중위험 차이 이해",
+    "explanation": "시장대표형 주식 ETF는 여러 산업의 종목을 넓게 담는 경우가 많습니다. 섹터형은 특정 산업에, 테마형은 특정 주제와 관련된 기업에 집중합니다. 섹터·테마형도 여러 종목을 보유할 수 있지만 투자범위가 좁아 특정 산업이나 주제의 악재에 더 크게 영향을 받을 수 있습니다.",
     "type": "OX",
-    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n일반계좌의 국내 상장 해외주식형 ETF는 실제 매매차익과 과표기준가격 상승분 중 작은 금액에 일반적으로 15.4%가 원천징수된다.",
+    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n섹터형 ETF는 여러 종목을 담고 있더라도 특정 산업에 집중되어 시장대표형 ETF보다 집중위험이 높을 수 있다.",
     "choices": [
       "O",
       "X"
@@ -12213,37 +12315,45 @@
     "variant_group": "FND_I_007",
     "category": "펀드/ETF",
     "difficulty": "중급",
-    "source_name": "한국거래소(KRX) - ETF 투자 안내",
-    "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) - ETF 투자 안내",
-        "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - How to Read a Mutual Fund Prospectus: Concentration Risk",
+        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/how-read-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Asset Allocation and Diversification",
+        "source_url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation"
       }
     ],
     "source_type": "LLM_GENERATED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "LLM 생성 문항의 핵심 개념·정답·해설을 표시된 공식기관 또는 공신력 있는 원자료와 대조함",
-    "key_concept": "해외주식형 ETF 세제",
-    "weakness_tag": "ETF 세제 차이",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "시장대표형·섹터형·테마형의 분산 차이",
+    "weakness_tag": "섹터·테마 집중위험",
     "parent_tag": "ETF의 개념",
     "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "ETF의 개념",
-    "learning_goal": "국내/해외 ETF 세제 차이 이해",
-    "explanation": "일반계좌의 국내 상장 해외주식형 ETF는 실제 매매차익과 매수·매도 사이 과표기준가격 상승분 중 작은 금액을 배당소득으로 보아 일반적으로 15.4%를 원천징수합니다. 계좌 종류와 납세자 상황, 세법 개정에 따라 달라질 수 있으므로 거래 시점의 안내를 확인해야 합니다.",
+    "learning_goal": "시장대표형과 섹터·테마형의 투자범위 및 집중위험 차이 이해",
+    "explanation": "시장대표형 주식 ETF는 여러 산업의 종목을 넓게 담는 경우가 많습니다. 섹터형은 특정 산업에, 테마형은 특정 주제와 관련된 기업에 집중합니다. 섹터·테마형도 여러 종목을 보유할 수 있지만 투자범위가 좁아 특정 산업이나 주제의 악재에 더 크게 영향을 받을 수 있습니다.",
     "type": "빈칸선택",
-    "question": "다음 질문의 빈칸에 들어갈 알맞은 답을 고르세요.\n일반계좌에서 국내 상장 해외주식형 ETF를 매도해 이익이 발생한 경우의 과세 설명으로 옳은 것은? (2026년 8월 기준)\n선택: _____",
+    "question": "다음 문장의 빈칸에 들어갈 알맞은 답을 고르세요.\n반도체 산업의 기업들에 집중적으로 투자하는 ETF는 일반적으로 _____ ETF라고 부른다.",
     "choices": [
-      "실제 매매차익과 과표기준가격 상승분 중 작은 금액에 일반적으로 15.4%가 원천징수된다",
-      "모든 매매차익이 조건 없이 비과세된다",
-      "예금자보호료만 납부한다",
-      "수익과 관계없이 매수금액 전체에 세금이 붙는다"
+      "섹터형",
+      "단기금융형",
+      "국채형",
+      "시장전체형"
     ],
-    "answer": "실제 매매차익과 과표기준가격 상승분 중 작은 금액에 일반적으로 15.4%가 원천징수된다",
+    "answer": "섹터형",
     "answer_mode": "choice"
   },
   {
@@ -12253,39 +12363,49 @@
     "variant_group": "FND_I_007",
     "category": "펀드/ETF",
     "difficulty": "중급",
-    "source_name": "한국거래소(KRX) - ETF 투자 안내",
-    "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) - ETF 투자 안내",
-        "source_url": "https://pdf.krx.co.kr/ebook_new/access/ecatalogt.jsp?Dir=23&callmode=normal&catimage=&eclang=ko&start=83&um=s"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - How to Read a Mutual Fund Prospectus: Concentration Risk",
+        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/how-read-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Asset Allocation and Diversification",
+        "source_url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation"
       }
     ],
     "source_type": "LLM_GENERATED",
     "verification_status": "VERIFIED_OFFICIAL",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "LLM 생성 문항의 핵심 개념·정답·해설을 표시된 공식기관 또는 공신력 있는 원자료와 대조함",
-    "key_concept": "해외주식형 ETF 세제",
-    "weakness_tag": "ETF 세제 차이",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "시장대표형·섹터형·테마형의 분산 차이",
+    "weakness_tag": "섹터·테마 집중위험",
     "parent_tag": "ETF의 개념",
     "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "ETF의 개념",
-    "learning_goal": "국내/해외 ETF 세제 차이 이해",
-    "explanation": "일반계좌의 국내 상장 해외주식형 ETF는 실제 매매차익과 매수·매도 사이 과표기준가격 상승분 중 작은 금액을 배당소득으로 보아 일반적으로 15.4%를 원천징수합니다. 계좌 종류와 납세자 상황, 세법 개정에 따라 달라질 수 있으므로 거래 시점의 안내를 확인해야 합니다.",
+    "learning_goal": "시장대표형과 섹터·테마형의 투자범위 및 집중위험 차이 이해",
+    "explanation": "시장대표형 주식 ETF는 여러 산업의 종목을 넓게 담는 경우가 많습니다. 섹터형은 특정 산업에, 테마형은 특정 주제와 관련된 기업에 집중합니다. 섹터·테마형도 여러 종목을 보유할 수 있지만 투자범위가 좁아 특정 산업이나 주제의 악재에 더 크게 영향을 받을 수 있습니다.",
     "type": "빈칸직접입력",
-    "question": "일반계좌의 국내 상장 해외주식형 ETF 과세에 일반적으로 적용되는 원천징수 세율을 입력하세요.",
+    "question": "인공지능·친환경·고령화처럼 특정 주제와 관련된 기업에 투자하는 ETF 유형을 입력하세요.",
     "choices": [],
-    "answer": "15.4%",
+    "answer": "테마형 ETF",
     "acceptable_answers": [
-      "15.4%",
-      "15.4퍼센트"
+      "테마형 ETF",
+      "테마 ETF",
+      "테마형",
+      "테마 펀드"
     ],
     "answer_mode": "text",
     "grading_rule": "NFKC_TRIM_CASE_PUNCTUATION_NORMALIZED_ALIAS_MATCH",
-    "input_hint": "핵심 단어 또는 수치를 입력하세요."
+    "input_hint": "핵심 단어를 입력하세요."
   },
   {
     "id": "FND_I_008_MCQ",
@@ -12294,37 +12414,49 @@
     "variant_group": "FND_I_008",
     "category": "펀드/ETF",
     "difficulty": "중급",
-    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Mutual Fund and ETF Fees and Expenses",
-    "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/mutual-fund-and-etf-fees-and-expenses-investor-bulletin",
+    "source_name": "미국 상품선물거래위원회(CFTC) - Learn About Risks Before Investing in Commodity ETPs or Funds",
+    "source_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_CommodityETPs.htm",
     "source_references": [
       {
-        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Mutual Fund and ETF Fees and Expenses",
-        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/mutual-fund-and-etf-fees-and-expenses-investor-bulletin"
+        "source_name": "미국 상품선물거래위원회(CFTC) - Learn About Risks Before Investing in Commodity ETPs or Funds",
+        "source_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_CommodityETPs.htm"
+      },
+      {
+        "source_name": "BlackRock iShares 공식 자료 - 금 현물형과 금광기업 주식형 상품 비교",
+        "source_url": "https://www.ishares.com/us/insights/inside-the-market/gold-and-silver-investing-in-precious-metals"
+      },
+      {
+        "source_name": "한국거래소 KIND - KODEX 골드선물(H) ETF 시장안내",
+        "source_url": "https://kind.krx.co.kr/common/disclsviewer.do?acptNo=20220114000255&docno=&method=searchInitInfo"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "SOURCE_REVALIDATED",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "기존의 비정상·구형 출처 주소를 현재 열리는 공식 또는 공신력 있는 자료로 교체하고 핵심 개념을 재검토함",
-    "key_concept": "보수의 복리 누적 효과",
-    "weakness_tag": "장기 비용 영향",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "금 관련 ETF·펀드의 구조 차이",
+    "weakness_tag": "금 ETF·펀드 구조",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "보수가 장기 수익률에 미치는 영향 정량 이해",
-    "explanation": "보수는 펀드 자산에서 지속적으로 차감되므로 작은 연간 보수 차이도 투자기간이 길어지면 복리 효과로 최종 자산에 의미 있는 차이를 만들 수 있습니다. 실제 차이는 수익률과 투자기간에 따라 달라집니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "금 현물·금 선물·금광기업 주식에 노출되는 상품의 구조와 위험 차이 이해",
+    "explanation": "상품명에 금이 들어가도 투자 구조는 같지 않습니다. 금 현물 가격을 반영하는 상품, 금 선물계약을 이용하는 상품, 금광기업의 주식에 투자하는 상품 등이 있습니다. 금 선물형은 선물가격과 계약 교체 비용 등의 영향을 받고, 금광기업 주식형은 금 가격뿐 아니라 기업과 주식시장의 위험에도 노출됩니다. 따라서 기초지수와 편입자산을 확인해야 합니다.",
     "type": "4지선다",
-    "question": "펀드 보수가 연 0.5%p 차이 날 때 장기 투자성과에 대한 설명으로 가장 적절한 것은?",
+    "question": "금 관련 ETF·펀드를 구분하는 방법으로 가장 적절한 것은?",
     "choices": [
-      "작은 보수 차이도 장기간 누적되면 최종 자산에 큰 차이를 만들 수 있다",
-      "보수 차이는 장기 투자성과에 전혀 영향을 주지 않는다",
-      "보수가 높으면 그만큼 수익률도 반드시 높아진다",
-      "보수는 투자자의 자산에서 차감되지 않는다"
+      "금이라는 단어만 보지 말고 금 현물·금 선물·금광기업 주식 중 무엇에 노출되는지 확인한다",
+      "상품명에 금이 있으면 모두 금 실물을 직접 보유한다고 본다",
+      "금 관련 상품은 구조와 관계없이 수익률이 항상 동일하다고 본다",
+      "금광기업 주식형도 채권형으로 분류한다"
     ],
-    "answer": "작은 보수 차이도 장기간 누적되면 최종 자산에 큰 차이를 만들 수 있다",
+    "answer": "금이라는 단어만 보지 말고 금 현물·금 선물·금광기업 주식 중 무엇에 노출되는지 확인한다",
     "answer_mode": "choice"
   },
   {
@@ -12334,35 +12466,47 @@
     "variant_group": "FND_I_008",
     "category": "펀드/ETF",
     "difficulty": "중급",
-    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Mutual Fund and ETF Fees and Expenses",
-    "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/mutual-fund-and-etf-fees-and-expenses-investor-bulletin",
+    "source_name": "미국 상품선물거래위원회(CFTC) - Learn About Risks Before Investing in Commodity ETPs or Funds",
+    "source_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_CommodityETPs.htm",
     "source_references": [
       {
-        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Mutual Fund and ETF Fees and Expenses",
-        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/mutual-fund-and-etf-fees-and-expenses-investor-bulletin"
+        "source_name": "미국 상품선물거래위원회(CFTC) - Learn About Risks Before Investing in Commodity ETPs or Funds",
+        "source_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_CommodityETPs.htm"
+      },
+      {
+        "source_name": "BlackRock iShares 공식 자료 - 금 현물형과 금광기업 주식형 상품 비교",
+        "source_url": "https://www.ishares.com/us/insights/inside-the-market/gold-and-silver-investing-in-precious-metals"
+      },
+      {
+        "source_name": "한국거래소 KIND - KODEX 골드선물(H) ETF 시장안내",
+        "source_url": "https://kind.krx.co.kr/common/disclsviewer.do?acptNo=20220114000255&docno=&method=searchInitInfo"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "SOURCE_REVALIDATED",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "기존의 비정상·구형 출처 주소를 현재 열리는 공식 또는 공신력 있는 자료로 교체하고 핵심 개념을 재검토함",
-    "key_concept": "보수의 복리 누적 효과",
-    "weakness_tag": "장기 비용 영향",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "금 관련 ETF·펀드의 구조 차이",
+    "weakness_tag": "금 ETF·펀드 구조",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "보수가 장기 수익률에 미치는 영향 정량 이해",
-    "explanation": "보수는 펀드 자산에서 지속적으로 차감되므로 작은 연간 보수 차이도 투자기간이 길어지면 복리 효과로 최종 자산에 의미 있는 차이를 만들 수 있습니다. 실제 차이는 수익률과 투자기간에 따라 달라집니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "금 현물·금 선물·금광기업 주식에 노출되는 상품의 구조와 위험 차이 이해",
+    "explanation": "상품명에 금이 들어가도 투자 구조는 같지 않습니다. 금 현물 가격을 반영하는 상품, 금 선물계약을 이용하는 상품, 금광기업의 주식에 투자하는 상품 등이 있습니다. 금 선물형은 선물가격과 계약 교체 비용 등의 영향을 받고, 금광기업 주식형은 금 가격뿐 아니라 기업과 주식시장의 위험에도 노출됩니다. 따라서 기초지수와 편입자산을 확인해야 합니다.",
     "type": "OX",
-    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n작은 펀드 보수 차이도 장기간 누적되면 최종 자산에 의미 있는 차이를 만들 수 있다.",
+    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n상품명에 금이 들어간 ETF는 모두 금 실물을 직접 보유하며 동일한 방식으로 금 가격을 따라간다.",
     "choices": [
       "O",
       "X"
     ],
-    "answer": "O",
+    "answer": "X",
     "answer_mode": "choice"
   },
   {
@@ -12372,37 +12516,49 @@
     "variant_group": "FND_I_008",
     "category": "펀드/ETF",
     "difficulty": "중급",
-    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Mutual Fund and ETF Fees and Expenses",
-    "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/mutual-fund-and-etf-fees-and-expenses-investor-bulletin",
+    "source_name": "미국 상품선물거래위원회(CFTC) - Learn About Risks Before Investing in Commodity ETPs or Funds",
+    "source_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_CommodityETPs.htm",
     "source_references": [
       {
-        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Mutual Fund and ETF Fees and Expenses",
-        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/mutual-fund-and-etf-fees-and-expenses-investor-bulletin"
+        "source_name": "미국 상품선물거래위원회(CFTC) - Learn About Risks Before Investing in Commodity ETPs or Funds",
+        "source_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_CommodityETPs.htm"
+      },
+      {
+        "source_name": "BlackRock iShares 공식 자료 - 금 현물형과 금광기업 주식형 상품 비교",
+        "source_url": "https://www.ishares.com/us/insights/inside-the-market/gold-and-silver-investing-in-precious-metals"
+      },
+      {
+        "source_name": "한국거래소 KIND - KODEX 골드선물(H) ETF 시장안내",
+        "source_url": "https://kind.krx.co.kr/common/disclsviewer.do?acptNo=20220114000255&docno=&method=searchInitInfo"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "SOURCE_REVALIDATED",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "기존의 비정상·구형 출처 주소를 현재 열리는 공식 또는 공신력 있는 자료로 교체하고 핵심 개념을 재검토함",
-    "key_concept": "보수의 복리 누적 효과",
-    "weakness_tag": "장기 비용 영향",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "금 관련 ETF·펀드의 구조 차이",
+    "weakness_tag": "금 ETF·펀드 구조",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "보수가 장기 수익률에 미치는 영향 정량 이해",
-    "explanation": "보수는 펀드 자산에서 지속적으로 차감되므로 작은 연간 보수 차이도 투자기간이 길어지면 복리 효과로 최종 자산에 의미 있는 차이를 만들 수 있습니다. 실제 차이는 수익률과 투자기간에 따라 달라집니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "금 현물·금 선물·금광기업 주식에 노출되는 상품의 구조와 위험 차이 이해",
+    "explanation": "상품명에 금이 들어가도 투자 구조는 같지 않습니다. 금 현물 가격을 반영하는 상품, 금 선물계약을 이용하는 상품, 금광기업의 주식에 투자하는 상품 등이 있습니다. 금 선물형은 선물가격과 계약 교체 비용 등의 영향을 받고, 금광기업 주식형은 금 가격뿐 아니라 기업과 주식시장의 위험에도 노출됩니다. 따라서 기초지수와 편입자산을 확인해야 합니다.",
     "type": "빈칸선택",
-    "question": "다음 질문의 빈칸에 들어갈 알맞은 답을 고르세요.\n펀드 보수가 연 0.5%p 차이 날 때 장기 투자성과에 대한 설명으로 가장 적절한 것은?\n선택: _____",
+    "question": "다음 중 금광회사의 주식에 주로 투자하는 ETF의 성격을 가장 정확하게 설명한 것은?",
     "choices": [
-      "작은 보수 차이도 장기간 누적되면 최종 자산에 큰 차이를 만들 수 있다",
-      "보수 차이는 장기 투자성과에 전혀 영향을 주지 않는다",
-      "보수가 높으면 그만큼 수익률도 반드시 높아진다",
-      "보수는 투자자의 자산에서 차감되지 않는다"
+      "금 가격뿐 아니라 금광기업과 주식시장의 위험에도 노출된다",
+      "금 실물 가격만 정확히 따라가며 기업 위험은 없다",
+      "국채 이자율만으로 수익이 결정된다",
+      "은행 예금과 동일하게 원금이 보장된다"
     ],
-    "answer": "작은 보수 차이도 장기간 누적되면 최종 자산에 큰 차이를 만들 수 있다",
+    "answer": "금 가격뿐 아니라 금광기업과 주식시장의 위험에도 노출된다",
     "answer_mode": "choice"
   },
   {
@@ -12412,41 +12568,53 @@
     "variant_group": "FND_I_008",
     "category": "펀드/ETF",
     "difficulty": "중급",
-    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Mutual Fund and ETF Fees and Expenses",
-    "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/mutual-fund-and-etf-fees-and-expenses-investor-bulletin",
+    "source_name": "미국 상품선물거래위원회(CFTC) - Learn About Risks Before Investing in Commodity ETPs or Funds",
+    "source_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_CommodityETPs.htm",
     "source_references": [
       {
-        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Mutual Fund and ETF Fees and Expenses",
-        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/mutual-fund-and-etf-fees-and-expenses-investor-bulletin"
+        "source_name": "미국 상품선물거래위원회(CFTC) - Learn About Risks Before Investing in Commodity ETPs or Funds",
+        "source_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_CommodityETPs.htm"
+      },
+      {
+        "source_name": "BlackRock iShares 공식 자료 - 금 현물형과 금광기업 주식형 상품 비교",
+        "source_url": "https://www.ishares.com/us/insights/inside-the-market/gold-and-silver-investing-in-precious-metals"
+      },
+      {
+        "source_name": "한국거래소 KIND - KODEX 골드선물(H) ETF 시장안내",
+        "source_url": "https://kind.krx.co.kr/common/disclsviewer.do?acptNo=20220114000255&docno=&method=searchInitInfo"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "SOURCE_REVALIDATED",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "기존의 비정상·구형 출처 주소를 현재 열리는 공식 또는 공신력 있는 자료로 교체하고 핵심 개념을 재검토함",
-    "key_concept": "보수의 복리 누적 효과",
-    "weakness_tag": "장기 비용 영향",
-    "parent_tag": "펀드의 개념",
-    "diagnostic_item": "F1",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "금 관련 ETF·펀드의 구조 차이",
+    "weakness_tag": "금 ETF·펀드 구조",
+    "parent_tag": "ETF의 개념",
+    "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
-    "remediation_tag": "펀드의 개념",
-    "learning_goal": "보수가 장기 수익률에 미치는 영향 정량 이해",
-    "explanation": "보수는 펀드 자산에서 지속적으로 차감되므로 작은 연간 보수 차이도 투자기간이 길어지면 복리 효과로 최종 자산에 의미 있는 차이를 만들 수 있습니다. 실제 차이는 수익률과 투자기간에 따라 달라집니다.",
+    "remediation_tag": "ETF의 개념",
+    "learning_goal": "금 현물·금 선물·금광기업 주식에 노출되는 상품의 구조와 위험 차이 이해",
+    "explanation": "상품명에 금이 들어가도 투자 구조는 같지 않습니다. 금 현물 가격을 반영하는 상품, 금 선물계약을 이용하는 상품, 금광기업의 주식에 투자하는 상품 등이 있습니다. 금 선물형은 선물가격과 계약 교체 비용 등의 영향을 받고, 금광기업 주식형은 금 가격뿐 아니라 기업과 주식시장의 위험에도 노출됩니다. 따라서 기초지수와 편입자산을 확인해야 합니다.",
     "type": "빈칸직접입력",
-    "question": "수익률이 같아도 펀드 보수가 더 높으면 투자자의 최종 순수익은 일반적으로 어떻게 되나요?",
+    "question": "금 선물형 ETF가 금 가격 노출을 얻기 위해 주로 이용하는 파생상품을 입력하세요.",
     "choices": [],
-    "answer": "낮아진다",
+    "answer": "금 선물계약",
     "acceptable_answers": [
-      "낮아진다",
-      "감소한다",
-      "줄어든다",
-      "더 낮다"
+      "금 선물계약",
+      "금 선물",
+      "선물계약",
+      "선물"
     ],
     "answer_mode": "text",
     "grading_rule": "NFKC_TRIM_CASE_PUNCTUATION_NORMALIZED_ALIAS_MATCH",
-    "input_hint": "핵심 단어 또는 수치를 입력하세요."
+    "input_hint": "핵심 단어를 입력하세요."
   },
   {
     "id": "FND_I_009_MCQ",
@@ -13093,37 +13261,41 @@
     "variant_group": "FND_A_003",
     "category": "펀드/ETF",
     "difficulty": "고급",
-    "source_name": "Investor.gov Mutual Funds and ETFs (Q10)",
-    "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz",
+    "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+    "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746",
     "source_references": [
       {
-        "source_name": "Investor.gov Mutual Funds and ETFs (Q10)",
-        "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz"
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "ORIGINAL_SOURCE",
-    "source_checked_at": null,
-    "verification_note": "기존 출처 기반 문항",
-    "key_concept": "노로드 펀드 정확한 의미",
-    "weakness_tag": "펀드 수수료 체계",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "혼합형 펀드의 구성과 위험",
+    "weakness_tag": "혼합형 펀드 구성",
     "parent_tag": "펀드의 개념",
     "diagnostic_item": "F1",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "펀드의 개념",
-    "learning_goal": "펀드 수수료의 종류와 명칭 정확히 이해",
-    "explanation": "노로드 펀드는 가입이나 환매 때 부과하는 판매수수료(load)가 없다는 뜻입니다. 운용보수와 기타비용 등 다른 비용은 있을 수 있으므로 투자설명서의 비용표를 확인해야 합니다.",
+    "learning_goal": "혼합형 펀드의 주식·채권 등 자산 구성비가 위험 특성에 미치는 영향 이해",
+    "explanation": "혼합형 펀드는 주식과 채권 등 둘 이상의 자산을 함께 편입합니다. 국내 공시 분류에서는 주식 편입 정도 등에 따라 혼합주식형·혼합채권형 등으로 세분될 수 있습니다. 같은 혼합형이라도 자산별 구성비와 운용전략이 다르면 위험도 달라지므로 투자설명서의 실제 편입 비중을 확인해야 합니다.",
     "type": "4지선다",
-    "question": "'노로드(No-Load) 펀드'에 대한 설명으로 옳은 것은?",
+    "question": "주식 60%, 채권 40%를 편입한 혼합형 펀드를 이해하는 방법으로 가장 적절한 것은?",
     "choices": [
-      "판매수수료가 없을 뿐, 운용보수 등 다른 비용은 있을 수 있다",
-      "모든 운용보수와 거래비용이 0원이다",
-      "운용회사가 투자원금을 보장한다",
-      "오직 예금에만 투자하는 펀드이다"
+      "주식과 채권의 구성비 및 각각의 위험을 함께 확인한다",
+      "혼합형이라는 이름만 보고 모든 상품의 위험이 같다고 본다",
+      "채권이 포함되어 있으므로 주식시장 위험은 전혀 없다고 본다",
+      "주식이 포함되어 있으므로 채권의 금리위험은 전혀 없다고 본다"
     ],
-    "answer": "판매수수료가 없을 뿐, 운용보수 등 다른 비용은 있을 수 있다",
+    "answer": "주식과 채권의 구성비 및 각각의 위험을 함께 확인한다",
     "answer_mode": "choice"
   },
   {
@@ -13133,35 +13305,39 @@
     "variant_group": "FND_A_003",
     "category": "펀드/ETF",
     "difficulty": "고급",
-    "source_name": "Investor.gov Mutual Funds and ETFs (Q10)",
-    "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz",
+    "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+    "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746",
     "source_references": [
       {
-        "source_name": "Investor.gov Mutual Funds and ETFs (Q10)",
-        "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz"
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "ORIGINAL_SOURCE",
-    "source_checked_at": null,
-    "verification_note": "기존 출처 기반 문항",
-    "key_concept": "노로드 펀드 정확한 의미",
-    "weakness_tag": "펀드 수수료 체계",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "혼합형 펀드의 구성과 위험",
+    "weakness_tag": "혼합형 펀드 구성",
     "parent_tag": "펀드의 개념",
     "diagnostic_item": "F1",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "펀드의 개념",
-    "learning_goal": "펀드 수수료의 종류와 명칭 정확히 이해",
-    "explanation": "노로드 펀드는 가입이나 환매 때 부과하는 판매수수료(load)가 없다는 뜻입니다. 운용보수와 기타비용 등 다른 비용은 있을 수 있으므로 투자설명서의 비용표를 확인해야 합니다.",
+    "learning_goal": "혼합형 펀드의 주식·채권 등 자산 구성비가 위험 특성에 미치는 영향 이해",
+    "explanation": "혼합형 펀드는 주식과 채권 등 둘 이상의 자산을 함께 편입합니다. 국내 공시 분류에서는 주식 편입 정도 등에 따라 혼합주식형·혼합채권형 등으로 세분될 수 있습니다. 같은 혼합형이라도 자산별 구성비와 운용전략이 다르면 위험도 달라지므로 투자설명서의 실제 편입 비중을 확인해야 합니다.",
     "type": "OX",
-    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n노로드 펀드는 판매수수료가 없다는 뜻이며 운용보수 등 다른 비용까지 모두 없다는 뜻은 아니다.",
+    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\n혼합형 펀드는 상품마다 주식·채권 등의 구성비가 달라도 위험 수준이 항상 동일하다.",
     "choices": [
       "O",
       "X"
     ],
-    "answer": "O",
+    "answer": "X",
     "answer_mode": "choice"
   },
   {
@@ -13171,37 +13347,41 @@
     "variant_group": "FND_A_003",
     "category": "펀드/ETF",
     "difficulty": "고급",
-    "source_name": "Investor.gov Mutual Funds and ETFs (Q10)",
-    "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz",
+    "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+    "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746",
     "source_references": [
       {
-        "source_name": "Investor.gov Mutual Funds and ETFs (Q10)",
-        "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz"
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "ORIGINAL_SOURCE",
-    "source_checked_at": null,
-    "verification_note": "기존 출처 기반 문항",
-    "key_concept": "노로드 펀드 정확한 의미",
-    "weakness_tag": "펀드 수수료 체계",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "혼합형 펀드의 구성과 위험",
+    "weakness_tag": "혼합형 펀드 구성",
     "parent_tag": "펀드의 개념",
     "diagnostic_item": "F1",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "펀드의 개념",
-    "learning_goal": "펀드 수수료의 종류와 명칭 정확히 이해",
-    "explanation": "노로드 펀드는 가입이나 환매 때 부과하는 판매수수료(load)가 없다는 뜻입니다. 운용보수와 기타비용 등 다른 비용은 있을 수 있으므로 투자설명서의 비용표를 확인해야 합니다.",
+    "learning_goal": "혼합형 펀드의 주식·채권 등 자산 구성비가 위험 특성에 미치는 영향 이해",
+    "explanation": "혼합형 펀드는 주식과 채권 등 둘 이상의 자산을 함께 편입합니다. 국내 공시 분류에서는 주식 편입 정도 등에 따라 혼합주식형·혼합채권형 등으로 세분될 수 있습니다. 같은 혼합형이라도 자산별 구성비와 운용전략이 다르면 위험도 달라지므로 투자설명서의 실제 편입 비중을 확인해야 합니다.",
     "type": "빈칸선택",
-    "question": "다음 질문의 빈칸에 들어갈 알맞은 답을 고르세요.\n'노로드(No-Load) 펀드'에 대한 설명으로 옳은 것은?\n선택: _____",
+    "question": "다음 문장의 빈칸에 들어갈 알맞은 답을 고르세요.\n주식과 채권을 함께 편입하는 펀드는 일반적으로 _____ 펀드라고 부를 수 있다.",
     "choices": [
-      "판매수수료가 없을 뿐, 운용보수 등 다른 비용은 있을 수 있다",
-      "모든 운용보수와 거래비용이 0원이다",
-      "운용회사가 투자원금을 보장한다",
-      "오직 예금에만 투자하는 펀드이다"
+      "혼합형",
+      "단일주식형",
+      "예금형",
+      "금 현물형"
     ],
-    "answer": "판매수수료가 없을 뿐, 운용보수 등 다른 비용은 있을 수 있다",
+    "answer": "혼합형",
     "answer_mode": "choice"
   },
   {
@@ -13211,39 +13391,46 @@
     "variant_group": "FND_A_003",
     "category": "펀드/ETF",
     "difficulty": "고급",
-    "source_name": "Investor.gov Mutual Funds and ETFs (Q10)",
-    "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz",
+    "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+    "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746",
     "source_references": [
       {
-        "source_name": "Investor.gov Mutual Funds and ETFs (Q10)",
-        "source_url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz"
+        "source_name": "금융투자협회 법규정보시스템 - 집합투자기구 공시 및 통계에 관한 시행세칙",
+        "source_url": "https://law.kofia.or.kr/download.do?gubun=102&seq=24746"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "ORIGINAL_SOURCE",
-    "source_checked_at": null,
-    "verification_note": "기존 출처 기반 문항",
-    "key_concept": "노로드 펀드 정확한 의미",
-    "weakness_tag": "펀드 수수료 체계",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "혼합형 펀드의 구성과 위험",
+    "weakness_tag": "혼합형 펀드 구성",
     "parent_tag": "펀드의 개념",
     "diagnostic_item": "F1",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "펀드의 개념",
-    "learning_goal": "펀드 수수료의 종류와 명칭 정확히 이해",
-    "explanation": "노로드 펀드는 가입이나 환매 때 부과하는 판매수수료(load)가 없다는 뜻입니다. 운용보수와 기타비용 등 다른 비용은 있을 수 있으므로 투자설명서의 비용표를 확인해야 합니다.",
+    "learning_goal": "혼합형 펀드의 주식·채권 등 자산 구성비가 위험 특성에 미치는 영향 이해",
+    "explanation": "혼합형 펀드는 주식과 채권 등 둘 이상의 자산을 함께 편입합니다. 국내 공시 분류에서는 주식 편입 정도 등에 따라 혼합주식형·혼합채권형 등으로 세분될 수 있습니다. 같은 혼합형이라도 자산별 구성비와 운용전략이 다르면 위험도 달라지므로 투자설명서의 실제 편입 비중을 확인해야 합니다.",
     "type": "빈칸직접입력",
-    "question": "판매수수료는 없지만 운용보수 등 다른 비용은 있을 수 있는 펀드를 무엇이라고 하나요?",
+    "question": "혼합형 펀드의 위험을 판단하기 위해 우선 확인해야 하는 주식·채권 등의 비율을 무엇이라고 하나요?",
     "choices": [],
-    "answer": "노로드 펀드",
+    "answer": "자산별 구성비",
     "acceptable_answers": [
-      "노로드 펀드",
-      "no-load fund"
+      "자산별 구성비",
+      "자산 구성비",
+      "편입 비중",
+      "자산별 비중",
+      "주식·채권 구성비"
     ],
     "answer_mode": "text",
     "grading_rule": "NFKC_TRIM_CASE_PUNCTUATION_NORMALIZED_ALIAS_MATCH",
-    "input_hint": "핵심 단어 또는 수치를 입력하세요."
+    "input_hint": "핵심 단어를 입력하세요."
   },
   {
     "id": "FND_A_004_MCQ",
@@ -13411,37 +13598,45 @@
     "variant_group": "FND_A_005",
     "category": "펀드/ETF",
     "difficulty": "고급",
-    "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-    "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-        "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - How to Read a Mutual Fund or ETF Shareholder Report",
+        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated-investor-bulletin-how-read-mutual-fund-or-etf-shareholder-report"
+      },
+      {
+        "source_name": "미국 상품선물거래위원회(CFTC) - Learn About Risks Before Investing in Commodity ETPs or Funds",
+        "source_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_CommodityETPs.htm"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "SOURCE_REVALIDATED",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "기존의 비정상·구형 출처 주소를 현재 열리는 공식 또는 공신력 있는 자료로 교체하고 핵심 개념을 재검토함",
-    "key_concept": "ETF 상장폐지 요건",
-    "weakness_tag": "ETF 상장폐지 사유",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "ETF·펀드 유형의 근거 확인",
+    "weakness_tag": "기초지수·편입자산 확인",
     "parent_tag": "ETF의 개념",
     "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "ETF의 개념",
-    "learning_goal": "ETF 상장폐지 사유 식별",
-    "explanation": "ETF는 순자산 규모, 추적오차·괴리율, 기초지수의 유지 여부 등 거래소 규정상 사유에 해당하면 상장폐지될 수 있습니다. 기초지수의 일시적 하락만으로 자동 상장폐지되는 것은 아니며, 상장폐지 절차에서 잔여재산이 정산될 수 있지만 투자손실 가능성은 남습니다.",
+    "learning_goal": "상품명에 의존하지 않고 공식 자료에서 유형과 위험구조를 확인",
+    "explanation": "ETF·펀드의 유형을 확인할 때에는 상품명만 보지 말고 투자목적, 기초지수 또는 비교지수, 주요 편입자산, 파생상품 사용 여부, 레버리지·인버스 여부를 확인해야 합니다. 이러한 정보는 투자설명서, 간이투자설명서, 운용사와 거래소의 공식 상품정보에서 확인할 수 있습니다.",
     "type": "4지선다",
-    "question": "ETF 상장폐지에 대한 설명으로 옳은 것은?",
+    "question": "처음 보는 ETF·펀드의 유형을 가장 신뢰성 있게 확인하는 방법은?",
     "choices": [
-      "거래소 규정의 규모·추적·기초지수 관련 기준 등에 해당하면 상장폐지될 수 있다",
-      "기초지수가 하루 하락하면 ETF는 자동으로 상장폐지된다",
-      "상장폐지되면 펀드가 보유하던 자산은 아무 절차 없이 모두 사라진다",
-      "모든 ETF는 상장 후 정확히 10년이 지나면 상장폐지된다"
+      "투자설명서에서 투자목적·기초지수·편입자산·운용전략을 확인한다",
+      "상품명과 운용사 브랜드만으로 유형을 확정한다",
+      "최근 수익률과 거래량만으로 편입자산을 추정한다",
+      "시장가격이 높은지 낮은지만으로 투자대상을 판단한다"
     ],
-    "answer": "거래소 규정의 규모·추적·기초지수 관련 기준 등에 해당하면 상장폐지될 수 있다",
+    "answer": "투자설명서에서 투자목적·기초지수·편입자산·운용전략을 확인한다",
     "answer_mode": "choice"
   },
   {
@@ -13451,35 +13646,43 @@
     "variant_group": "FND_A_005",
     "category": "펀드/ETF",
     "difficulty": "고급",
-    "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-    "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-        "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - How to Read a Mutual Fund or ETF Shareholder Report",
+        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated-investor-bulletin-how-read-mutual-fund-or-etf-shareholder-report"
+      },
+      {
+        "source_name": "미국 상품선물거래위원회(CFTC) - Learn About Risks Before Investing in Commodity ETPs or Funds",
+        "source_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_CommodityETPs.htm"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "SOURCE_REVALIDATED",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "기존의 비정상·구형 출처 주소를 현재 열리는 공식 또는 공신력 있는 자료로 교체하고 핵심 개념을 재검토함",
-    "key_concept": "ETF 상장폐지 요건",
-    "weakness_tag": "ETF 상장폐지 사유",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "ETF·펀드 유형의 근거 확인",
+    "weakness_tag": "기초지수·편입자산 확인",
     "parent_tag": "ETF의 개념",
     "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "ETF의 개념",
-    "learning_goal": "ETF 상장폐지 사유 식별",
-    "explanation": "ETF는 순자산 규모, 추적오차·괴리율, 기초지수의 유지 여부 등 거래소 규정상 사유에 해당하면 상장폐지될 수 있습니다. 기초지수의 일시적 하락만으로 자동 상장폐지되는 것은 아니며, 상장폐지 절차에서 잔여재산이 정산될 수 있지만 투자손실 가능성은 남습니다.",
+    "learning_goal": "상품명에 의존하지 않고 공식 자료에서 유형과 위험구조를 확인",
+    "explanation": "ETF·펀드의 유형을 확인할 때에는 상품명만 보지 말고 투자목적, 기초지수 또는 비교지수, 주요 편입자산, 파생상품 사용 여부, 레버리지·인버스 여부를 확인해야 합니다. 이러한 정보는 투자설명서, 간이투자설명서, 운용사와 거래소의 공식 상품정보에서 확인할 수 있습니다.",
     "type": "OX",
-    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\nETF는 거래소가 정한 규모·추적·기초지수 관련 기준 등에 해당하면 상장폐지될 수 있다.",
+    "question": "다음 설명이 맞으면 O, 틀리면 X를 선택하세요.\nETF의 상품명만 확인하면 실제 편입자산과 레버리지·파생상품 사용 여부까지 항상 정확히 알 수 있다.",
     "choices": [
       "O",
       "X"
     ],
-    "answer": "O",
+    "answer": "X",
     "answer_mode": "choice"
   },
   {
@@ -13489,37 +13692,45 @@
     "variant_group": "FND_A_005",
     "category": "펀드/ETF",
     "difficulty": "고급",
-    "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-    "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-        "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - How to Read a Mutual Fund or ETF Shareholder Report",
+        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated-investor-bulletin-how-read-mutual-fund-or-etf-shareholder-report"
+      },
+      {
+        "source_name": "미국 상품선물거래위원회(CFTC) - Learn About Risks Before Investing in Commodity ETPs or Funds",
+        "source_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_CommodityETPs.htm"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "SOURCE_REVALIDATED",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "기존의 비정상·구형 출처 주소를 현재 열리는 공식 또는 공신력 있는 자료로 교체하고 핵심 개념을 재검토함",
-    "key_concept": "ETF 상장폐지 요건",
-    "weakness_tag": "ETF 상장폐지 사유",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "ETF·펀드 유형의 근거 확인",
+    "weakness_tag": "기초지수·편입자산 확인",
     "parent_tag": "ETF의 개념",
     "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "ETF의 개념",
-    "learning_goal": "ETF 상장폐지 사유 식별",
-    "explanation": "ETF는 순자산 규모, 추적오차·괴리율, 기초지수의 유지 여부 등 거래소 규정상 사유에 해당하면 상장폐지될 수 있습니다. 기초지수의 일시적 하락만으로 자동 상장폐지되는 것은 아니며, 상장폐지 절차에서 잔여재산이 정산될 수 있지만 투자손실 가능성은 남습니다.",
+    "learning_goal": "상품명에 의존하지 않고 공식 자료에서 유형과 위험구조를 확인",
+    "explanation": "ETF·펀드의 유형을 확인할 때에는 상품명만 보지 말고 투자목적, 기초지수 또는 비교지수, 주요 편입자산, 파생상품 사용 여부, 레버리지·인버스 여부를 확인해야 합니다. 이러한 정보는 투자설명서, 간이투자설명서, 운용사와 거래소의 공식 상품정보에서 확인할 수 있습니다.",
     "type": "빈칸선택",
-    "question": "다음 질문의 빈칸에 들어갈 알맞은 답을 고르세요.\nETF 상장폐지에 대한 설명으로 옳은 것은?\n선택: _____",
+    "question": "다음 중 ETF가 주식·채권·금 선물 중 무엇을 추종하는지 확인할 때 가장 관련성이 높은 정보 조합은?",
     "choices": [
-      "거래소 규정의 규모·추적·기초지수 관련 기준 등에 해당하면 상장폐지될 수 있다",
-      "기초지수가 하루 하락하면 ETF는 자동으로 상장폐지된다",
-      "상장폐지되면 펀드가 보유하던 자산은 아무 절차 없이 모두 사라진다",
-      "모든 ETF는 상장 후 정확히 10년이 지나면 상장폐지된다"
+      "기초지수·주요 편입자산·투자전략",
+      "최근 수익률·거래량·시장가격",
+      "운용사 브랜드·상장일·순자산 규모",
+      "분배금 지급일·거래수수료·호가 단위"
     ],
-    "answer": "거래소 규정의 규모·추적·기초지수 관련 기준 등에 해당하면 상장폐지될 수 있다",
+    "answer": "기초지수·주요 편입자산·투자전략",
     "answer_mode": "choice"
   },
   {
@@ -13529,39 +13740,47 @@
     "variant_group": "FND_A_005",
     "category": "펀드/ETF",
     "difficulty": "고급",
-    "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-    "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd",
+    "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+    "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2",
     "source_references": [
       {
-        "source_name": "한국거래소(KRX) Data Marketplace - ETF·ETN 정보",
-        "source_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - Exchange-Traded Funds (ETFs)",
+        "source_url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2"
+      },
+      {
+        "source_name": "미국 증권거래위원회(SEC) Investor.gov - How to Read a Mutual Fund or ETF Shareholder Report",
+        "source_url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins/updated-investor-bulletin-how-read-mutual-fund-or-etf-shareholder-report"
+      },
+      {
+        "source_name": "미국 상품선물거래위원회(CFTC) - Learn About Risks Before Investing in Commodity ETPs or Funds",
+        "source_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/CustomerAdvisory_CommodityETPs.htm"
       }
     ],
-    "source_type": "SOURCE_BASED",
-    "verification_status": "SOURCE_REVALIDATED",
-    "source_checked_at": "2026-08-04",
-    "verification_note": "기존의 비정상·구형 출처 주소를 현재 열리는 공식 또는 공신력 있는 자료로 교체하고 핵심 개념을 재검토함",
-    "key_concept": "ETF 상장폐지 요건",
-    "weakness_tag": "ETF 상장폐지 사유",
+    "source_type": "LLM_GENERATED",
+    "verification_status": "VERIFIED_OFFICIAL",
+    "source_checked_at": "2026-08-24",
+    "verification_note": "초급자 학습용으로 작성한 문항의 핵심 개념·정답·해설을 표시된 공식기관 자료와 대조함",
+    "key_concept": "ETF·펀드 유형의 근거 확인",
+    "weakness_tag": "기초지수·편입자산 확인",
     "parent_tag": "ETF의 개념",
     "diagnostic_item": "F2",
     "diagnostic_linked": true,
     "recommendation_available": true,
     "recommendation_route": "DIAGNOSTIC_OR_QUIZ_RESULT",
     "remediation_tag": "ETF의 개념",
-    "learning_goal": "ETF 상장폐지 사유 식별",
-    "explanation": "ETF는 순자산 규모, 추적오차·괴리율, 기초지수의 유지 여부 등 거래소 규정상 사유에 해당하면 상장폐지될 수 있습니다. 기초지수의 일시적 하락만으로 자동 상장폐지되는 것은 아니며, 상장폐지 절차에서 잔여재산이 정산될 수 있지만 투자손실 가능성은 남습니다.",
+    "learning_goal": "상품명에 의존하지 않고 공식 자료에서 유형과 위험구조를 확인",
+    "explanation": "ETF·펀드의 유형을 확인할 때에는 상품명만 보지 말고 투자목적, 기초지수 또는 비교지수, 주요 편입자산, 파생상품 사용 여부, 레버리지·인버스 여부를 확인해야 합니다. 이러한 정보는 투자설명서, 간이투자설명서, 운용사와 거래소의 공식 상품정보에서 확인할 수 있습니다.",
     "type": "빈칸직접입력",
-    "question": "ETF가 거래소 규정의 유지 기준을 충족하지 못하면 어떤 절차의 대상이 될 수 있나요?",
+    "question": "ETF·펀드의 투자목적, 주요 투자전략과 위험을 공식적으로 확인할 수 있는 대표 문서를 입력하세요.",
     "choices": [],
-    "answer": "상장폐지",
+    "answer": "투자설명서",
     "acceptable_answers": [
-      "상장폐지",
-      "delisting"
+      "투자설명서",
+      "간이투자설명서"
     ],
     "answer_mode": "text",
     "grading_rule": "NFKC_TRIM_CASE_PUNCTUATION_NORMALIZED_ALIAS_MATCH",
-    "input_hint": "핵심 단어 또는 수치를 입력하세요."
+    "input_hint": "핵심 단어를 입력하세요."
   },
   {
     "id": "FND_A_006_MCQ",

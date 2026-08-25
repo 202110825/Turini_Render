@@ -13,7 +13,7 @@ export type AssetDefinition = {
   help: string;
 };
 
-export const PORTFOLIO_RULE_VERSION = "2.0.0-equity-fund-55";
+export const PORTFOLIO_RULE_VERSION = "2.1.0-equity-fund-50";
 
 export const ASSETS: AssetDefinition[] = [
   {
@@ -49,7 +49,7 @@ export const ASSETS: AssetDefinition[] = [
     short: "주식형",
     color: "#ff9600",
     icon: "F",
-    risk: 55,
+    risk: 50,
     help: "여러 주식에 투자하는 일반 주식형 ETF·펀드입니다. 지수형·액티브형과 섹터·테마형을 포함하되, 섹터·테마형은 집중위험이 더 클 수 있습니다. 레버리지·인버스 상품은 제외합니다.",
   },
   {
@@ -72,8 +72,8 @@ export const ASSETS: AssetDefinition[] = [
   },
 ];
 
-export const RISK_CENTERS: Record<PortfolioType, number> = { 안정형: 30.8, 중립형: 42, 공격형: 53.8 };
-export const PORTFOLIO_TYPE_BANDS = { stableMax: 36.4, neutralMax: 47.9 } as const;
+export const RISK_CENTERS: Record<PortfolioType, number> = { 안정형: 30.5, 중립형: 41, 공격형: 52.8 };
+export const PORTFOLIO_TYPE_BANDS = { stableMax: 35.8, neutralMax: 46.9 } as const;
 export const EMPTY_ALLOCATION: Allocation = { domestic: 20, overseas: 15, bond: 30, equityFund: 15, cash: 10, gold: 10 };
 
 export function targetFor(tendency: PortfolioTendency): Allocation {
