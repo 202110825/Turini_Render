@@ -220,8 +220,8 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .result-hero strong { display: block; margin: 6px 0 0; color: #32951d; font-size: 43px; line-height: 1; }.result-hero strong small { font-size: 14px; color: var(--ink); }.result-hero > div > span { display: block; margin-top: 5px; color: #32951d; font-size: 11px; font-weight: 900; }
 .stars { margin-top: 10px; color: #40a830; letter-spacing: 2px; }
 .score-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
-.score-cards article { min-height: 120px; padding: 18px; border: 1px solid var(--line); border-radius: 17px; position: relative; }
-.score-cards article > span { color: var(--muted); font-size: 10px; font-weight: 800; }.score-cards article > strong { display: block; margin-top: 8px; font-size: 23px; }.score-cards article > small { font-size: 10px; font-weight: 800; }
+.score-cards article { min-height: 136px; padding: 18px 96px 18px 18px; border: 1px solid var(--line); border-radius: 17px; position: relative; }
+.score-cards article > span { color: var(--muted); font-size: 10px; font-weight: 800; }.score-cards article > strong { display: block; margin-top: 8px; font-size: 23px; white-space: nowrap; }.score-cards article > small { display: block; margin-top: 7px; font-size: 10px; font-weight: 800; line-height: 1.45; word-break: keep-all; }
 .mini-gauge { position: absolute; right: 17px; bottom: 20px; width: 70px; height: 34px; border-radius: 70px 70px 0 0; background: conic-gradient(from 270deg at 50% 100%, #58cc02 0 33%, #ffc800 33% 66%, #ff4b4b 66% 100%); overflow: hidden; }.mini-gauge::after { content:""; position:absolute; inset:10px 10px 0; background:white; border-radius:60px 60px 0 0; }.mini-gauge i { position:absolute; bottom:-2px; width:7px; height:28px; background:#35483d; transform-origin:50% 100%; transform:translateX(-50%) rotate(45deg); z-index:2; border-radius:7px; }
 .ring-score { position: absolute; right: 22px; bottom: 18px; width: 60px; height: 60px; border-radius: 50%; background: conic-gradient(var(--green) var(--score), #e8ede9 0); }.ring-score::after { content:""; position:absolute; inset:9px; border-radius:50%; background:white; }
 .portfolio-tabs { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid var(--line); margin-top: 8px; }.portfolio-tabs button { padding: 13px 5px; border:0; border-bottom:3px solid transparent; background:none; font-size:10px; color:var(--muted); font-weight:800; cursor:pointer; }.portfolio-tabs button.active { color:var(--green-dark); border-bottom-color:var(--green); }
@@ -338,6 +338,10 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .profile-hero h1 { font-size: 28px; }
 .profile-hero > div:last-child { min-width: 0; }
 .profile-hero > div:last-child > span { display: block; line-height: 1.5; overflow-wrap: anywhere; }
+
+@media (max-width: 380px) {
+  .score-cards { grid-template-columns: 1fr; }
+}
 .growth-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
 .growth-summary article { min-width: 0; padding: 15px 13px; border-radius: 15px; background: #f7faf7; border: 1px solid var(--line); }
 .growth-summary span { display: block; color: var(--muted); font-size: 9px; font-weight: 800; }
