@@ -30,6 +30,11 @@ test("GPT portfolio coaching is called through a server-only API route", () => {
   assert.match(feedbackRouteSource, /process\.env\.OPENAI_API_KEY/);
   assert.match(feedbackRouteSource, /https:\/\/api\.openai\.com\/v1\/responses/);
   assert.match(feedbackRouteSource, /type: "json_schema"/);
+  assert.match(feedbackRouteSource, /getCurrentUser/);
+  assert.match(feedbackRouteSource, /analyzeAllocation/);
+  assert.match(feedbackRouteSource, /브라우저가 보낸 computed는 신뢰하지 않고/);
+  assert.match(feedbackRouteSource, /RATE_LIMIT_REQUESTS/);
+  assert.match(feedbackRouteSource, /금광기업 주식형 ETF는 금이 아니라/);
   assert.doesNotMatch(pageSource, /sk-[A-Za-z0-9_-]{20,}/);
   assert.match(envExampleSource, /OPENAI_API_KEY=your_api_key_here/);
 });
@@ -39,4 +44,7 @@ test("portfolio screen exposes the revised asset classification help", () => {
   assert.doesNotMatch(pageSource, /asset-classification-note/);
   assert.match(pageSource, /portfolioRuleVersion: PORTFOLIO_RULE_VERSION/);
   assert.doesNotMatch(pageSource, /분석 가중치/);
+  assert.match(pageSource, /종목·업종 내부 집중은 평가하지 않음/);
+  assert.match(pageSource, /scoreMax\}점 만점/);
+  assert.match(pageSource, /학습용 조정 예시/);
 });
