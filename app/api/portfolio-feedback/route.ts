@@ -104,11 +104,17 @@ export async function POST(request: Request) {
   });
   const weakTags = stringArray(context.weakTags).filter((tag) => CONCEPT_TAGS.includes(tag as typeof CONCEPT_TAGS[number]));
   const fallbackSummary = `종합점수는 ${computed.score}점(${computed.scoreLabel})이고 위험점수는 ${computed.riskScore}점이에요.`;
+  const allocationPercent = Object.fromEntries(
+    ASSETS.map((asset) => [asset.key, Math.round((context.allocation as Allocation)[asset.key] * 1000) / 10]),
+  );
+  const targetPercent = Object.fromEntries(
+    ASSETS.map((asset) => [asset.key, Math.round(computed.target[asset.key] * 1000) / 10]),
+  );
   const allowedNumbers = [
     computed.score, computed.scoreMax, computed.riskScore, computed.fit, computed.horizonFit,
     computed.diversification, computed.concentrationPenalty, computed.profileMatch.gap, ASSETS.length,
-    ...Object.values(context.allocation as Allocation),
-    ...Object.values(computed.target),
+    ...Object.values(allocationPercent),
+    ...Object.values(targetPercent),
     ...computed.rebalancingActions.map((action) => Math.abs(action.delta)),
   ];
 
@@ -145,7 +151,8 @@ export async function POST(request: Request) {
             portfolioRuleVersion: PORTFOLIO_RULE_VERSION,
             tendency,
             horizon,
-            allocation: context.allocation,
+            allocation_percent: allocationPercent,
+            recommended_allocation_percent: targetPercent,
             weakTags,
             allowedImprovements: deterministicImprovements,
           },

@@ -232,7 +232,11 @@ function clamp(value: number, min = 0, max = 100) {
 }
 
 function sumAllocation(value: Allocation) {
-  return allocationTotal(value);
+  return Math.round(allocationTotal(value) * 1000) / 10;
+}
+
+function toPercent(value: number) {
+  return Math.round(value * 1000) / 10;
 }
 
 function Mascot({ pose = "wave", size = "medium" }: { pose?: string; size?: "small" | "medium" | "large" }) {
@@ -622,7 +626,7 @@ export default function Home() {
 
   const chartStyle = useMemo(() => {
     const chart = ASSETS.reduce<{ cursor: number; stops: string[] }>((state, asset) => {
-      const end = state.cursor + allocation[asset.key];
+      const end = state.cursor + toPercent(allocation[asset.key]);
       return { cursor: end, stops: [...state.stops, `${asset.color} ${state.cursor}% ${end}%`] };
     }, { cursor: 0, stops: [] });
     return { background: `conic-gradient(${chart.stops.join(",")})` } as CSSProperties;
@@ -802,7 +806,7 @@ export default function Home() {
               <PageTitle eyebrow="MY PORTFOLIO" title="내 포트폴리오 설계" copy="여섯 자산의 현재 비중을 입력하면 성향 적합도와 리밸런싱 금액을 바로 계산해요." />
               <section className="portfolio-intro"><div><span className="pill">핵심 기능</span><h2>비중을 입력하고<br />투리니의 코칭 받기</h2><p>개별 종목 추천이 아닌 자산배분 학습용 분석이에요.</p></div><div className="portfolio-mascot-frame"><CharacterArt pose="wave" /></div></section>
               <section className="portfolio-builder card-block">
-                <div className="builder-header"><div><p className="eyebrow">STEP 1</p><h2>현재 자산 비중</h2></div><div className={`sum-badge ${sumAllocation(allocation) === 100 ? "valid" : ""}`}><span>합계</span><strong>{sumAllocation(allocation)}%</strong></div></div>
+                <div className="builder-header"><div><p className="eyebrow">STEP 1</p><h2>현재 자산 비중</h2></div><div className={`sum-badge ${validateAllocation(allocation) ? "valid" : ""}`}><span>합계</span><strong>{sumAllocation(allocation)}%</strong></div></div>
                 <div className="preset-row"><span>성향 프리셋</span>{(["안정형", "중립형", "공격형"] as const).map((type) => <button key={type} className={progress.tendency === type ? "active" : ""} onClick={() => applyPreset(type)}>{type}</button>)}</div>
                 <div className="allocation-layout">
                   <div className="donut-wrap"><div className="allocation-donut" style={chartStyle}><span><b>{sumAllocation(allocation)}</b><small>%</small></span></div><p>현재 자산 구성</p></div>
@@ -811,8 +815,8 @@ export default function Home() {
                       <div className="asset-row">
                         <span className="asset-dot" style={{ background: asset.color }}>{asset.icon}</span>
                         <span className="asset-name"><strong>{asset.label}</strong><button type="button" className="asset-info-button" aria-label={`${asset.label} 입력 기준 보기`} aria-expanded={activeAssetHelp === asset.key} aria-controls={`asset-help-${asset.key}`} onClick={() => setActiveAssetHelp(activeAssetHelp === asset.key ? null : asset.key)}>ⓘ</button></span>
-                        <input aria-label={`${asset.label} 비중 슬라이더`} type="range" min="0" max="100" value={allocation[asset.key]} onChange={(event) => { setAllocation({ ...allocation, [asset.key]: Number(event.target.value) }); setPortfolioResult(null); }} style={{ "--range-color": asset.color } as CSSProperties} />
-                        <span className="percent-input"><input aria-label={`${asset.label} 비중`} type="number" min="0" max="100" value={allocation[asset.key]} onChange={(event) => { setAllocation({ ...allocation, [asset.key]: clamp(Number(event.target.value)) }); setPortfolioResult(null); }} />%</span>
+                        <input aria-label={`${asset.label} 비중 슬라이더`} type="range" min="0" max="100" step="1" value={toPercent(allocation[asset.key])} onChange={(event) => { setAllocation({ ...allocation, [asset.key]: Number(event.target.value) / 100 }); setPortfolioResult(null); }} style={{ "--range-color": asset.color } as CSSProperties} />
+                        <span className="percent-input"><input aria-label={`${asset.label} 비중`} type="number" min="0" max="100" step="0.1" value={toPercent(allocation[asset.key])} onChange={(event) => { setAllocation({ ...allocation, [asset.key]: clamp(Number(event.target.value)) / 100 }); setPortfolioResult(null); }} />%</span>
                       </div>
                       {activeAssetHelp === asset.key && <div className="asset-help" id={`asset-help-${asset.key}`} role="note"><p>{asset.help}</p>{asset.key === "equityFund" && <small>혼합형 펀드는 공시된 주식·채권 비중에 따라 두 자산군으로 나누어 입력하고, 구성비를 확인할 수 없으면 임의로 분류하지 마세요.</small>}</div>}
                     </div>)}
@@ -943,7 +947,7 @@ function NavButton({ item, active, onClick }: { item: View; active: boolean; onC
 
 function PortfolioResults({ result, allocation, amount, tab, setTab, aiFeedback, aiFeedbackLoading, aiFeedbackError, retryAiFeedback }: { result: PortfolioResult; allocation: Allocation; amount: number; tab: "summary" | "rebalance" | "detail" | "coach"; setTab: (tab: "summary" | "rebalance" | "detail" | "coach") => void; aiFeedback: AIFeedback | null; aiFeedbackLoading: boolean; aiFeedbackError: string; retryAiFeedback: () => void }) {
   const targetChart = ASSETS.reduce<{ cursor: number; stops: string[] }>((state, asset) => {
-    const end = state.cursor + result.target[asset.key];
+    const end = state.cursor + toPercent(result.target[asset.key]);
     return { cursor: end, stops: [...state.stops, `${asset.color} ${state.cursor}% ${end}%`] };
   }, { cursor: 0, stops: [] });
   const targetChartStyle = { background: `conic-gradient(${targetChart.stops.join(", ")})` } as CSSProperties;
@@ -954,7 +958,7 @@ function PortfolioResults({ result, allocation, amount, tab, setTab, aiFeedback,
     <div className="score-cards"><article><span>위험 점수</span><strong>{result.riskScore}점</strong><small>{result.portfolioType} 포트폴리오</small><div className="mini-gauge"><i style={{ left: `${gaugePosition}%` }} /></div></article><article><span>성향 일치도</span><strong>{result.fit}%</strong><small>{result.profileMatch.level} · {result.suitability}</small><div className="ring-score" style={{ "--score": `${result.fit * 3.6}deg` } as CSSProperties} /></article></div>
     <div className="portfolio-tabs"><button className={tab === "summary" ? "active" : ""} onClick={() => setTab("summary")}>요약</button><button className={tab === "rebalance" ? "active" : ""} onClick={() => setTab("rebalance")}>리밸런싱</button><button className={tab === "detail" ? "active" : ""} onClick={() => setTab("detail")}>상세 분석</button><button className={tab === "coach" ? "active" : ""} onClick={() => setTab("coach")}>AI 코치</button></div>
     {tab === "summary" && <div className="tab-panel"><div className="coach-banner"><CharacterArt pose="reading" className="coach-mascot-art" /><div><b>투리니 코치의 한마디!</b><p>{result.coach}</p></div></div><div className="analysis-columns"><article className="good"><h3>강점</h3>{result.strengths.length ? <ul>{result.strengths.map((item) => <li key={item}>{item}</li>)}</ul> : <p>현재 강점 기준을 충족한 항목이 없어요.</p>}</article><article className="care"><h3>개선하면 좋은 점</h3>{result.cautions.length ? <ul>{result.cautions.map((item) => <li key={item}>{item}</li>)}</ul> : <p>현재 규칙에서 별도로 주의할 점이 없어요.</p>}</article></div></div>}
-    {tab === "rebalance" && <div className="tab-panel"><div className="target-chart"><div className="allocation-donut small" style={targetChartStyle}><span>예시</span></div><div><h3>학습용 조정 예시</h3><p>현재 비중과 성향별 목표의 50% 지점 · 총 {amount.toLocaleString("ko-KR")}원 기준</p></div></div>{result.rebalancingActions.length ? <div className="rebalance-table"><div className="table-head"><span>자산</span><span>현재</span><span>예시</span><span>조정 규모</span></div>{result.rebalancingActions.map((item) => { const asset = ASSETS.find((candidate) => candidate.key === item.asset)!; const money = Math.round(amount * Math.abs(item.delta) / 100); return <div key={asset.key}><strong><i style={{ background: asset.color }} />{asset.label}</strong><span>{allocation[asset.key]}%</span><span>{result.target[asset.key]}%</span><b className={item.delta > 0 ? "buy" : "sell"}>{item.delta > 0 ? "+" : "-"}{money.toLocaleString("ko-KR")}원</b></div>; })}</div> : <p className="fine-print">5%p 이상 차이가 나는 자산군이 없어요.</p>}{result.residualItems.length ? <div className="residual-list"><b>표에 표시되지 않은 작은 차이</b>{result.residualItems.map((item) => { const asset = ASSETS.find((candidate) => candidate.key === item.asset)!; return <span key={item.asset}>{asset.label} {item.delta > 0 ? "+" : ""}{item.delta}%p</span>; })}</div> : null}<p className="fine-print">수수료·세금·개별 상품 특성은 반영하지 않은 자산배분 학습용 계산이에요.</p></div>}
+    {tab === "rebalance" && <div className="tab-panel"><div className="target-chart"><div className="allocation-donut small" style={targetChartStyle}><span>예시</span></div><div><h3>학습용 조정 예시</h3><p>현재 비중과 성향별 목표의 50% 지점 · 총 {amount.toLocaleString("ko-KR")}원 기준</p></div></div>{result.rebalancingActions.length ? <div className="rebalance-table"><div className="table-head"><span>자산</span><span>현재</span><span>예시</span><span>조정 규모</span></div>{result.rebalancingActions.map((item) => { const asset = ASSETS.find((candidate) => candidate.key === item.asset)!; const money = Math.round(amount * Math.abs(item.delta) / 100); return <div key={asset.key}><strong><i style={{ background: asset.color }} />{asset.label}</strong><span>{toPercent(allocation[asset.key])}%</span><span>{toPercent(result.target[asset.key])}%</span><b className={item.delta > 0 ? "buy" : "sell"}>{item.delta > 0 ? "+" : "-"}{money.toLocaleString("ko-KR")}원</b></div>; })}</div> : <p className="fine-print">5%p 이상 차이가 나는 자산군이 없어요.</p>}{result.residualItems.length ? <div className="residual-list"><b>표에 표시되지 않은 작은 차이</b>{result.residualItems.map((item) => { const asset = ASSETS.find((candidate) => candidate.key === item.asset)!; return <span key={item.asset}>{asset.label} {item.delta > 0 ? "+" : ""}{item.delta}%p</span>; })}</div> : null}<p className="fine-print">수수료·세금·개별 상품 특성은 반영하지 않은 자산배분 학습용 계산이에요.</p></div>}
     {tab === "detail" && <div className="tab-panel detail-grid"><article><span>분산도</span><strong>{result.diversification}</strong><p>자산군 사이의 분산만 평가하며 종목·업종 내부 집중은 평가하지 않음</p></article><article><span>집중 페널티</span><strong>{result.concentrationPenalty ? `-${result.concentrationPenalty}` : "0"}</strong><p>주식·주식형 ETF·펀드·금이 50%를 넘은 만큼 직접 차감</p></article><article><span>성향 일치도</span><strong>{result.fit}</strong><p>위험점수와 진단 성향 중심의 거리</p></article><article><span>기간 적합도</span><strong>{result.horizonFit}</strong><p>위험점수와 투자기간 중심의 거리</p></article></div>}
     {tab === "coach" && <div className="tab-panel ai-coach-panel"><CharacterArt pose="reading" className="ai-coach-art" /><div><p className="eyebrow">TURINI GPT COACH</p>{aiFeedbackLoading ? <><h3>GPT가 분석 결과를 읽고 있어요…</h3><p>잠시만 기다려 주세요.</p></> : aiFeedback ? <><h3>{aiFeedback.summary_ko}</h3>{aiFeedback.strengths.length > 0 && <section className="ai-feedback-section"><b>강점</b><ul>{aiFeedback.strengths.map((item) => <li key={item}>{item}</li>)}</ul></section>}{aiFeedback.cautions.length > 0 && <section className="ai-feedback-section"><b>주의할 점</b><ul>{aiFeedback.cautions.map((item) => <li key={item}>{item}</li>)}</ul></section>}{aiFeedback.improvements.length > 0 && <section className="ai-feedback-section"><b>개선 방향</b><ul>{aiFeedback.improvements.map((item) => <li key={item}>{item}</li>)}</ul></section>}{aiFeedback.concept_refs.length > 0 && <p className="ai-concepts">함께 공부할 개념 · {aiFeedback.concept_refs.join(" · ")}</p>}</> : <><h3>{result.coach}</h3><p>{aiFeedbackError || "규칙 분석 결과를 표시하고 있어요."}</p>{aiFeedbackError && <button className="primary-button" onClick={retryAiFeedback}>GPT 코칭 다시 받기</button>}</>}<button className="primary-button" onClick={() => setTab("rebalance")}>조정 예시 보기</button></div></div>}
     <p className="result-disclaimer">본 결과는 금융 학습을 위한 자산배분 예시이며 특정 금융상품의 추천이나 매수·매도 권유가 아니에요. 세금·수수료·계좌 유형·상품별 위험·종목 내부 집중위험은 반영하지 않았어요.</p>

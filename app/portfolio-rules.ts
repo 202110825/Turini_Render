@@ -23,6 +23,12 @@ export type PortfolioSignal = {
   text: string;
 };
 
+export type StrengthAxis = {
+  axis: "A" | "B" | "C";
+  value: number;
+  threshold: number;
+};
+
 export type PortfolioResult = {
   score: number;
   scoreMax: number;
@@ -41,12 +47,13 @@ export type PortfolioResult = {
   rebalancingActions: { asset: AssetKey; delta: number; action: "확대" | "축소" }[];
   residualItems: { asset: AssetKey; delta: number }[];
   signals: PortfolioSignal[];
+  strengthAxes: StrengthAxis[];
   strengths: string[];
   cautions: string[];
   coach: string;
 };
 
-export const PORTFOLIO_RULE_VERSION = "3.0.0-portfolio-v9.1";
+export const PORTFOLIO_RULE_VERSION = "3.0.4-portfolio-v9.1";
 export const SCORE_MAX = 85;
 
 export const ASSETS: AssetDefinition[] = [
@@ -110,17 +117,17 @@ const ASSET_KEYS = ASSETS.map((asset) => asset.key);
 const RISK_BY_ASSET = Object.fromEntries(ASSETS.map((asset) => [asset.key, asset.risk])) as Record<AssetKey, number>;
 const NON_EXEMPT_CONCENTRATION: AssetKey[] = ["domestic", "overseas", "equityFund", "gold"];
 
-// 내부 계산은 반올림 전 중심값을 사용하고 화면에서만 소수 첫째 자리로 표시한다.
-export const RISK_CENTERS: Record<PortfolioType, number> = { 안정형: 30.5, 중립형: 41, 공격형: 52.75 };
-export const PORTFOLIO_TYPE_BANDS = { stableMax: 35.75, neutralMax: 46.875 } as const;
-export const HORIZON_CENTERS: Record<string, number> = { "1년 미만": 20, "1~3년": 40, "3~5년": 55, "5년 이상": 65 };
-export const EMPTY_ALLOCATION: Allocation = { domestic: 20, overseas: 15, bond: 30, equityFund: 15, cash: 10, gold: 10 };
+// 성향 중심·표시값은 소수 첫째 자리이며, 판정에는 반올림 전 원값을 사용한다.
+export const RISK_CENTERS: Record<PortfolioType, number> = { 안정형: 30.5, 중립형: 41, 공격형: 52.8 };
+export const PORTFOLIO_TYPE_BANDS = { stableMax: 35.75, neutralMax: 46.9 } as const;
+export const HORIZON_CENTERS: Record<string, number> = { "1년 미만": 20, "1~3년": 40, "3~5년": 55, "5년 이상": 70 };
+export const EMPTY_ALLOCATION: Allocation = { domestic: 0.2, overseas: 0.15, bond: 0.3, equityFund: 0.15, cash: 0.1, gold: 0.1 };
 
 export function targetFor(tendency: PortfolioTendency): Allocation {
   const profile = tendency === "진단 전" ? "중립형" : tendency;
-  if (profile === "안정형") return { domestic: 5, overseas: 10, bond: 55, equityFund: 5, cash: 15, gold: 10 };
-  if (profile === "공격형") return { domestic: 20, overseas: 40, bond: 10, equityFund: 20, cash: 5, gold: 5 };
-  return { domestic: 10, overseas: 20, bond: 30, equityFund: 20, cash: 10, gold: 10 };
+  if (profile === "안정형") return { domestic: 0.05, overseas: 0.1, bond: 0.55, equityFund: 0.05, cash: 0.15, gold: 0.1 };
+  if (profile === "공격형") return { domestic: 0.2, overseas: 0.4, bond: 0.1, equityFund: 0.2, cash: 0.05, gold: 0.05 };
+  return { domestic: 0.1, overseas: 0.2, bond: 0.3, equityFund: 0.2, cash: 0.1, gold: 0.1 };
 }
 
 function finiteNumber(value: unknown) {
@@ -129,8 +136,11 @@ function finiteNumber(value: unknown) {
 
 export function normalizeAllocation(value: unknown): Allocation {
   const saved = value && typeof value === "object" ? value as Partial<Allocation> & { fund?: number } : {};
+  const rawValues = ASSET_KEYS.map((key) => key === "equityFund" ? saved.equityFund ?? saved.fund : saved[key]);
+  // 3.0.0 이하에서 저장한 0~100 형식은 불러올 때 0.0~1.0 형식으로 자동 이전한다.
+  const usesLegacyPercent = rawValues.some((candidate) => finiteNumber(candidate) && (candidate as number) > 1);
   const numberOr = (candidate: unknown, fallback: number) => finiteNumber(candidate)
-    ? Math.min(100, Math.max(0, candidate as number))
+    ? Math.min(1, Math.max(0, (candidate as number) / (usesLegacyPercent ? 100 : 1)))
     : fallback;
   return {
     domestic: numberOr(saved.domestic, EMPTY_ALLOCATION.domestic),
@@ -150,8 +160,8 @@ export function validateAllocation(allocation: unknown): allocation is Allocatio
   if (!allocation || typeof allocation !== "object" || Array.isArray(allocation)) return false;
   const row = allocation as Record<string, unknown>;
   if (Object.keys(row).some((key) => !ASSET_KEYS.includes(key as AssetKey))) return false;
-  if (!ASSET_KEYS.every((key) => finiteNumber(row[key]) && (row[key] as number) >= 0 && (row[key] as number) <= 100)) return false;
-  return Math.abs(ASSET_KEYS.reduce((sum, key) => sum + (row[key] as number), 0) - 100) < 1e-9;
+  if (!ASSET_KEYS.every((key) => finiteNumber(row[key]) && (row[key] as number) >= 0 && (row[key] as number) <= 1)) return false;
+  return Math.abs(ASSET_KEYS.reduce((sum, key) => sum + (row[key] as number), 0) - 1) < 1e-9;
 }
 
 function round1(value: number) {
@@ -159,11 +169,11 @@ function round1(value: number) {
 }
 
 function rawRiskScore(allocation: Allocation) {
-  return ASSET_KEYS.reduce((sum, key) => sum + allocation[key] * RISK_BY_ASSET[key], 0) / 100;
+  return ASSET_KEYS.reduce((sum, key) => sum + allocation[key] * RISK_BY_ASSET[key], 0);
 }
 
 export function riskScoreFor(allocation: Allocation) {
-  if (!validateAllocation(allocation)) throw new Error("자산 비중은 유한한 숫자이며 합계가 정확히 100%여야 합니다.");
+  if (!validateAllocation(allocation)) throw new Error("자산 비중은 0.0~1.0의 유한한 숫자이며 합계가 1.0이어야 합니다.");
   return round1(rawRiskScore(allocation));
 }
 
@@ -205,13 +215,13 @@ function metrics(allocation: Allocation): AllocationMetrics {
 function allocationSignalIds(allocation: Allocation) {
   const value = metrics(allocation);
   const ids = new Set<number>();
-  if (value.growth > 65) ids.add(1);
-  if (value.growth < 35) ids.add(2);
-  if (value.defense < 30) ids.add(3);
-  if (value.defense > 60) ids.add(4);
-  if (value.cash > 20) ids.add(5);
-  if (value.cash < 5) ids.add(6);
-  if (value.topRatio >= 50) ids.add(7);
+  if (value.growth > 0.65) ids.add(1);
+  if (value.growth < 0.35) ids.add(2);
+  if (value.defense < 0.3) ids.add(3);
+  if (value.defense > 0.6) ids.add(4);
+  if (value.cash > 0.2) ids.add(5);
+  if (value.cash < 0.05) ids.add(6);
+  if (value.topRatio >= 0.5) ids.add(7);
   if (value.held <= 2) ids.add(8);
   return ids;
 }
@@ -231,14 +241,15 @@ function signalKind(id: number, current: Allocation, target: Allocation): Signal
 }
 
 function roundedRecommendation(current: Allocation, target: Allocation): Allocation {
-  const result = Object.fromEntries(ASSET_KEYS.map((key) => [key, round1((current[key] + target[key]) / 2)])) as Allocation;
-  // 표시 반올림으로 생기는 0.1%p 단위 잔차는 현금성자산에서만 보정한다.
-  result.cash = round1(result.cash + round1(100 - allocationTotal(result)));
+  const round4 = (value: number) => Math.round((value + Number.EPSILON) * 10_000) / 10_000;
+  const result = Object.fromEntries(ASSET_KEYS.map((key) => [key, round4((current[key] + target[key]) / 2)])) as Allocation;
+  // 표시 반올림으로 생기는 미세 잔차는 현금성자산에서 보정한다.
+  result.cash = round4(result.cash + round4(1 - allocationTotal(result)));
   return result;
 }
 
 export function analyzeAllocation(current: Allocation, tendency: PortfolioTendency, horizon: string): PortfolioResult {
-  if (!validateAllocation(current)) throw new Error("자산 비중은 유한한 숫자이며 합계가 정확히 100%여야 합니다.");
+  if (!validateAllocation(current)) throw new Error("자산 비중은 0.0~1.0의 유한한 숫자이며 합계가 1.0이어야 합니다.");
   if (!(horizon in HORIZON_CENTERS)) throw new Error("지원하지 않는 투자 기간입니다.");
 
   const profile: PortfolioType = tendency === "진단 전" ? "중립형" : tendency;
@@ -248,12 +259,12 @@ export function analyzeAllocation(current: Allocation, tendency: PortfolioTenden
   const portfolioType = portfolioTypeFor(riskRaw);
   const gapRaw = Math.abs(riskRaw - RISK_CENTERS[profile]);
   const fitRaw = Math.max(0, 100 - gapRaw * 4);
-  const hhi = ASSET_KEYS.reduce((sum, key) => sum + Math.pow(current[key] / 100, 2), 0);
+  const hhi = ASSET_KEYS.reduce((sum, key) => sum + Math.pow(current[key], 2), 0);
   const diversificationRaw = Math.max(0, Math.min(100, ((1 - hhi) / (1 - 1 / ASSET_KEYS.length)) * 100));
   const horizonCenter = HORIZON_CENTERS[horizon];
   const horizonFitRaw = Math.max(0, 100 - Math.abs(riskRaw - horizonCenter) * 1.5);
   const penaltyAsset = [...NON_EXEMPT_CONCENTRATION].sort((left, right) => current[right] - current[left] || RISK_BY_ASSET[right] - RISK_BY_ASSET[left])[0];
-  const concentrationPenaltyRaw = current[penaltyAsset] > 50 ? current[penaltyAsset] - 50 : 0;
+  const concentrationPenaltyRaw = current[penaltyAsset] > 0.5 ? (current[penaltyAsset] - 0.5) * 100 : 0;
   const score = Math.max(0, Math.min(SCORE_MAX, Math.round(0.45 * fitRaw + 0.25 * diversificationRaw + 0.15 * horizonFitRaw - concentrationPenaltyRaw)));
   const scoreLabel: ScoreLabel = score >= 82 ? "Excellent" : score >= 70 ? "Good" : score >= 50 ? "Fair" : "Poor";
   const gap = round1(gapRaw);
@@ -265,14 +276,14 @@ export function analyzeAllocation(current: Allocation, tendency: PortfolioTenden
   const currentMetrics = metrics(current);
   const top = topAsset(current);
   const characteristics: PortfolioResult["characteristics"] = {
-    growth: trait(currentMetrics.growth, 35, 65),
-    defense: trait(currentMetrics.defense, 30, 60),
-    liquidity: trait(current.cash, 5, 20),
-    concentration: current[top] < 50 ? "낮음" : current[top] < 70 ? "보통" : "높음",
+    growth: trait(currentMetrics.growth, 0.35, 0.65),
+    defense: trait(currentMetrics.defense, 0.3, 0.6),
+    liquidity: trait(current.cash, 0.05, 0.2),
+    concentration: current[top] < 0.5 ? "낮음" : current[top] < 0.7 ? "보통" : "높음",
   };
 
   const recommended = roundedRecommendation(current, target);
-  const allDeltas = ASSET_KEYS.map((asset) => ({ asset, delta: round1(recommended[asset] - current[asset]) }));
+  const allDeltas = ASSET_KEYS.map((asset) => ({ asset, delta: round1((recommended[asset] - current[asset]) * 100) }));
   const sortByDeltaThenRisk = (left: { asset: AssetKey; delta: number }, right: { asset: AssetKey; delta: number }) =>
     Math.abs(right.delta) - Math.abs(left.delta) || RISK_BY_ASSET[right.asset] - RISK_BY_ASSET[left.asset];
   const rebalancingActions = allDeltas
@@ -305,10 +316,16 @@ export function analyzeAllocation(current: Allocation, tendency: PortfolioTenden
     text: signalTexts[id],
   }));
 
-  const strengths: string[] = [];
-  if (fitRaw >= 80) strengths.push("현재 위험도가 진단 성향과 잘 맞아요.");
-  if (diversificationRaw >= 85) strengths.push("여러 자산군에 고르게 나뉘어 분산도가 양호해요.");
-  if (horizonFitRaw >= 80) strengths.push("투자 기간과 포트폴리오 위험도가 잘 맞아요.");
+  const strengthAxes: StrengthAxis[] = [];
+  if (fitRaw >= 80) strengthAxes.push({ axis: "A", value: fit, threshold: 80 });
+  if (diversificationRaw >= 85) strengthAxes.push({ axis: "B", value: diversification, threshold: 85 });
+  if (horizonFitRaw >= 80) strengthAxes.push({ axis: "C", value: horizonFit, threshold: 80 });
+  const strengthText: Record<StrengthAxis["axis"], string> = {
+    A: "현재 위험도가 진단 성향과 잘 맞아요.",
+    B: "여러 자산군에 고르게 나뉘어 분산도가 양호해요.",
+    C: "투자 기간과 포트폴리오 위험도가 잘 맞아요.",
+  };
+  const strengths = strengthAxes.map(({ axis }) => strengthText[axis]);
   const cautions = signals.filter((signal) => signal.kind === "caution").map((signal) => signal.text);
 
   const mainAction = rebalancingActions[0];
@@ -335,6 +352,7 @@ export function analyzeAllocation(current: Allocation, tendency: PortfolioTenden
     rebalancingActions,
     residualItems,
     signals,
+    strengthAxes,
     strengths,
     cautions,
     coach,
